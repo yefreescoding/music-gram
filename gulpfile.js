@@ -14,13 +14,11 @@ const browsersync = require("browser-sync").create();
 
 // Sass Task
 function scssTask() {
-  return (
-    src("app/scss/index.scss", { sourcemaps: true })
-      .pipe(sass())
-      // .pipe(postcss([autoprefixer(), cssnano()]))
-      .pipe(postcss([autoprefixer()]))
-      .pipe(dest("dist", { sourcemaps: "." }))
-  );
+  return src("app/scss/index.scss", { sourcemaps: true })
+    .pipe(sass())
+    .pipe(postcss([autoprefixer(), cssnano()]))
+    .pipe(postcss([autoprefixer()]))
+    .pipe(dest("dist", { sourcemaps: "." }));
 }
 
 // JavaScript Task
@@ -55,7 +53,7 @@ function browserSyncReload(cb) {
 function watchTask() {
   watch("*.html", browserSyncReload);
   watch(
-    ["app/styles/scss/**/*.scss", "app/**/*.js"],
+    ["app/scss/**/*.scss", "app/**/*.js"],
     series(scssTask, jsTask, browserSyncReload)
   );
 }
