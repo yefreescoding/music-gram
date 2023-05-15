@@ -3,8 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
-
+    <!-- Fonts Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="icon"
       type="image/png"
@@ -18,22 +29,27 @@
     <script defer src="dist/script.js"></script>
   </head>
   <body>
-    <header class="header">
+    <!-- ========HEADER========== -->
+    <header id="home" class="flex header">
       <div class="header__logo">BB trickz</div>
-      <nav class="header__nav">
+      <nav class="flex header__nav">
         <a href="" class="header__links">About</a
         ><a href="" class="header__links">Music</a
         ><a href="" class="header__links">Redes Sociales</a
         ><a href="" class="header__links--btn">CONTACT</a>
       </nav>
     </header>
+    <!-- ========HEADER========== -->
+    <!-- ========MAIN-HERO========== -->
     <main class="main">
       <!-- Video de la pagina -->
       <h1 class="main__h1">We are creatives</h1>
     </main>
-    <section class="about">
-      <div class="about__services">
-        <div class="about__text">
+    <!-- ========MAIN-HERO========== -->
+    <!-- ========SECTION_ABOUT========== -->
+    <section class="grid about">
+      <div class="flex about__services">
+        <div class="flex-col about__text">
           <h2 class="main__h2">Transform your brand</h2>
           <p class="main__p">
             We are a full-service creative agency specializing in helping brands
@@ -42,11 +58,11 @@
           </p>
           <a href="" class="main__link"> Learn more </a>
         </div>
-        <div class="about__image"></div>
+        <img src="" alt="Imagen de portada" class="about__image" />
       </div>
-      <div class="about__services">
-        <div class="about__image"></div>
-        <div class="about__text">
+      <div class="flex about__services">
+        <img src="" alt="Imagen de portada" class="about__image" />
+        <div class="flex-col about__text">
           <h2 class="main__h2">Stand out to the right audience</h2>
           <p class="main__p">
             Using a collaborative formula of designers, researchers,
@@ -56,14 +72,14 @@
           <a href="" class="main__link">Learn more</a>
         </div>
       </div>
-      <div class="main__info">
+      <div class="flex main__info">
         <h3 class="main__h3">Graphic design</h3>
         <p class="main__p">
           Great design makes you memorable. We deliver artwork that underscores
           your brand message and captures potential clients’ attention.
         </p>
       </div>
-      <div class="main__info">
+      <div class="flex main__info">
         <h3 class="main__h3">Photography</h3>
         <p class="main__p">
           Increase your credibility by getting the most stunning, high-quality
@@ -71,29 +87,52 @@
         </p>
       </div>
     </section>
-    <section class="testimonials">
+    <!-- ========SECTION_ABOUT========== -->
+    <!-- ========SECTION_TESTIMONIALS========== -->
+    <section class="flex-col testimonials">
+      <h2 class="testimonial__h2">Client testimonials</h2>
       <div class="testimonials__container">
         <img src="" alt="" class="testimonials__image" />
-        <p class="testimonials__p"></p>
-        <div class="testimonials__names">
-          <span class="testimonial__name"></span
-          ><span class="testimonials__position"></span>
+        <p class="testimonials__p">
+          We put our trust in Sunnyside and they delivered, making sure our
+          needs were met and deadlines were always hit.
+        </p>
+        <div class="flex-col testimonials__names">
+          <span class="testimonial__name"> Emily R.</span
+          ><span class="testimonials__position">Marketing Director</span>
         </div>
       </div>
     </section>
-    Client testimonials We put our trust in Sunnyside and they delivered, making
-    sure our needs were met and deadlines were always hit. Emily R. Marketing
-    Director Sunnyside’s enthusiasm coupled with their keen interest in our
-    brand’s success made it a satisfying and enjoyable experience. Thomas S.
-    Chief Operating Officer Incredible end result! Our sales increased over 400%
-    when we worked with Sunnyside. Highly recommended! Jennie F. Business Owner
-    About Services Projects Contact
-
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
-    </div>
+    <!-- Sunnyside’s enthusiasm coupled with their keen interest in our brand’s
+    success made it a satisfying and enjoyable experience. Thomas S. Chief
+    Operating Officer Incredible end result! Our sales increased over 400% when
+    we worked with Sunnyside. Highly recommended! Jennie F. Business Owner About
+    Services Projects Contact -->
+    <!-- ========SECTION_TESTIMONIALS========== -->
+    <!-- ========FOOTER========== -->
+    <footer class="flex-col attribution">
+      <div class="flex-col header__top">
+        <h3 class="footer__h3"></h3>
+        <div class="header__links"></div>
+      </div>
+      <div class="flex footer__botton">
+        <a href="" class="footer__socials">
+          <img src="" alt="Social media icons" class="footer__icons" />
+        </a>
+        <a href="" class="footer__socials">
+          <img src="" alt="Social media icons" class="footer__icons" />
+        </a>
+        <a href="" class="footer__socials">
+          <img src="" alt="Social media icons" class="footer__icons" />
+        </a>
+        <a href="" class="footer__socials">
+          <img src="" alt="Social media icons" class="footer__icons" />
+        </a>
+      </div>
+      <div class="flex-col footer__copyright">
+        Coded by <a href="#">Yefree De Los Santos</a>
+      </div>
+    </footer>
+    <!-- ========FOOTER========== -->
   </body>
 </html>

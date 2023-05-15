@@ -1,0 +1,17 @@
+@use "../util" as *;
+
+:is(.flex-col, .flex) {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.grid {
+  display: grid;
+}
+
+.uno-rem {
+  gap: em(16);
+}

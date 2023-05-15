@@ -1,2 +1,2 @@
-"use strict";var test=function(t,e){return t+e};console.log(test(3,3));
+"use strict";
 //# sourceMappingURL=script.js.map

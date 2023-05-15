@@ -1,1 +1,1 @@
-{"version":3,"sources":["script.js"],"names":["test","a","b","console","log"],"mappings":"AAAA,aAAA,IAAMA,KAAO,SAACC,EAAGC,GACf,OAAOD,EAAIC,CACb,EAEAC,QAAQC,IAAIJ,KAAK,EAAG","file":"script.js","sourcesContent":["const test = (a, b) => {\n  return a + b;\n};\n\nconsole.log(test(3, 3));\n"]}
+{"version":3,"file":"script.js","names":[],"sources":["script.js"],"mappings":"AAAA"}

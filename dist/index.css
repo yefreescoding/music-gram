@@ -1,2 +1,2 @@
-.attribution{font-size:11px;text-align:center}.attribution a{color:#3e52a3}h1{font-size:6rem}.flex-col{display:flex}.test{font-weight:700;text-align:center}
+:is(.flex-col,.flex){display:flex}.flex-col{flex-direction:column}.grid{display:grid}.uno-rem{gap:1em}html{box-sizing:border-box;font-size:100%}*,:after,:before{box-sizing:inherit;margin:0;outline:.5px solid grey;padding:0}img{display:block;width:100%}
 /*# sourceMappingURL=index.css.map */

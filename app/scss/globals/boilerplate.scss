@@ -1,0 +1,19 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+
+  outline: 0.5px solid grey;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
