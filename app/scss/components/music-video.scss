@@ -1,0 +1,14 @@
+.music-video {
+  position: absolute;
+  inset: 20px;
+  display: none;
+}
+
+.show-me-video {
+  display: block;
+}
+
+.about__music--video {
+  aspect-ratio: 4/4;
+  object-fit: cover;
+}

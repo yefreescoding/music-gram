@@ -31,65 +31,134 @@
   <body>
     <!-- ========HEADER========== -->
     <header id="home" class="flex header">
-      <div class="header__logo">BB trickz</div>
-      <nav class="flex header__nav">
-        <a href="" class="header__links">About</a
-        ><a href="" class="header__links">Music</a
-        ><a href="" class="header__links">Redes Sociales</a
-        ><a href="" class="header__links--btn">CONTACT</a>
+      <div class="flex header__logo">
+        <img
+          class="header__logo--image"
+          src="assets/logos/logo-page.png"
+          alt="Logo de la pagina"
+        />
+        <span class="header__logo--letters">BB trickz</span>
+      </div>
+      <nav id="nav" class="flex header__nav">
+        <a href="#about" class="header__links">About</a
+        ><a href="#music" class="header__links">Music</a
+        ><a href="#" class="header__links" target="_blank">SoundCloud</a
+        ><a href="#footer" class="header__links header__links--btn">CONTACT</a>
       </nav>
+      <button class="header__toggle">
+        <img src="assets/icons/menu.png" alt="menu mobile" />
+      </button>
     </header>
     <!-- ========HEADER========== -->
     <!-- ========MAIN-HERO========== -->
-    <main class="main">
+    <main class="grid main">
       <!-- Video de la pagina -->
-      <h1 class="main__h1">We are creatives</h1>
+      <video autoplay muted playsinline loop class="main__video">
+        <source src="assets/video/video-hero.mp4" type="video/mp4" />
+      </video>
+      <h1 class="main__h1">SHE'S FIRE</h1>
     </main>
     <!-- ========MAIN-HERO========== -->
     <!-- ========SECTION_ABOUT========== -->
-    <section class="grid about">
-      <div class="flex about__services">
+    <section id="about" class="grid about">
+      <div class="flex about__services wrap-reverse">
         <div class="flex-col about__text">
-          <h2 class="main__h2">Transform your brand</h2>
-          <p class="main__p">
-            We are a full-service creative agency specializing in helping brands
-            grow fast. Engage your clients through compelling visuals that do
-            most of the marketing for you
+          <h2 class="about__h2">Who's She?</h2>
+          <p class="about__p">
+            Bb trickz is a Spanish artist born in Barcelona in 2000 and real
+            name Belize Kazi. His style is characterized by controversial and
+            sometimes even humorous lyrics, and a flow offbeat on rhythms
+            generally of drill, Detroit or even R & B. This has led him to
+            receive numerous comparisons mainly with the American artist Ice
+            Spice.
           </p>
-          <a href="" class="main__link"> Learn more </a>
+          <button
+            href="https://genius.com/artists/Bb-trickz"
+            class="about__link"
+            target="_blank"
+          >
+            Learn more
+          </button>
         </div>
-        <img src="" alt="Imagen de portada" class="about__image" />
+        <img
+          src="assets/images/desktop/hero-section.png"
+          alt="Imagen de portada"
+          class="about__image"
+        />
       </div>
       <div class="flex about__services">
-        <img src="" alt="Imagen de portada" class="about__image" />
+        <img
+          src="assets/images/desktop/hero-section-2.png"
+          alt="Imagen de portada"
+          class="about__image"
+        />
         <div class="flex-col about__text">
-          <h2 class="main__h2">Stand out to the right audience</h2>
-          <p class="main__p">
-            Using a collaborative formula of designers, researchers,
-            photographers, videographers, and copywriters, we’ll build and
-            extend your brand in digital places.
+          <h2 class="about__h2">BB Trickz: "Urban Music shops in Humana"</h2>
+          <p class="about__p">
+            The 23-year-old Catalan has revolutionized everything she has found
+            in her path. From zero to one hundred. One day it appeared on the
+            Twitter timeline and, minutes later, no one stopped talking about
+            it. Passivity, fashion, exaltation of conventional beauty, lyrics
+            impossible to explain to a person who is in his thirties and a
+            celebration of everything that makes generation Z unique. A cocktail
+            that merges with the classic urban codes, which it does not abandon,
+            but it does transform into its own language
           </p>
-          <a href="" class="main__link">Learn more</a>
+          <a
+            href="https://www.infobae.com/espana/2023/05/14/bb-trickz-la-musica-urbana-va-al-humana/"
+            class="about__link"
+            target="_blank"
+            >Learn more</a
+          >
         </div>
       </div>
-      <div class="flex main__info">
-        <h3 class="main__h3">Graphic design</h3>
-        <p class="main__p">
-          Great design makes you memorable. We deliver artwork that underscores
-          your brand message and captures potential clients’ attention.
-        </p>
-      </div>
-      <div class="flex main__info">
-        <h3 class="main__h3">Photography</h3>
-        <p class="main__p">
-          Increase your credibility by getting the most stunning, high-quality
-          photos that improve your business image.
-        </p>
+      <div id="music" class="flex about__music">
+        <div class="grid about__info">
+          <video autoplay muted playsinline loop class="about__video">
+            <source src="assets/video/video-hero.mp4" type="video/mp4" />
+          </video>
+          <div class="about__text--video">
+            <h3 class="about__h3--video">Tu Nightmare</h3>
+            <p class="about__p--video">
+              This is the latest single of the artist BB trickz. Go check it out
+              in all the streaming platforms.
+            </p>
+            <button id="video-show" class="about__btn">check video</button>
+          </div>
+          <div id="video-youtube" class="music-video">
+            <iframe
+              class="about__music--video"
+              src="https://www.youtube.com/embed/zIWoqc00EPI?controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="clipboard-write; encrypted-media; gyroscope; web-share"
+            ></iframe>
+          </div>
+        </div>
+        <div class="grid about__info">
+          <video autoplay muted playsinline loop class="about__video">
+            <source src="assets/video/video-hero2.mp4" type="video/mp4" />
+          </video>
+          <div class="about__text--video">
+            <h3 class="about__h3--video">Treachory</h3>
+            <p class="about__p--video">Treachory... Just listen.</p>
+            <button id="video-show" class="about__btn">check video</button>
+          </div>
+          <div id="video-youtube2" class="music-video">
+            <iframe
+              class="about__music--video"
+              src="https://www.youtube.com/embed/zIWoqc00EPI?controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="clipboard-write; encrypted-media; gyroscope; web-share"
+            ></iframe>
+          </div>
+        </div>
       </div>
     </section>
     <!-- ========SECTION_ABOUT========== -->
     <!-- ========SECTION_TESTIMONIALS========== -->
-    <section class="flex-col testimonials">
+    <section id="music" class="flex-col testimonials">
       <h2 class="testimonial__h2">Client testimonials</h2>
       <div class="testimonials__container">
         <img src="" alt="" class="testimonials__image" />
@@ -129,8 +198,11 @@
           <img src="" alt="Social media icons" class="footer__icons" />
         </a>
       </div>
-      <div class="flex-col footer__copyright">
-        Coded by <a href="#">Yefree De Los Santos</a>
+      <div class="flex footer__copyright">
+        <span class="footer__author">
+          Coded by <a href="#">Yefree De Los Santos</a>
+        </span>
+        <span id="date" class="footer__date"></span>
       </div>
     </footer>
     <!-- ========FOOTER========== -->

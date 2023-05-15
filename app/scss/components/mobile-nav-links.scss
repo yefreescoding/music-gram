@@ -1,0 +1,14 @@
+.show {
+  display: flex;
+  opacity: 1;
+}
+
+.fixed-nav {
+  display: flex;
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 9999;
+  background: linear-gradient(var(--Dark-blue), rgba(224, 218, 218, 0));
+  // filter: blur(5px);
+  color: var(--White);
+}
