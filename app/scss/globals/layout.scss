@@ -17,11 +17,11 @@
 }
 
 body {
-  background-color: var(--Dark-desaturated-cyan);
+  background-color: var(--Dark-moderate-cyan);
 }
 
 :is(header, main, section, footer) {
-  width: min(rem(1440), 100% - rem(16));
+  width: min(rem(1440), 100% - rem(8));
   margin-inline: auto;
 }
 
@@ -97,6 +97,7 @@ body {
   &__video {
     grid-area: one;
     object-fit: cover;
+    aspect-ratio: 9/16;
     @include breakpoint(medium) {
       aspect-ratio: 16/9;
     }
@@ -195,6 +196,58 @@ body {
   }
 }
 
+.testimonials {
+  background-color: var(--Soft-red);
+  padding: em(20);
+  justify-content: center;
+  gap: em(32);
+  &__h2 {
+    text-align: center;
+  }
+  &__container {
+    gap: rem(16);
+    grid-template-columns: repeat(auto-fit, minmax(min(22rem, 100%), 1fr));
+    align-items: start;
+  }
+  &__reviews {
+    background-color: var(--White);
+    padding: em(16);
+    gap: em(28);
+    height: fit-content;
+    // justify-content: space-between;
+    border-radius: 16px;
+  }
+  &__names {
+    gap: em(16);
+    align-items: center;
+  }
+  &__name {
+  }
+  &__image {
+    width: em(30);
+    border-radius: 50%;
+  }
+  &__p {
+  }
+
+  &__position {
+  }
+}
+.gallery {
+  padding: rem(24);
+  gap: rem(18);
+  grid-auto-flow: column;
+  grid-auto-columns: calc(40% - (1rem / 2));
+  // grid-auto-rows: 300px;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 1rem;
+  &__image {
+    border-radius: 22px;
+    scroll-snap-align: start;
+    object-fit: contain;
+  }
+}
 .wrap-reverse {
   flex-wrap: wrap-reverse;
 }

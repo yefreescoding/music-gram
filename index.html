@@ -29,6 +29,15 @@
     <script defer src="dist/script.js"></script>
   </head>
   <body>
+    <!-- ===========PRELOADER========= -->
+    <div class="preloader">
+      <div class="preloader__animation">LOADING ...</div>
+      <img
+        src="assets/images/desktop/preloader/preloader-2.png"
+        alt=""
+        class="preloader__image"
+      />
+    </div>
     <!-- ========HEADER========== -->
     <header id="home" class="flex header">
       <div class="flex header__logo">
@@ -42,11 +51,15 @@
       <nav id="nav" class="flex header__nav">
         <a href="#about" class="header__links">About</a
         ><a href="#music" class="header__links">Music</a
-        ><a href="#" class="header__links" target="_blank">SoundCloud</a
+        ><a
+          href="https://soundcloud.com/bbtrickz"
+          class="header__links"
+          target="_blank"
+          >SoundCloud</a
         ><a href="#footer" class="header__links header__links--btn">CONTACT</a>
       </nav>
       <button class="header__toggle">
-        <img src="assets/icons/menu.png" alt="menu mobile" />
+        <img src="assets/icons/icon-hamburger.svg" alt="menu mobile" />
       </button>
     </header>
     <!-- ========HEADER========== -->
@@ -54,7 +67,7 @@
     <main class="grid main">
       <!-- Video de la pagina -->
       <h1 class="main__h1">SHE'S FIRE</h1>
-      <video pause muted playsinline loop class="main__video">
+      <video autoplay muted playsinline loop class="main__video">
         <source src="assets/video/video-hero.mp4" type="video/mp4" />
       </video>
     </main>
@@ -122,16 +135,17 @@
             </p>
             <button id="video-show" class="about__btn">check video</button>
           </div>
-          <video pause muted playsinline loop class="about__video">
+          <video autoplay muted playsinline loop class="about__video">
             <source src="assets/video/video-hero.mp4" type="video/mp4" />
           </video>
           <div id="video-youtube" class="music-video">
             <iframe
               class="about__music--video"
-              src="https://www.youtube.com/embed/zIWoqc00EPI?controls=0"
+              src="https://www.youtube.com/embed/ODHwDw_QKzE?controls=0"
               title="YouTube video player"
               frameborder="0"
-              allow="clipboard-write; encrypted-media; gyroscope; web-share"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
             ></iframe>
           </div>
         </div>
@@ -141,7 +155,7 @@
             <p class="about__p--video">Treachory... Just listen.</p>
             <button id="video-show" class="about__btn">check video</button>
           </div>
-          <video pause muted playsinline loop class="about__video">
+          <video autoplay muted playsinline loop class="about__video">
             <source src="assets/video/video-hero2.mp4" type="video/mp4" />
           </video>
           <div id="video-youtube2" class="music-video">
@@ -159,24 +173,48 @@
     <!-- ========SECTION_ABOUT========== -->
     <!-- ========SECTION_TESTIMONIALS========== -->
     <section id="music" class="flex-col testimonials">
-      <h2 class="testimonial__h2">Client testimonials</h2>
-      <div class="testimonials__container">
-        <img src="" alt="" class="testimonials__image" />
-        <p class="testimonials__p">
-          We put our trust in Sunnyside and they delivered, making sure our
-          needs were met and deadlines were always hit.
-        </p>
-        <div class="flex-col testimonials__names">
-          <span class="testimonial__name"> Emily R.</span
-          ><span class="testimonials__position">Marketing Director</span>
+      <h2 class="testimonials__h2">Fans Around The World Loves Her</h2>
+      <div class="grid testimonials__container">
+        <div class="flex-col testimonials__reviews">
+          <div class="flex testimonials__names">
+            <img
+              src="assets/images/image-jennie.jpg"
+              alt="Profile Image of the user"
+              class="testimonials__image"
+            />
+            <span class="testimonials__name"> Emily R.</span
+            ><span class="testimonials__position">Marketing Director</span>
+          </div>
+          <p class="testimonials__p">
+            We put our trust in Sunnyside and they delivered, making sure our
+            needs were met and deadlines were always hit.
+          </p>
+          <span class="testimonial__date"> April 24th, 2023. </span>
         </div>
       </div>
     </section>
-    <!-- Sunnyside’s enthusiasm coupled with their keen interest in our brand’s
-    success made it a satisfying and enjoyable experience. Thomas S. Chief
-    Operating Officer Incredible end result! Our sales increased over 400% when
-    we worked with Sunnyside. Highly recommended! Jennie F. Business Owner About
-    Services Projects Contact -->
+    <section class="grid gallery">
+      <img
+        src="assets/images/desktop/preloader/Screenshot 2023-05-15 at 23.37.43.png"
+        alt=""
+        class="gallery__image"
+      />
+      <img
+        src="assets/images/desktop/preloader/preloader-1.png"
+        alt=""
+        class="gallery__image"
+      />
+      <img
+        src="assets/images/desktop/preloader/Screenshot 2023-05-15 at 23.37.43.png"
+        alt=""
+        class="gallery__image"
+      />
+      <img
+        src="assets/images/desktop/preloader/Screenshot 2023-05-15 at 23.37.43.png"
+        alt=""
+        class="gallery__image"
+      />
+    </section>
     <!-- ========SECTION_TESTIMONIALS========== -->
     <!-- ========FOOTER========== -->
     <footer class="flex-col attribution">
@@ -186,16 +224,32 @@
       </div>
       <div class="flex footer__botton">
         <a href="" class="footer__socials">
-          <img src="" alt="Social media icons" class="footer__icons" />
+          <img
+            src="assets/icons/icon-facebook.svg"
+            alt="Social media icons"
+            class="footer__icons"
+          />
         </a>
         <a href="" class="footer__socials">
-          <img src="" alt="Social media icons" class="footer__icons" />
+          <img
+            src="assets/icons/icon-instagram.svg"
+            alt="Social media icons"
+            class="footer__icons"
+          />
         </a>
         <a href="" class="footer__socials">
-          <img src="" alt="Social media icons" class="footer__icons" />
+          <img
+            src="assets/icons/icon-pinterest.svg"
+            alt="Social media icons"
+            class="footer__icons"
+          />
         </a>
         <a href="" class="footer__socials">
-          <img src="" alt="Social media icons" class="footer__icons" />
+          <img
+            src="assets/icons/icon-twitter.svg"
+            alt="Social media icons"
+            class="footer__icons"
+          />
         </a>
       </div>
       <div class="flex footer__copyright">
