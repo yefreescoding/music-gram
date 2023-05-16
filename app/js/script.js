@@ -10,18 +10,13 @@ const header = document.getElementById("home");
 
 linksToggle.addEventListener("click", () => {
   linksContainerNav.classList.toggle("show");
-  // const containerHeight = linksContainerNav.getBoundingClientRect();
-  // console.log(containerHeight);
+  linksToggle.classList.toggle("close-btn");
 });
 
 // Fixed nav bar
 
 window.addEventListener("scroll", () => {
-  // console.log(window.pageYOffset);
-  const videoHero = document.querySelector("main__video");
-
   const scrollHeight = window.pageYOffset;
-  const headerHeight = header.getBoundingClientRect().height;
   if (scrollHeight > 50) {
     header.classList.add("fixed-nav");
   } else {
@@ -66,8 +61,8 @@ const testimonials = [
   {
     id: 4,
     name: "fulano",
-    position: "work in S.A Monster",
-    image: "#",
+    position: "Twitter",
+    image: "assets/images/image-jennie.jpg",
     testimonial: "Cosas se escriben por aqui, cosass mas y mas cosas",
   },
 ];
@@ -75,6 +70,59 @@ const testimonials = [
 const testimonialsContainer = document.querySelector(
   ".testimonials__container"
 );
+
+// Gallery
+const gallery = [
+  {
+    id: 1,
+    src: "assets/images/desktop/hero/hero-3.png",
+  },
+  {
+    id: 2,
+    src: "assets/images/desktop/hero/hero-2.png",
+  },
+  {
+    id: 3,
+    src: "assets/images/desktop/hero/hero-portrait2.png",
+  },
+  {
+    id: 4,
+    src: "assets/images/desktop/hero/hero4.png",
+  },
+];
+
+const galleryContainer = document.querySelector(".gallery");
+// Social Media Icons
+
+// Gallery
+const socials = [
+  {
+    id: 1,
+    src: "assets/icons/icon-facebook.svg",
+    alt: "Facebook logo icon",
+    link: "#",
+  },
+  {
+    id: 2,
+    src: "assets/icons/icon-instagram.svg",
+    alt: "instagram logo icon",
+    link: "#",
+  },
+  {
+    id: 3,
+    src: "assets/icons/icon-pinterest.svg",
+    alt: "pinterest logo icon",
+    link: "#",
+  },
+  {
+    id: 4,
+    src: "assets/icons/icon-twitter.svg",
+    alt: "Twitter logo icon",
+    link: "#",
+  },
+];
+
+const socialMediaContainer = document.querySelector(".footer__bottom");
 
 window.addEventListener("DOMContentLoaded", () => {
   let testimonialsDisplay = testimonials.map((item) => {
@@ -99,6 +147,30 @@ window.addEventListener("DOMContentLoaded", () => {
 
   testimonialsDisplay = testimonialsDisplay.join("");
   testimonialsContainer.innerHTML = testimonialsDisplay;
+
+  let galleryDisplay = gallery.map((item) => {
+    return `<img
+              src="${item.src}"
+              alt="Portrait image of BB Trickz"
+              class="gallery__image"
+            />`;
+  });
+
+  galleryDisplay = galleryDisplay.join("");
+  galleryContainer.innerHTML = galleryDisplay;
+
+  let socialsDisplay = socials.map((item) => {
+    return `<a href="${item.link}" class="footer__socials">
+              <img
+                src="${item.src}"
+                alt="${item.alt}"
+                class="footer__icons"
+              />
+            </a>`;
+  });
+
+  socialsDisplay = socialsDisplay.join("");
+  socialMediaContainer.innerHTML = socialsDisplay;
 });
 
 // Preloader

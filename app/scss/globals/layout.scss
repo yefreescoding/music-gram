@@ -18,6 +18,7 @@
 
 body {
   background-color: var(--Dark-moderate-cyan);
+  overflow-x: hidden;
 }
 
 :is(header, main, section, footer) {
@@ -30,6 +31,7 @@ body {
   align-items: center;
   justify-content: space-between;
   position: relative;
+  padding: min(5vh, 1rem) 0.5rem;
   height: 50px;
 
   &__logo {
@@ -48,13 +50,18 @@ body {
     }
   }
   &__nav {
-    display: none;
+    // display: none;
     flex-direction: column;
+    justify-content: space-around;
+    gap: rem(16);
     position: absolute;
-    inset: 60px 0 0 auto;
-    height: 20rem;
-    aspect-ratio: 3/3;
-    background-color: white;
+    inset: 50px 0 0 30%;
+    padding: min(20vh, 10rem) 2rem;
+    background-color: hsla(0, 20%, 100%, 0.9);
+    backdrop-filter: blur(1em);
+    transition: all 0.5s ease-in-out;
+    transform: translateX(120%);
+    // aspect-ratio: 3/3;
 
     @include breakpoint(medium) {
       position: relative;
@@ -66,21 +73,29 @@ body {
       display: flex;
       aspect-ratio: 0;
       background-color: transparent;
+      backdrop-filter: blur(0);
+      transform: translateX(0);
     }
   }
   &__links {
-    flex: 1;
-    text-align: center;
+    // flex: 1;
+    // text-align: center;
+    font-size: rem(22);
     color: var(--Very-dark-desaturated-blue);
     @include breakpoint(medium) {
       color: white;
     }
   }
   &__toggle {
-    flex-basis: em(50);
-    background: transparent;
-    border: 0.9px solid transparent;
-    border-radius: 8px;
+    width: rem(32);
+    aspect-ratio: 1;
+    background-image: url(../../../assets/icons/icon-hamburger.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    background-size: contain;
+    border: 1.5px solid transparent;
+
     cursor: pointer;
     @include breakpoint(medium) {
       display: none;
@@ -203,6 +218,8 @@ body {
   gap: em(32);
   &__h2 {
     text-align: center;
+    color: var(--White);
+    font-size: rem(38);
   }
   &__container {
     gap: rem(16);
@@ -216,12 +233,21 @@ body {
     height: fit-content;
     // justify-content: space-between;
     border-radius: 16px;
+    box-shadow: 0 0 16px rgba(95, 95, 95, 0.794);
   }
   &__names {
-    gap: em(16);
+    gap: em(8);
     align-items: center;
+    text-align: center;
+    width: 100%;
   }
   &__name {
+    font-weight: 600;
+    font-size: rem(18);
+  }
+  &__position {
+    color: var(--Dark-moderate-cyan);
+    font-weight: 600;
   }
   &__image {
     width: em(30);
@@ -229,25 +255,54 @@ body {
   }
   &__p {
   }
-
-  &__position {
-  }
 }
 .gallery {
   padding: rem(24);
   gap: rem(18);
   grid-auto-flow: column;
   grid-auto-columns: calc(40% - (1rem / 2));
-  // grid-auto-rows: 300px;
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
   scroll-padding: 1rem;
+  background-color: var(--Yellow);
   &__image {
     border-radius: 22px;
     scroll-snap-align: start;
     object-fit: contain;
+    box-shadow: 0 0 26px var(--Dark-moderate-cyan);
   }
 }
+
+.footer {
+  align-items: center;
+  justify-content: space-around;
+  height: rem(300);
+  padding: rem(16);
+  background-color: var(--Dark-moderate-cyan);
+  &__h3 {
+    font-size: rem(28);
+    color: var(--Very-dark-desaturated-blue);
+  }
+  &__bottom {
+    gap: rem(32);
+    align-items: center;
+  }
+  &__socials {
+  }
+  &__icons {
+    aspect-ratio: 2/2;
+    object-fit: cover;
+  }
+  &__copyright {
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+  }
+  &__author {
+    font-size: 600;
+  }
+}
+
 .wrap-reverse {
   flex-wrap: wrap-reverse;
 }
