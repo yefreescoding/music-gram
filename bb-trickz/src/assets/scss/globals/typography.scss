@@ -1,0 +1,23 @@
+@use '../util' as *;
+
+a,
+:active {
+  text-decoration: none;
+  color: var(--Dark-blue);
+  font-family: $specialFont;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: $specialFont;
+  color: var(--Very-dark-desaturated-blue);
+}
+
+p,
+span {
+  font-family: $regularFont;
+  font-size: rem(18);
+  line-height: 1.5;
+}

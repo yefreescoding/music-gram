@@ -1,0 +1,47 @@
+---
+import '../assets/scss/index.scss';
+
+import SiteMeta from '../Components/SiteMeta.astro';
+import LinkFonts from '../Components/SiteMeta.astro';
+import Header from '../Components/Header.astro';
+import Footer from '../Components/Footer.astro';
+
+const {
+  title = 'BB Trickzz',
+  description = 'The unofficial website for the upcoming artist BB Trickz',
+  url,
+  image = '/',
+  author = 'Yefree De Los Santos',
+} = Astro.props;
+
+const { pageTitle } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <SiteMeta
+      title={title}
+      description={description.substring(0, 100)}
+      url={Astro.site
+        ? `${Astro.site}/${title.toLowerCase().replaceAll(' ', '-')}`
+        : `https://accessible-astro.dev/${title
+            .toLowerCase()
+            .replaceAll(' ', '-')}`}
+      image={image}
+      author={author}
+    />
+    <!-- Fonts Google -->
+    <LinkFonts />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
