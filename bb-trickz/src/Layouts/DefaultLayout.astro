@@ -5,6 +5,7 @@ import SiteMeta from '../Components/SiteMeta.astro';
 import LinkFonts from '../Components/SiteMeta.astro';
 import Header from '../Components/Header.astro';
 import Footer from '../Components/Footer.astro';
+import Preloader from '../Components/Preloader.astro';
 
 const {
   title = 'BB Trickzz',
@@ -35,13 +36,27 @@ const { pageTitle } = Astro.props;
     />
     <!-- Fonts Google -->
     <LinkFonts />
-    <title>{pageTitle}</title>
   </head>
   <body>
+    <Preloader />
     <Header />
+
     <main>
       <slot />
     </main>
     <Footer />
+    <style lang="scss" is:global>
+      @use '../assets/scss/util/' as *;
+      body {
+        color: var(--Dark-blue);
+        font-family: $regularFont;
+        &,
+        header,
+        nav {
+          display: flex;
+        }
+        flex-direction: column;
+      }
+    </style>
   </body>
 </html>

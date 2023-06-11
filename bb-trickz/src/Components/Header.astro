@@ -3,14 +3,77 @@ import Navigation from './Navigation.astro';
 ---
 
 <header id="home" class="flex header">
-  <div class="flex header__logo">
+  <div class="header__logo">
+    <span class="header__logo--letters">BB trickz</span>
     <img
       class="header__logo--image"
       src="/logos/logo-page.png"
       alt="Logo de la pagina"
     />
-    <span class="header__logo--letters">BB trickz</span>
   </div>
   <Navigation />
-  <button class="header__toggle"></button>
+  <p class="header__p">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem consequatur
+    totam sit ipsam!
+  </p>
+  <!-- <button class="header__toggle"></button> -->
 </header>
+
+<style lang="scss" is:global>
+  @use '../assets/scss/util/' as *;
+
+  .header {
+    padding: 1rem 0.5rem;
+    font-weight: 600;
+
+    &__logo,
+    &__nav,
+    &__p {
+      flex: 1;
+      flex-direction: column;
+      align-items: start;
+      justify-content: space-between;
+      padding-inline: 1rem;
+      border-left: 1px solid #111;
+      gap: 1rem;
+    }
+    &__logo {
+      display: flex;
+      &--image {
+        width: em(50);
+        border-radius: 50%;
+      }
+      &--letters {
+        font-weight: 600;
+      }
+    }
+    // &__toggle {
+    //   width: rem(32);
+    //   aspect-ratio: 1;
+    //   background-image: url(/icons/icon-hamburger.svg);
+    //   background-repeat: no-repeat;
+    //   background-position: center;
+    //   background-color: transparent;
+    //   background-size: contain;
+    //   border: 1.5px solid transparent;
+
+    //   cursor: pointer;
+    //   @include breakpoint(medium) {
+    //     display: none;
+    //   }
+    // }
+  }
+</style>
+
+<script>
+  // const header = document.getElementById('home');
+
+  // window.addEventListener('scroll', () => {
+  //   const scrollHeight = window.pageYOffset;
+  //   if (scrollHeight > 50) {
+  //     header.classList.add('fixed-nav');
+  //   } else {
+  //     header.classList.remove('fixed-nav');
+  //   }
+  // });
+</script>

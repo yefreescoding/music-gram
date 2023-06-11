@@ -1,4 +1,4 @@
-<nav id="nav" class="flex header__nav">
+<nav id="nav" class="header__nav">
   <a href="#about" class="header__links">About</a><a
     href="#music"
     class="header__links">Music</a
@@ -6,5 +6,41 @@
     href="https://soundcloud.com/bbtrickz"
     class="header__links"
     target="_blank">SoundCloud</a
-  ><a href="#footer" class="header__links header__links--btn">CONTACT</a>
+  ><a href="#footer" class="header__links">CONTACT</a>
 </nav>
+
+<style lang="scss">
+  @use '../assets/scss/util/' as *;
+
+  .header {
+    &__nav {
+    }
+    &__links {
+      font-size: 1.1rem;
+      transition: all 0.2s;
+      &:hover {
+        color: gray;
+        transform: scale(1.1, 1.1);
+      }
+    }
+  }
+  .show {
+    transition: all 0.5s ease-in-out;
+    transform: translateX(0);
+  }
+
+  .fixed-nav {
+    display: flex;
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 100;
+    backdrop-filter: blur(1em);
+    background: linear-gradient(
+      var(--Dark-moderate-cyan),
+      rgba(224, 218, 218, 0)
+    );
+    color: var(--White);
+  }
+</style>
+
+<script></script>

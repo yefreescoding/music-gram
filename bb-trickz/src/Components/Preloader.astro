@@ -1,0 +1,49 @@
+<!-- ===========PRELOADER========= --><!-- <div class="preloader">
+      <div class="preloader__animation">LOADING ...</div>
+      <img
+        src="/images/desktop/preloader/preloader-2.png"
+        alt=""
+        class="preloader__image"
+      /> -->
+<style lang="scss">
+  @use '../assets/scss/util/' as *;
+
+  .preloader {
+    position: fixed;
+    inset: 0;
+    background-color: var(--White);
+    display: grid;
+    place-items: center;
+    grid-template-areas: 'loader';
+    visibility: visible;
+    z-index: 999;
+    transition: all 2s ease-out;
+    &__animation {
+      grid-area: loader;
+      z-index: 5;
+      font-size: 4rem;
+      color: var(--White);
+      font-family: $specialFont;
+    }
+    &__image {
+      object-fit: contain;
+      object-position: bottom;
+      grid-area: loader;
+      @include breakpoint(medium) {
+        aspect-ratio: 0;
+      }
+    }
+  }
+
+  .hide-preloader {
+    z-index: -999;
+    visibility: hidden;
+  }
+</style>
+<script>
+  const preloader = document.querySelector('.preloader');
+
+  window.addEventListener('load', () => {
+    preloader.classList.add('hide-preloader');
+  });
+</script>

@@ -1,24 +1,10 @@
 ---
 import DefaultLayout from '../Layouts/DefaultLayout.astro';
-import DefaulLayout from '../Layouts/DefaultLayout.astro';
+import Cover from '../Components/Cover.astro';
 ---
 
-<DefaultLayout pageTitle="BB Trickz | Home">
-  <!-- ===========PRELOADER========= --><!-- <div class="preloader">
-      <div class="preloader__animation">LOADING ...</div>
-      <img
-        src="/images/desktop/preloader/preloader-2.png"
-        alt=""
-        class="preloader__image"
-      />
-   ========MAIN-HERO========== -->
-  <section class="grid main">
-    <!-- Video de la pagina -->
-    <h1 class="main__h1">SHE'S FIRE</h1>
-    <video autoplay muted playsinline loop class="main__video">
-      <source src="/video/video-hero.mp4" type="video/mp4" />
-    </video>
-  </section>
+<DefaultLayout>
+  <Cover />
   <!-- ========MAIN-HERO========== -->
   <!-- ========SECTION_ABOUT========== -->
   <section id="about" class="grid about">
@@ -32,13 +18,13 @@ import DefaulLayout from '../Layouts/DefaultLayout.astro';
           drill, Detroit or even R & B. This has led him to receive numerous
           comparisons mainly with the American artist Ice Spice.
         </p>
-        <button
+        <a
           href="https://genius.com/artists/Bb-trickz"
           class="about__link"
           target="_blank"
         >
           Learn more
-        </button>
+        </a>
       </div>
       <img
         src="/images/desktop/hero-section.png"

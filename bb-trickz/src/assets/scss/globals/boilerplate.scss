@@ -1,7 +1,17 @@
+@use '../util' as *;
+
 html {
-  font-size: 100%;
   box-sizing: border-box;
   scroll-behavior: smooth;
+
+  @media (prefers-reduced-motion: reduce) {
+    scroll-behavior: auto;
+
+    body * {
+      animation-duration: 0s !important;
+      animation-delay: 0s !important;
+    }
+  }
 }
 
 *,
@@ -14,19 +24,38 @@ html {
   // outline: 0.5px solid grey;
 }
 
+embed,
+iframe,
 img,
-video,
+object,
 svg,
-iframe {
+video {
   display: block;
   max-width: 100%;
-  width: 100%;
-  // -webkit-transform: translateZ(0);
+}
+
+a,
+:active {
+  text-decoration: none;
+  color: var(--Dark-blue);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--Very-dark-desaturated-blue);
+}
+
+p,
+span {
+  font-size: rem(18);
+  line-height: 1.5;
 }
 
 button {
   background: transparent;
   border: 0.5px solid transparent;
-  cursor: pointer;
   text-transform: capitalize;
+  cursor: pointer;
 }
