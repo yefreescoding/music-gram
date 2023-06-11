@@ -48,11 +48,13 @@ const { pageTitle } = Astro.props;
     <style lang="scss" is:global>
       @use '../assets/scss/util/' as *;
       body {
-        color: var(--Dark-blue);
+        color: var(--Dark-moderate-cyan);
+        background-color: var(--Dark-blue);
         font-family: $regularFont;
         &,
         header,
-        nav {
+        nav,
+        .cover {
           display: flex;
         }
         flex-direction: column;

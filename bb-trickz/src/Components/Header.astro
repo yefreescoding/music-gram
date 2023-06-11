@@ -4,7 +4,7 @@ import Navigation from './Navigation.astro';
 
 <header id="home" class="flex header">
   <div class="header__logo">
-    <span class="header__logo--letters">BB trickz</span>
+    <a href="/" class="header__logo--letters">BB trickz</a>
     <img
       class="header__logo--image"
       src="/logos/logo-page.png"
@@ -26,6 +26,10 @@ import Navigation from './Navigation.astro';
     padding: 1rem 0.5rem;
     font-weight: 600;
 
+    a {
+      color: var(--Dark-moderate-cyan);
+    }
+
     &__logo,
     &__nav,
     &__p {
@@ -34,7 +38,7 @@ import Navigation from './Navigation.astro';
       align-items: start;
       justify-content: space-between;
       padding-inline: 1rem;
-      border-left: 1px solid #111;
+      border-left: 1px solid var(--Dark-moderate-cyan);
       gap: 1rem;
     }
     &__logo {
@@ -44,7 +48,6 @@ import Navigation from './Navigation.astro';
         border-radius: 50%;
       }
       &--letters {
-        font-weight: 600;
       }
     }
     // &__toggle {
