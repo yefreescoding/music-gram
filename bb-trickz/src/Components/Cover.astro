@@ -1,26 +1,33 @@
+---
+const { coverText } = Astro.props;
+---
+
 <section class="cover">
-  <video paused muted playsinline class="cover__video">
-    <source src="/video/video-hero.mp4" type="video/mp4" />
-  </video>
-  <h1 class="cover__h1">trickstar</h1>
+  <slot />
+  <h1 class="cover__h1">{coverText}</h1>
 </section>
 
-<style lang="scss">
+<style lang="scss" is:global>
   @use '../assets/scss/util/' as *;
 
   .cover {
     position: relative;
     flex-direction: column;
-    &__video {
+    &__bg {
       object-fit: cover;
       aspect-ratio: 16/6;
     }
     &__h1 {
-      font-size: clamp(3rem, 10vw, 12rem);
       position: absolute;
-      color: white;
-      text-align: center;
+      left: 0;
+      right: 0;
       bottom: 0;
+      font-size: clamp(3rem, 10vw, 12rem);
+      color: hsl(0, 0%, 100%);
+      background: linear-gradient(
+        hsla(180, 14%, 99%, 0),
+        hsla(206, 16%, 17%, 0.7)
+      );
     }
     // &::before {
     //   content: '';

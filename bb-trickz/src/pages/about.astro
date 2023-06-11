@@ -1,8 +1,68 @@
 ---
 import DefaultLayout from '../Layouts/DefaultLayout.astro';
 import Cover from '../Components/Cover.astro';
+
+import aboutData from '../js/data';
 ---
 
 <DefaultLayout>
-  <h1>ABOUT</h1>
+  <Cover coverText="about">
+    <img
+      class="cover__bg"
+      src="/images/desktop/hero/hero-portrait1.png"
+      alt="Fotografia retrato de bb trickz"
+    />
+  </Cover>
+  <section id="about" class="about">
+    {
+      aboutData.map((data) => (
+        <article class="about__article">
+          <div class="flex-col about__text">
+            <h2 class="about__h2">{data.title}</h2>
+            <p class="about__p">{data.description}</p>
+            <a href={data.link} class="about__link" target="_blank">
+              Learn more
+            </a>
+          </div>
+          <img src={data.image} alt="Imagen de portada" class="about__image" />
+        </article>
+      ))
+    }
+  </section>
 </DefaultLayout>
+
+<style lang="scss">
+  .about {
+    flex-direction: column;
+    &__article,
+    &__text {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    &__text,
+    &__image {
+      flex-basis: 20em;
+      flex-grow: 1;
+    }
+    &__article {
+      border-bottom: 1px solid var(--Dark-moderate-cyan);
+    }
+    &__text {
+      justify-content: space-between;
+      padding: 3vh 5vw;
+      gap: 5rem;
+    }
+    &__h2 {
+    }
+    &__p {
+    }
+    &__link {
+    }
+    &__image {
+      width: 100px;
+      aspect-ratio: 1;
+      object-fit: cover;
+    }
+  }
+</style>

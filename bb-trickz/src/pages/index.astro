@@ -4,104 +4,11 @@ import Cover from '../Components/Cover.astro';
 ---
 
 <DefaultLayout>
-  <Cover />
-  <!-- ========MAIN-HERO========== -->
-  <!-- ========SECTION_ABOUT========== -->
-  <section id="about" class="grid about">
-    <div class="flex about__services wrap-reverse">
-      <div class="flex-col about__text">
-        <h2 class="about__h2">Who's She?</h2>
-        <p class="about__p">
-          Bb trickz is a Spanish artist born in Barcelona in 2000 and real name
-          Belize Kazi. His style is characterized by controversial and sometimes
-          even humorous lyrics, and a flow offbeat on rhythms generally of
-          drill, Detroit or even R & B. This has led him to receive numerous
-          comparisons mainly with the American artist Ice Spice.
-        </p>
-        <a
-          href="https://genius.com/artists/Bb-trickz"
-          class="about__link"
-          target="_blank"
-        >
-          Learn more
-        </a>
-      </div>
-      <img
-        src="/images/desktop/hero-section.png"
-        alt="Imagen de portada"
-        class="about__image"
-      />
-    </div>
-    <div class="flex about__services">
-      <img
-        src="/images/desktop/hero/hero-portrait1.png"
-        alt="Imagen de portada"
-        class="about__image"
-      />
-      <div class="flex-col about__text">
-        <h2 class="about__h2">BB Trickz: "Urban Music shops in Humana"</h2>
-        <p class="about__p">
-          The 23-year-old Catalan has revolutionized everything she has found in
-          her path. From zero to one hundred. One day it appeared on the Twitter
-          timeline and, minutes later, no one stopped talking about it.
-          Passivity, fashion, exaltation of conventional beauty, lyrics
-          impossible to explain to a person who is in his thirties and a
-          celebration of everything that makes generation Z unique. A cocktail
-          that merges with the classic urban codes, which it does not abandon,
-          but it does transform into its own language
-        </p>
-        <a
-          href="https://www.infobae.com/espana/2023/05/14/bb-trickz-la-musica-urbana-va-al-humana/"
-          class="about__link"
-          target="_blank">Learn more</a
-        >
-      </div>
-    </div>
-    <div id="music" class="flex about__music">
-      <div class="grid about__info">
-        <div class="about__text--video">
-          <h3 class="about__h3--video">Tu Nightmare</h3>
-          <p class="about__p--video">
-            This is the latest single of the artist BB trickz. Go check it out
-            in all the streaming platforms.
-          </p>
-          <button id="video-show" class="about__btn">check video</button>
-        </div>
-        <video autoplay muted playsinline loop class="about__video">
-          <source src="/video/video-hero.mp4" type="video/mp4" />
-        </video>
-        <div id="video-youtube" class="music-video">
-          <iframe
-            class="about__music--video"
-            src="https://www.youtube.com/embed/ODHwDw_QKzE?controls=0"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
-        </div>
-      </div>
-      <div class="grid about__info">
-        <div class="about__text--video">
-          <h3 class="about__h3--video">Treachory</h3>
-          <p class="about__p--video">Treachory... Just listen.</p>
-          <button id="video-show" class="about__btn">check video</button>
-        </div>
-        <video autoplay muted playsinline loop class="about__video">
-          <source src="/video/video-hero2.mp4" type="video/mp4" />
-        </video>
-        <div id="video-youtube2" class="music-video">
-          <iframe
-            class="about__music--video"
-            src="https://www.youtube.com/embed/zIWoqc00EPI?controls=0"
-            title="YouTube video player"
-            frameborder="0"
-            allow="clipboard-write; encrypted-media; gyroscope; web-share"
-          ></iframe>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- ========SECTION_ABOUT========== -->
+  <Cover coverText="trickstarz">
+    <video paused muted playsinline class="cover__bg">
+      <source src="/video/video-hero.mp4" type="video/mp4" />
+    </video>
+  </Cover>
   <!-- ========SECTION_TESTIMONIALS========== -->
   <section id="music" class="flex-col testimonials">
     <h2 class="testimonials__h2">Fans Around The World Loves Her</h2>
