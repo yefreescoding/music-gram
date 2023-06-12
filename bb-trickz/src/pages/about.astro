@@ -5,11 +5,11 @@ import Cover from '../Components/Cover.astro';
 import aboutData from '../js/data';
 ---
 
-<DefaultLayout>
-  <Cover coverText="about">
+<DefaultLayout subtitle="About Us">
+  <Cover coverText="About Us">
     <img
       class="cover__bg"
-      src="/images/desktop/hero/hero-portrait1.png"
+      src="/images/desktop/hero/hero-about-us.jpg"
       alt="Fotografia retrato de bb trickz"
     />
   </Cover>
@@ -21,7 +21,7 @@ import aboutData from '../js/data';
             <h2 class="about__h2">{data.title}</h2>
             <p class="about__p">{data.description}</p>
             <a href={data.link} class="about__link" target="_blank">
-              Learn more
+              More about us
             </a>
           </div>
           <img src={data.image} alt="Imagen de portada" class="about__image" />
@@ -53,15 +53,16 @@ import aboutData from '../js/data';
       padding: 3vh 5vw;
       gap: 5rem;
     }
-    &__h2 {
-    }
-    &__p {
-    }
     &__link {
+      color: var(--Grayish-blue);
+      &:hover {
+        color: var(--White);
+        transform: scale(1.1, 1.1);
+      }
     }
     &__image {
       width: 100px;
-      aspect-ratio: 1;
+      aspect-ratio: 3/2;
       object-fit: cover;
     }
   }

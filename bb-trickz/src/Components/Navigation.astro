@@ -1,12 +1,15 @@
+---
+---
+
 <nav id="nav" class="header__nav">
-  <a href="/about/" class="header__links">About</a><a
+  <a href="/about/" class="header__links">About us</a><a
     href="/music/"
     class="header__links">Music</a
   ><a
     href="https://soundcloud.com/bbtrickz"
     class="header__links"
-    target="_blank">SoundCloud</a
-  ><a href="#footer" class="header__links">CONTACT</a>
+    target="_blank">Spotify Playlist</a
+  ><a href="/" class="header__links">Source Code</a>
 </nav>
 
 <style lang="scss">
@@ -14,8 +17,10 @@
 
   .header {
     &__nav {
+      flex-wrap: wrap;
     }
     &__links {
+      flex: 1;
       font-size: 1.1rem;
     }
   }

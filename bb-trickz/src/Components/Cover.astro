@@ -15,7 +15,10 @@ const { coverText } = Astro.props;
     flex-direction: column;
     &__bg {
       object-fit: cover;
-      aspect-ratio: 16/6;
+      aspect-ratio: 1;
+      @media (min-width: 40em) {
+        aspect-ratio: 16/6.3;
+      }
     }
     &__h1 {
       position: absolute;

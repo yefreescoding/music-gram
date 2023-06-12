@@ -4,17 +4,18 @@ import Navigation from './Navigation.astro';
 
 <header id="home" class="flex header">
   <div class="header__logo">
-    <a href="/" class="header__logo--letters">BB trickz</a>
+    <a href="/" class="header__logo--letters">Home</a>
     <img
       class="header__logo--image"
-      src="/logos/logo-page.png"
+      src="/logos/music.png"
       alt="Logo de la pagina"
     />
   </div>
   <Navigation />
   <p class="header__p">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem consequatur
-    totam sit ipsam!
+    Get ready to groove with the hottest beats, freshest talent, and coolest
+    vibes! Your ultimate destination for the latest music, emerging artists, and
+    juicy articles.
   </p>
   <!-- <button class="header__toggle"></button> -->
 </header>
@@ -24,11 +25,12 @@ import Navigation from './Navigation.astro';
 
   .header {
     padding: 0 1rem;
-    font-weight: 600;
+    font-weight: 400;
+    flex-wrap: wrap;
+    gap: 1.5rem;
 
     a {
       color: var(--Dark-moderate-cyan);
-      transition: all 0.2s;
       &:hover {
         color: gray;
         transform: scale(1.1, 1.1);
@@ -38,13 +40,17 @@ import Navigation from './Navigation.astro';
     &__logo,
     &__nav,
     &__p {
-      flex: 1;
-      flex-direction: column;
-      align-items: start;
-      justify-content: space-between;
-      padding: 0.5rem 1rem;
-      border-left: 1px solid var(--Dark-moderate-cyan);
+      flex-basis: 15em;
+      flex-grow: 1;
+      align-items: center;
+      justify-content: center;
       gap: 1rem;
+      @media (min-width: 35em) {
+        border-left: 1px solid var(--Dark-moderate-cyan);
+        padding: 0.5rem 1rem;
+        align-items: start;
+        flex-direction: column;
+      }
     }
     &__logo {
       display: flex;
@@ -71,6 +77,12 @@ import Navigation from './Navigation.astro';
     //     display: none;
     //   }
     // }
+  }
+
+  .header__p {
+    @media (max-width: 35em) {
+      display: none;
+    }
   }
 </style>
 

@@ -8,7 +8,8 @@ import Footer from '../Components/Footer.astro';
 import Preloader from '../Components/Preloader.astro';
 
 const {
-  title = 'BB Trickzz',
+  title = 'MUSIC.GRAM',
+  subtitle,
   description = 'The unofficial website for the upcoming artist BB Trickz',
   url,
   image = '/',
@@ -25,6 +26,7 @@ const { pageTitle } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <SiteMeta
       title={title}
+      subtitle={subtitle}
       description={description.substring(0, 100)}
       url={Astro.site
         ? `${Astro.site}/${title.toLowerCase().replaceAll(' ', '-')}`
@@ -51,14 +53,18 @@ const { pageTitle } = Astro.props;
         color: var(--Dark-moderate-cyan);
         background-color: var(--Dark-blue);
         font-family: $regularFont;
+        overflow-x: hidden;
         &,
-        header,
+        .header,
         nav,
         .cover,
         .about {
           display: flex;
         }
         flex-direction: column;
+        & * {
+          transition: all 0.2s linear;
+        }
       }
     </style>
   </body>

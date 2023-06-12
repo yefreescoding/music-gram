@@ -3,37 +3,10 @@ import DefaultLayout from '../Layouts/DefaultLayout.astro';
 import Cover from '../Components/Cover.astro';
 ---
 
-<DefaultLayout>
-  <Cover coverText="trickstarz">
-    <video paused muted playsinline class="cover__bg">
-      <source src="/video/video-hero.mp4" type="video/mp4" />
+<DefaultLayout subtitle="HOME">
+  <Cover coverText="MUSIC.GRAM">
+    <video autoplay muted playsinline class="cover__bg">
+      <source src="/video/hero-video-cover.mp4" type="video/mp4" />
     </video>
   </Cover>
-  <!-- ========SECTION_TESTIMONIALS========== -->
-  <section id="music" class="flex-col testimonials">
-    <h2 class="testimonials__h2">Fans Around The World Loves Her</h2>
-    <div class="grid testimonials__container">
-      <div class="flex-col testimonials__reviews">
-        <div class="flex testimonials__names">
-          <img
-            src="/images/image-jennie.jpg"
-            alt="Profile Image of the user"
-            class="testimonials__image"
-          />
-          <span class="testimonials__name"> Emily R.</span><span
-            class="testimonials__position">Marketing Director</span
-          >
-        </div>
-        <p class="testimonials__p">
-          We put our trust in Sunnyside and they delivered, making sure our
-          needs were met and deadlines were always hit.
-        </p>
-        <span class="testimonial__date"> April 24th, 2023.</span>
-      </div>
-    </div>
-  </section>
-  <section class="grid gallery">
-    <img src="/images/desktop/hero/hero-3.png" alt="" class="gallery__image" />
-  </section>
-  <!-- ========SECTION_TESTIMONIALS========== -->
 </DefaultLayout>

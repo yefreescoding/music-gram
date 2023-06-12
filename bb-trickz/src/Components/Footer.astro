@@ -1,18 +1,21 @@
-<footer id="footer" class="flex-col footer">
-  <h3 class="footer__h3">BB Trickz</h3>
-  <div class="flex footer__bottom">
-    <a href="" class="footer__socials">
-      <img
-        src="/icons/icon-facebook.svg"
-        alt="Social media icons"
-        class="footer__icons"
-      />
-    </a>
+---
+import Navigation from './Navigation.astro';
+---
+
+<footer class="header">
+  <div class="header__logo">
+    <a href="/" class="header__logo--letters">Home</a>
+    <img
+      class="header__logo--image"
+      src="/logos/music.png"
+      alt="Logo de la pagina"
+    />
   </div>
-  <div class="flex footer__copyright">
-    <span class="footer__author">
-      Coded by <a href="#">Yefree De Los Santos</a>
-    </span>
-    <span id="date" class="footer__date"></span>
-  </div>
+  <Navigation />
+  <p class="header__p">
+    Get ready to groove with the hottest beats, freshest talent, and coolest
+    vibes! Your ultimate destination for the latest music, emerging artists, and
+    juicy articles.
+  </p>
+  <!-- <button class="header__toggle"></button> -->
 </footer>

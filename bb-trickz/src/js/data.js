@@ -1,23 +1,21 @@
 const aboutData = [
   {
-    title: "Who's She?",
-    image: '/images/desktop/hero/hero-section.png',
-    description: `Bb trickz is a Spanish artist born in Barcelona in 2000 and real name
-          Belize Kazi. His style is characterized by controversial and sometimes
-          even humorous lyrics, and a flow offbeat on rhythms generally of
-          drill, Detroit or even R & B. This has led him to receive numerous
-          comparisons mainly with the American artist Ice Spice.`,
-    link: 'https://genius.com/artists/Bb-trickz',
+    title: 'Who are we?',
+    image: '/images/desktop/hero/about-us-1.jpg',
+    description: `We are a vibrant online platform dedicated to showcasing the best of the music industry's rising stars, innovative producers, and electrifying music styles. Our mission is to create a space where music lovers can discover, connect, and celebrate the next big thing in the ever-evolving world of music.`,
+    link: 'https://github.com/yefreescoding',
   },
   {
-    title: 'BB Trickz: "Urban Music shops in Humana',
-    image: '/images/desktop/hero/hero-portrait1.png',
-    description: `Tiene las Air Force súper guarras / No sé por qué coño te las compras blancas. 
-          Bb Trickz, nombre artístico de Belize, ha encandilado a las nuevas generaciones al hablar
-          el nuevo lenguaje de la calle. Ya no importa el comunismo sonoro o empezar desde cero, el 
-          proletariado del esfuerzo o la lucha interna, sino preguntarse por qué nadie limpia un modelo 
-          icónico de zapatilla Nike que ha de permanecer prácticamente impoluto.`,
-    link: 'https://www.infobae.com/espana/2023/05/14/bb-trickz-la-musica-urbana-va-al-humana/',
+    title: 'Our mission',
+    image: '/images/desktop/hero/about-us-2.jpg',
+    description: `At our core, we believe in the power of music to inspire, uplift, and unite. Our team is fueled by a shared passion for curating exceptional content that captures the essence of new and emerging artists. Through our website, we strive to provide a platform that nurtures talent, fosters creativity, and encourages artistic exploration`,
+    link: 'https://www.instagram.com/ysvcodes/',
+  },
+  {
+    title: 'What is our goal?',
+    image: '/images/desktop/hero/about-us-3.jpg',
+    description: `Join us on this exhilarating ride as we embrace the rhythm, celebrate the talent, and amplify the voices of tomorrow's music industry icons. Together, let's discover the sounds that move us, connect with the artists who inspire us, and celebrate the universal language that unites us all: music. \n Are you ready to groove to the beat? Come along and let the music speak!`,
+    link: 'https://www.instagram.com/ysvcodes/',
   },
 ];
 
