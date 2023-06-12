@@ -54,14 +54,14 @@ import EntrySection from '../Components/EntrySection.astro';
 <style lang="scss">
   .intro {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(22em, 100%), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(25em, 100%), 1fr));
     margin: 10vh 0;
-    // gap: 1rem;
-    overflow-x: hidden;
+    gap: 5rem;
 
     &__images,
     &__div,
     &__article {
+      overflow-x: scroll;
       display: flex;
       gap: 1rem;
     }
@@ -69,10 +69,10 @@ import EntrySection from '../Components/EntrySection.astro';
       img {
         width: 20em;
         object-fit: cover;
-        aspect-ratio: 9/12;
+        aspect-ratio: 9/16;
       }
       img:nth-child(2) {
-        align-self: flex-end;
+        align-self: flex-start;
       }
     }
     &__div {
