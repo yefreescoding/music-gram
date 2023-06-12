@@ -5,13 +5,11 @@ import Cover from '../Components/Cover.astro';
 
 <DefaultLayout>
   <Cover coverText="music">
-    <img
-      class="cover__bg"
-      src="/images/desktop/hero/hero-intro.png"
-      alt="Fotografia retrato de bb trickz"
-    />
+    <video autoplay muted playsinline class="cover__bg">
+      <source src="/video/video-hero2.mp4" type="video/mp4" />
+    </video>
   </Cover>
-  <section>
+  <!-- <section>
     <div id="music" class="flex about__music">
       <div class="grid about__info">
         <div class="about__text--video">
@@ -55,5 +53,5 @@ import Cover from '../Components/Cover.astro';
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 </DefaultLayout>
