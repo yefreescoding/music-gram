@@ -20,14 +20,6 @@ import EntrySection from '../Components/EntrySection.astro';
         src="/images/desktop/hero/bb-cover.png"
         alt="Woman listening to music"
       />
-      <img
-        src="/images/desktop/hero/mabu-cover.png"
-        alt="Person listening to music"
-      />
-      <img
-        src="/images/desktop/hero/lola-indigo.png"
-        alt="Woman listening to music"
-      />
     </div>
     <div class="intro__div">
       <article class="intro__article">
@@ -63,10 +55,8 @@ import EntrySection from '../Components/EntrySection.astro';
   .intro {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(25em, 100%), 1fr));
-    margin-block: 10vh;
-    padding-block: 3vh;
+    margin: 10vh 0;
     gap: 5rem;
-    border-bottom: 1px solid var(--Dark-moderate-cyan);
 
     &__images,
     &__div,
@@ -81,8 +71,8 @@ import EntrySection from '../Components/EntrySection.astro';
         object-fit: cover;
         aspect-ratio: 9/16;
       }
-      img:nth-child(even) {
-        align-self: flex-end;
+      img:nth-child(2) {
+        align-self: flex-start;
       }
     }
     &__div {
