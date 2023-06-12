@@ -1,6 +1,7 @@
 ---
 import DefaultLayout from '../Layouts/DefaultLayout.astro';
 import Cover from '../Components/Cover.astro';
+import EntrySection from '../Components/EntrySection.astro';
 ---
 
 <DefaultLayout subtitle="HOME">
@@ -9,4 +10,77 @@ import Cover from '../Components/Cover.astro';
       <source src="/video/hero-video-cover.mp4" type="video/mp4" />
     </video>
   </Cover>
+  <section class="intro">
+    <div class="intro__images">
+      <img
+        src="/images/desktop/hero/connor-bem.png"
+        alt="Person listening to music"
+      />
+      <img
+        src="/images/desktop/hero/bb-cover.png"
+        alt="Woman listening to music"
+      />
+    </div>
+    <div class="intro__div">
+      <article class="intro__article">
+        <h2>Fresh Sounds Every Week!</h2>
+        <p>
+          Discover the next wave of musical talent with our weekly uploads. We
+          pride ourselves on being a platform that champions relative unknown
+          artists from diverse backgrounds and musical genres. From soulful
+          crooners to experimental beatmakers, we curate an eclectic mix of
+          sounds that will keep your playlists fresh and your ears yearning for
+          more.
+        </p>
+      </article>
+      <article class="intro__article">
+        <h2>Global Vibes, Local Talent</h2>
+        <p>
+          Music knows no boundaries, and neither do we. Our dedication to
+          showcasing artists from every corner of the globe ensures a rich
+          tapestry of cultural influences and sonic journeys. From the bustling
+          streets of Tokyo to the vibrant neighborhoods of Rio de Janeiro, our
+          platform brings together artists who are pushing boundaries and
+          redefining music as we know it. Get ready to explore a world of
+          captivating melodies, infectious rhythms, and authentic voices that
+          will transport you to new musical landscapes.
+        </p>
+      </article>
+    </div>
+  </section>
+  <EntrySection />
 </DefaultLayout>
+
+<style lang="scss">
+  .intro {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(22em, 100%), 1fr));
+    margin: 10vh 0;
+    // gap: 1rem;
+    overflow-x: hidden;
+
+    &__images,
+    &__div,
+    &__article {
+      display: flex;
+      gap: 1rem;
+    }
+    &__images {
+      img {
+        width: 20em;
+        object-fit: cover;
+        aspect-ratio: 9/12;
+      }
+      img:nth-child(2) {
+        align-self: flex-end;
+      }
+    }
+    &__div {
+      flex-direction: column;
+    }
+    &__article {
+      padding: 0 3vw;
+      flex-direction: column;
+    }
+  }
+</style>

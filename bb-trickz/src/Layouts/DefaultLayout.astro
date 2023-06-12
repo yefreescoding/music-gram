@@ -42,7 +42,6 @@ const { pageTitle } = Astro.props;
   <body>
     <Preloader />
     <Header />
-
     <main>
       <slot />
     </main>
@@ -54,6 +53,10 @@ const { pageTitle } = Astro.props;
         background-color: var(--Dark-blue);
         font-family: $regularFont;
         overflow-x: hidden;
+        width: min(100%, 90em);
+        margin: 0 auto;
+        flex-direction: column;
+
         &,
         .header,
         nav,
@@ -61,7 +64,7 @@ const { pageTitle } = Astro.props;
         .about {
           display: flex;
         }
-        flex-direction: column;
+
         & * {
           transition: all 0.2s linear;
         }
