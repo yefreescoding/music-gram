@@ -1,9 +1,21 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, getEntryBySlug } from 'astro:content';
 
-const artistsPost = await getCollection('artists');
+const artistsPost = await getCollection('artists', ({ data }) => {
+  return !data.draft && data.date < new Date();
+});
+
+const artistCover = await getEntryBySlug('artists', 'artist-saint-levant');
 ---
 
 <section class="post" aria-label="Recent Entries">
-  {artistsPost.map((post) => <h2>{post.data.title}</h2>)}
+  <h2 style="color: rgb(255, 136, 253);">{artistCover.data.title}</h2>
+  {
+    artistsPost.map((post) => (
+      <article>
+        <h2>{post.data.title}</h2>
+        <a href={`artists/${post.data.slug}/`}>Discover the artist</a>
+      </article>
+    ))
+  }
 </section>

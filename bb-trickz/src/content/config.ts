@@ -7,9 +7,9 @@ const artists = defineCollection({
   schema: z.object({
     title: z.string().max(60),
     artist: z.string(),
-    description: z.string().max(120),
+    description: z.string().max(160),
     date: z.date(),
-    draft: z.boolean(),
+    draft: z.boolean().optional(),
     img: z.object({ src: z.string(), alt: z.string() }).optional(),
     img2: z.object({ src: z.string(), alt: z.string() }).optional(),
   }),

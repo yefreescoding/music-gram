@@ -1,9 +1,9 @@
 ---
 title: From Gaza with Love.
 artist: Saint Levant
-description: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt ipsa aliassaepe commodi dignissimos numquam dolorem eum quod?
+description: Lorem ipsum, dolor sit amet consectetur adipisicing elit.
 date: 2023-06-13
-draft: false
+draft: true
 img: { src: '/', alt: '/' }
 img2: { src: '/', alt: '/' }
 ---
