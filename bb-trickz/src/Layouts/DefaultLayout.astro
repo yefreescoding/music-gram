@@ -10,9 +10,9 @@ import Preloader from '../Components/Preloader.astro';
 const {
   title = 'MUSIC.GRAM',
   subtitle,
-  description = 'The unofficial website for the upcoming artist BB Trickz',
-  url,
-  image = '/',
+  description = 'Where my favorite music lays',
+  url = 'https://music-gram-yefreescoding.vercel.app',
+  image = '/opengraph.png/',
   author = 'Yefree De Los Santos',
 } = Astro.props;
 
@@ -30,9 +30,7 @@ const { pageTitle } = Astro.props;
       description={description.substring(0, 100)}
       url={Astro.site
         ? `${Astro.site}/${title.toLowerCase().replaceAll(' ', '-')}`
-        : `https://accessible-astro.dev/${title
-            .toLowerCase()
-            .replaceAll(' ', '-')}`}
+        : `https://music-gram-yefreescoding.vercel.app`}
       image={image}
       author={author}
     />

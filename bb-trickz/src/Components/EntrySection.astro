@@ -16,6 +16,7 @@ const artistCover = await getEntryBySlug('artists', 'artist-saint-levant');
     {
       artistsPost.map((post) => (
         <Entry
+          url={post.slug}
           title={post.data.title}
           src={post.data.img.src}
           alt={post.data.img.alt}
