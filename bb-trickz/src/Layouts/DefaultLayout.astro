@@ -47,7 +47,13 @@ const { pageTitle } = Astro.props;
     </main>
     <Footer />
     <style lang="scss" is:global>
+      // import scss utilities
       @use '../assets/scss/util/' as *;
+      // ==========
+      .section {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(25em, 100%), 1fr));
+      }
       body {
         color: var(--Dark-moderate-cyan);
         background-color: var(--Dark-blue);

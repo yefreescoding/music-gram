@@ -30,7 +30,7 @@ const { Content } = await post.render();
   <Cover coverText={post.data.artist}>
     <img src={post.data.img.src} alt={post.data.img.alt} class="cover__bg" />
   </Cover>
-  <section class="entry-section" aria-label="Artist about artist">
+  <section class="entry-section section" aria-label="Artist about artist">
     <article class="entry-section__article">
       <h2 class="entry-section__h2">
         {post.data.title}
@@ -48,8 +48,6 @@ const { Content } = await post.render();
 
 <style lang="scss">
   .entry-section {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(25em, 100%), 1fr));
     margin: 10vh 0;
     gap: 3rem;
     &__article,

@@ -10,7 +10,7 @@ import EntrySection from '../Components/EntrySection.astro';
       <source src="/video/hero-video-cover.mp4" type="video/mp4" />
     </video>
   </Cover>
-  <section class="intro">
+  <section class="intro section">
     <div class="intro__images">
       <img
         src="/images/desktop/hero/connor-bem.png"
@@ -65,8 +65,6 @@ import EntrySection from '../Components/EntrySection.astro';
 
 <style lang="scss" is:global>
   .intro {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(25em, 100%), 1fr));
     margin: 10vh 0;
     gap: 5rem;
 

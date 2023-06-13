@@ -3,7 +3,7 @@ title: The globe isn't enough for this artist
 artist: Connor Price
 description: Lorem ipsum, dolor sit amet consectetur adipisicing elit.
 date: 2023-06-12
-draft: false
+draft: true
 img: { src: '/', alt: '/' }
 img2: { src: '/', alt: '/' }
 ---

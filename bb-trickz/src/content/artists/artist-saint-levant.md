@@ -2,9 +2,13 @@
 title: From Gaza with Love.
 artist: Saint Levant
 description: Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-date: 2023-06-13
-draft: true
-img: { src: '/', alt: '/' }
+date: 2023-06-12
+draft: false
+img:
+  {
+    src: '/images/artist-images/saint-levant/saint-levant.png',
+    alt: 'Imagen de portada de bb trickz',
+  }
 img2: { src: '/', alt: '/' }
 ---
 
