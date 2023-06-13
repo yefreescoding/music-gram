@@ -1,15 +1,32 @@
 ---
+const navigationLinks = [
+  {
+    name: 'About us',
+    link: '/about/',
+  },
+  {
+    name: 'Source',
+    link: '/',
+  },
+  {
+    name: 'Support',
+    link: '/',
+  },
+  {
+    name: 'Discover',
+    link: '/music/',
+  },
+];
 ---
 
 <nav id="nav" class="header__nav">
-  <a href="/about/" class="header__links">About us</a><a
-    href="/music/"
-    class="header__links">Music</a
-  ><a
-    href="https://soundcloud.com/bbtrickz"
-    class="header__links"
-    target="_blank">Spotify Playlist</a
-  ><a href="/" class="header__links">Source Code</a>
+  {
+    navigationLinks.map((link) => (
+      <a href={link.link} class="header__links">
+        {link.name}
+      </a>
+    ))
+  }
 </nav>
 
 <style lang="scss">

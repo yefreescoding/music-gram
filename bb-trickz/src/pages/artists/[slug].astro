@@ -1,0 +1,72 @@
+---
+// import Layout
+import DefaultLayout from '../../Layouts/DefaultLayout.astro';
+// import components
+import Cover from '../../Components/Cover.astro';
+import EntrySection from '../../Components/EntrySection.astro';
+
+import { CollectionEntry, getCollection, getEntryBySlug } from 'astro:content';
+
+export async function getStaticPaths() {
+  const artistsPost = await getCollection('artists', ({ data }) => {
+    return !data.draft && data.date < new Date();
+  });
+
+  return artistsPost.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+interface Props {
+  post: CollectionEntry<'artists'>;
+}
+const { post } = Astro.props;
+
+const { Content } = await post.render();
+---
+
+<DefaultLayout subtitle={post.data.title}>
+  <Cover coverText={post.data.artist}>
+    <img src={post.data.img.src} alt={post.data.img.alt} class="cover__bg" />
+  </Cover>
+  <section class="entry-section" aria-label="Artist about artist">
+    <article class="entry-section__article">
+      <h2 class="entry-section__h2">
+        {post.data.title}
+      </h2>
+      <div class="entry-section__ps">
+        <Content />
+      </div>
+    </article>
+    <aside class="entry-section__aside">
+      <img src={post.data.img2.src} alt={post.data.img2.alt} />
+    </aside>
+  </section>
+  <EntrySection />
+</DefaultLayout>
+
+<style lang="scss">
+  .entry-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(25em, 100%), 1fr));
+    margin: 10vh 0;
+    gap: 3rem;
+    &__article,
+    &__ps {
+      padding-inline-start: 2vw;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    &__ps {
+      padding-inline-start: 5vw;
+    }
+    &__aside {
+      img {
+        aspect-ratio: 4/4;
+        object-fit: cover;
+      }
+    }
+  }
+</style>

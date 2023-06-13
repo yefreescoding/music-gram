@@ -14,7 +14,7 @@ const artistCover = await getEntryBySlug('artists', 'artist-saint-levant');
     artistsPost.map((post) => (
       <article>
         <h2>{post.data.title}</h2>
-        <a href={`artists/${post.data.slug}/`}>Discover the artist</a>
+        <a href={`artists/${post.slug}`}>Discover the artist</a>
       </article>
     ))
   }

@@ -12,6 +12,7 @@ const artists = defineCollection({
     draft: z.boolean().optional(),
     img: z.object({ src: z.string(), alt: z.string() }).optional(),
     img2: z.object({ src: z.string(), alt: z.string() }).optional(),
+    img3: z.object({ src: z.string(), alt: z.string() }).optional(),
   }),
 });
 
