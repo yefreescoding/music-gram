@@ -1,4 +1,4 @@
-# Music.gram wweb site.
+# Music.gram web site.
 
 All the music that I like and all the artist that inspired, together in just one place.
 
