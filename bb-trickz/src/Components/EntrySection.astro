@@ -1,4 +1,9 @@
 ---
+import { getCollection } from 'astro:content';
+
+const artistsPost = await getCollection('artists');
 ---
 
-<section class="post" aria-label="Recent Entries"></section>
+<section class="post" aria-label="Recent Entries">
+  {artistsPost.map((post) => <h2>{post.data.title}</h2>)}
+</section>
