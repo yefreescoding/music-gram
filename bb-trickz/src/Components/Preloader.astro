@@ -18,15 +18,14 @@
     background-color: var(--Dark-blue);
     display: grid;
     place-items: center;
-    grid-template-areas: 'loader';
     visibility: visible;
     z-index: 999;
     transition: all 2s ease-out;
   }
 
   .metronome {
-    --uib-size: 40px;
-    --uib-speed: 1.6s;
+    --uib-size: 2.5rem;
+    --uib-speed: 1.8s;
     --uib-color: var(--White);
 
     position: relative;
@@ -112,13 +111,23 @@
 
   .hide-preloader {
     z-index: -9999;
-    visibility: hidden;
+    display: none;
   }
 </style>
 <script>
   const preloader = document.querySelector('.preloader');
 
-  window.addEventListener('load', () => {
+  const myTimeout = setTimeout(loaded, 1000);
+
+  function loaded() {
     preloader.classList.add('hide-preloader');
-  });
+  }
+
+  // function myStopFunction() {
+  //   clearTimeout(myTimeout);
+  // }
+
+  // window.addEventListener('load', () => {
+  //   preloader.classList.add('hide-preloader');
+  // });
 </script>

@@ -26,31 +26,39 @@ const artistCover = await getEntryBySlug('artists', 'artist-saint-levant');
   </div>
 </section>
 
-<style lang="scss">
+<style lang="scss" is:global>
   .post {
+    &,
     &__div {
       display: grid;
+    }
+    margin: 10vh 0;
+    text-align: center;
+    gap: 2rem;
+    &__div {
+      gap: 1rem;
       grid-template-areas:
         'one'
         'two'
         'three'
         'four';
       @media (min-width: 40em) {
-        grid-template-areas: 'one two three four';
+        grid-template-areas:
+          'one two four'
+          'one three four';
       }
-    }
-
-    article:nth-child(1) {
-      grid-area: one;
-    }
-    article:nth-child(2) {
-      grid-area: two;
-    }
-    article:nth-child(3) {
-      grid-area: three;
-    }
-    article:nth-child(4) {
-      grid-area: four;
+      .entries:nth-child(1) {
+        grid-area: one;
+      }
+      .entries:nth-child(2) {
+        grid-area: two;
+      }
+      .entries:nth-child(3) {
+        grid-area: three;
+      }
+      .entries:nth-child(4) {
+        grid-area: four;
+      }
     }
   }
 </style>

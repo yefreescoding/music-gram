@@ -2,20 +2,20 @@
 const { title, src, alt, url } = Astro.props;
 ---
 
-<a href={`/artists/${url}/`}>
-  <article class="entries">
+<article class="entries">
+  <a href={`/artists/${url}/`}>
     <img class="entries__bg" src={src} alt={alt} />
     <h3 class="entries__h3">{title}</h3>
-  </article>
-</a>
+  </a>
+</article>
 
 <style lang="scss">
   .entries {
     position: relative;
     flex-direction: column;
-    // width: 31rem;
 
     &__bg {
+      height: 100%;
       object-fit: cover;
       aspect-ratio: 1;
       @media (min-width: 40em) {
@@ -27,12 +27,9 @@ const { title, src, alt, url } = Astro.props;
       left: 0;
       right: 0;
       bottom: 0;
-      font-size: clamp(1.2rem, 2.5vw, 2rem);
+      font-size: clamp(1.8rem, 2.5vw, 2rem);
       color: hsl(0, 0%, 100%);
-      background: linear-gradient(
-        hsla(180, 14%, 99%, 0),
-        hsla(206, 16%, 17%, 0.7)
-      );
+      background: linear-gradient(hsla(180, 14%, 99%, 0), hsla(0, 0%, 0%, 0.9));
     }
     // &::before {
     //   content: '';
