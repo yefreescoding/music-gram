@@ -2,8 +2,10 @@
 title: She's special and unique.
 artist: Lola Indigo
 description: Come not between the dragon, and his wrath.
+genre: pop
 date: 2023-06-13
 draft: false
+state: true
 img:
   {
     src: '/images/artist-images/lola-indigo/lola-indigo-cover.png',

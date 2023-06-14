@@ -3,14 +3,17 @@ import { getCollection, getEntryBySlug } from 'astro:content';
 import Entry from './Entry.astro';
 
 const artistsPost = await getCollection('artists', ({ data }) => {
-  return !data.draft && data.date < new Date();
+  // return data.genre === 'drill';
+  // return !data.draft && data.date < new Date();
+  return data.state;
+  // return data.genre === 'drill';
 });
 
-const artistCover = await getEntryBySlug('artists', 'artist-saint-levant');
+const { sectionTitle } = Astro.props;
 ---
 
 <section class="post" aria-label="Recent Entries">
-  <h2>new artist entries</h2>
+  <h2>{sectionTitle}</h2>
   <div class="post__div">
     <!-- Entries goes in here -->
     {

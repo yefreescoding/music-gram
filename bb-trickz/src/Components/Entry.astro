@@ -12,6 +12,7 @@ const { title, src, alt, url } = Astro.props;
 <style lang="scss">
   .entries {
     position: relative;
+    overflow: hidden;
     flex-direction: column;
 
     &__bg {
@@ -20,6 +21,9 @@ const { title, src, alt, url } = Astro.props;
       aspect-ratio: 1;
       @media (min-width: 40em) {
         aspect-ratio: 4/2;
+      }
+      &:hover {
+        transform: scale(1.1);
       }
     }
     &__h3 {

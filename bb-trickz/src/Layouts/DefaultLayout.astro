@@ -12,7 +12,7 @@ const {
   subtitle,
   description = 'Where my favorite music lays',
   url = 'https://music-gram-yefreescoding.vercel.app',
-  image = '/opengraph.png/',
+  image = '/opengraph.png',
   author = 'Yefree De Los Santos',
 } = Astro.props;
 
@@ -24,6 +24,7 @@ const { pageTitle } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/x-icon" href="/favicon.svg" />
     <SiteMeta
       title={title}
       subtitle={subtitle}

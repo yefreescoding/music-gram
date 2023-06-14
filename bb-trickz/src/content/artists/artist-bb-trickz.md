@@ -2,8 +2,10 @@
 title: New spanish sensation
 artist: bb-trickz
 description: Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+genre: trap
 date: 2023-06-13
 draft: false
+state: true
 img:
   {
     src: '/images/artist-images/bb-trickz/bb-trickz-cover.png',

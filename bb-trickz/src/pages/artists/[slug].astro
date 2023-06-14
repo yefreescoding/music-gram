@@ -9,7 +9,7 @@ import { CollectionEntry, getCollection, getEntryBySlug } from 'astro:content';
 
 export async function getStaticPaths() {
   const artistsPost = await getCollection('artists', ({ data }) => {
-    return !data.draft && data.date < new Date();
+    return !data.draft && data.date;
   });
 
   return artistsPost.map((post) => ({
@@ -43,7 +43,7 @@ const { Content } = await post.render();
       <img src={post.data.img2.src} alt={post.data.img2.alt} />
     </aside>
   </section>
-  <EntrySection />
+  <EntrySection sectionTitle="Discover more artist" />
 </DefaultLayout>
 
 <style lang="scss">

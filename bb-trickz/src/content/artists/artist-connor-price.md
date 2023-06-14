@@ -2,8 +2,10 @@
 title: The globe isn't enough for this artist
 artist: Connor Price
 description: But while Price loves acting, there’s something else he loves even more
+genre: drill
 date: 2023-06-12
 draft: false
+state: true
 img:
   {
     src: '/images/artist-images/connor-price/connor-price-cover.png',

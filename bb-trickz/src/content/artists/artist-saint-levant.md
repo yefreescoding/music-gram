@@ -2,8 +2,10 @@
 title: From Gaza with Love.
 artist: Saint Levant
 description: دقيقة و بكون عندك يا فندم
+genre: hip-hop
 date: 2023-06-12
 draft: false
+state: true
 img:
   {
     src: '/images/artist-images/saint-levant/saint-levant-cover.png',
