@@ -1,12 +1,11 @@
 ---
-import { getCollection, getEntryBySlug } from 'astro:content';
+import { getCollection, getEntryBySlug, CollectionEntry } from 'astro:content';
+import { formatBlogPosts } from '../js/utils';
 import Entry from './Entry.astro';
 
-const artistsPost = await getCollection('artists', ({ data }) => {
-  // return data.genre === 'drill';
-  // return !data.draft && data.date < new Date();
-  return data.state;
-  // return data.genre === 'drill';
+const artistsPost = await getCollection('artists');
+const fomrmatArtist: CollectionEntry<'blog'>[] = formatBlogPosts(artistsPost, {
+  limit: 4,
 });
 
 const { sectionTitle } = Astro.props;
@@ -17,7 +16,7 @@ const { sectionTitle } = Astro.props;
   <div class="post__div">
     <!-- Entries goes in here -->
     {
-      artistsPost.map((post) => (
+      fomrmatArtist.map((post) => (
         <Entry
           url={post.slug}
           title={post.data.title}

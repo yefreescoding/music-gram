@@ -1,7 +1,17 @@
 ---
+// Layout imports
 import DefaultLayout from '../Layouts/DefaultLayout.astro';
+// Components imports
 import Cover from '../Components/Cover.astro';
 import EntrySection from '../Components/EntrySection.astro';
+
+import { getCollection, CollectionEntry } from 'astro:content';
+import { formatBlogPosts } from '../js/utils';
+
+const allArtist = await getCollection('artists');
+const fomrmatArtist: CollectionEntry<'blog'>[] = formatBlogPosts(allArtist, {
+  limit: 3,
+});
 ---
 
 <DefaultLayout subtitle="HOME">
@@ -10,30 +20,16 @@ import EntrySection from '../Components/EntrySection.astro';
       <source src="/video/hero-video-cover.mp4" type="video/mp4" />
     </video>
   </Cover>
+  <EntrySection sectionTitle="Hot artist of the moment" />
   <section class="intro section">
     <div class="intro__images">
-      <img
-        src="/images/desktop/hero/connor-bem.png"
-        alt="Person listening to music"
-      />
-      <img
-        src="/images/desktop/hero/bb-cover.png"
-        alt="Woman listening to music"
-      />
-      <img
-        src="/images/desktop/hero/lola-indigo.png"
-        alt="Person listening to music"
-      />
-      <img
-        src="/images/desktop/hero/lil-mabu.png"
-        alt="Woman listening to music"
-      />
-      <img
-        src="/images/desktop/hero/saint-levant.png"
-        alt="Woman listening to music"
-      />
+      {
+        fomrmatArtist.map((artist) => (
+          <img src={artist.data.img.src} alt="Person listening to music" />
+        ))
+      }
     </div>
-    <div class="intro__div">
+    <div class="intro__text">
       <article class="intro__article">
         <h2>Fresh Sounds Every Week!</h2>
         <p>
@@ -60,7 +56,6 @@ import EntrySection from '../Components/EntrySection.astro';
       </article>
     </div>
   </section>
-  <EntrySection sectionTitle="New artist posts" />
 </DefaultLayout>
 
 <style lang="scss" is:global>
@@ -69,28 +64,30 @@ import EntrySection from '../Components/EntrySection.astro';
     gap: 5rem;
 
     &__images,
-    &__div,
+    &__text,
     &__article {
       display: flex;
+      flex-direction: column;
       gap: 1rem;
     }
     &__images {
       overflow-x: scroll;
       img {
-        width: 20em;
+        // width: 20em;
         object-fit: cover;
-        aspect-ratio: 9/16;
+        // aspect-ratio: 9/16;
       }
       img:nth-child(even) {
         align-self: flex-end;
       }
     }
-    &__div {
-      flex-direction: column;
+    &__text {
+      position: sticky;
+      top: 10px;
+      height: fit-content;
     }
     &__article {
       padding: 0 3vw;
-      flex-direction: column;
     }
   }
 </style>
