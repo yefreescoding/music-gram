@@ -33,12 +33,8 @@ const { title, src, alt, url } = Astro.props;
       bottom: 0;
       font-size: clamp(1.8rem, 2.5vw, 2rem);
       color: hsl(0, 0%, 100%);
-      background: linear-gradient(hsla(180, 14%, 99%, 0), hsla(0, 0%, 0%, 0.9));
+      background: linear-gradient(hsla(180, 14%, 99%, 0), hsla(0, 0%, 0%, 1));
+      transition: all 0.23s ease-in-out;
     }
-    // &::before {
-    //   content: '';
-    //   position: absolute;
-    //   inset: 0;
-    // }
   }
 </style>
