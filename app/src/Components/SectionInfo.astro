@@ -1,7 +1,7 @@
 ---
 ---
 
-<section class="intro">
+<section class="intro" aria-label="Important information about the page">
   <div class="intro__images">
     <slot name="images" />
   </div>
@@ -40,7 +40,7 @@
       position: sticky;
       top: 5px;
       height: fit-content;
-      padding: 2vh 2vw;
+      padding: 5vh 2vw;
       overflow: hidden;
       @media (width > 40em) {
         &::after {
@@ -52,7 +52,7 @@
           inset: 0 0 0 auto;
           font-size: 11.875rem;
           font-weight: 600;
-          opacity: 0.5;
+          opacity: 0.3;
           z-index: -1;
           color: gray;
         }
