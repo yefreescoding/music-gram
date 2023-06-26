@@ -1,14 +1,10 @@
 ---
 ---
 
-<!-- <div class="preloader">
-  <div class="metronome">
-    <div class="metronome__dot"></div>
-    <div class="metronome__dot"></div>
-    <div class="metronome__dot"></div>
-    <div class="metronome__dot"></div>
-  </div>
-</div> -->
+<div class="preloader">
+  <span class="loader"></span>
+</div>
+
 <style lang="scss">
   @use '../assets/scss/util/' as *;
 
@@ -23,89 +19,51 @@
     transition: all 2s ease-out;
   }
 
-  .metronome {
-    --uib-size: 2.5rem;
-    --uib-speed: 1.8s;
-    --uib-color: var(--White);
-
+  .loader {
+    font-size: 48px;
+    color: #fff;
+    width: 1em;
+    height: 1em;
+    box-sizing: border-box;
+    background-color: currentcolor;
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    height: var(--uib-size);
-    width: var(--uib-size);
-  }
-
-  .metronome__dot {
-    position: absolute;
-    top: 13.5%;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    height: 100%;
-    width: 100%;
-    animation: swing var(--uib-speed) linear infinite;
-  }
-
-  .metronome__dot::before {
-    content: '';
-    height: 25%;
-    width: 25%;
     border-radius: 50%;
-    background-color: var(--uib-color);
+    transform: rotateX(-60deg) perspective(1000px);
+  }
+  .loader:before,
+  .loader:after {
+    content: '';
+    display: block;
+    position: absolute;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    animation: flowerFlow 1s ease-out infinite;
+  }
+  .loader:after {
+    animation-delay: 0.4s;
   }
 
-  .metronome__dot:nth-child(1) {
-    animation-delay: calc(var(--uib-speed) * -0.36);
-  }
-
-  .metronome__dot:nth-child(2) {
-    animation-delay: calc(var(--uib-speed) * -0.27);
-    opacity: 0.8;
-  }
-
-  .metronome__dot:nth-child(2)::before {
-    transform: scale(0.9);
-  }
-
-  .metronome__dot:nth-child(3) {
-    animation-delay: calc(var(--uib-speed) * -0.18);
-    opacity: 0.6;
-  }
-
-  .metronome__dot:nth-child(3)::before {
-    transform: scale(0.8);
-  }
-
-  .metronome__dot:nth-child(4) {
-    animation-delay: calc(var(--uib-speed) * -0.09);
-    opacity: 0.4;
-  }
-
-  .metronome__dot:nth-child(4)::before {
-    transform: scale(0.7);
-  }
-
-  @keyframes swing {
+  @keyframes flowerFlow {
     0% {
+      opacity: 1;
       transform: rotate(0deg);
+      box-shadow: 0 0 0 -0.5em currentcolor, 0 0 0 -0.5em currentcolor,
+        0 0 0 -0.5em currentcolor, 0 0 0 -0.5em currentcolor,
+        0 0 0 -0.5em currentcolor, 0 0 0 -0.5em currentcolor,
+        0 0 0 -0.5em currentcolor, 0 0 0 -0.5em currentcolor;
     }
-
-    15% {
-      transform: rotate(0deg);
-    }
-
-    50% {
-      transform: rotate(180deg);
-    }
-
-    65% {
-      transform: rotate(180deg);
-    }
-
     100% {
-      transform: rotate(0deg);
+      opacity: 0;
+      transform: rotate(180deg);
+      box-shadow: -1em -1em 0 -0.35em currentcolor,
+        0 -1.5em 0 -0.35em currentcolor, 1em -1em 0 -0.35em currentcolor,
+        -1.5em 0 0 -0.35em currentcolor, 1.5em -0 0 -0.35em currentcolor,
+        -1em 1em 0 -0.35em currentcolor, 0 1.5em 0 -0.35em currentcolor,
+        1em 1em 0 -0.35em currentcolor;
     }
   }
 

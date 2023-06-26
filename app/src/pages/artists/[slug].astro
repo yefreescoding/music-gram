@@ -4,6 +4,7 @@ import DefaultLayout from '../../Layouts/DefaultLayout.astro';
 // import components
 import Cover from '../../Components/Cover.astro';
 import EntrySection from '../../Components/EntrySection.astro';
+import SectionInfo from '../../Components/SectionInfo.astro';
 
 import { CollectionEntry, getCollection, getEntryBySlug } from 'astro:content';
 
@@ -30,7 +31,31 @@ const { Content } = await post.render();
   <Cover coverText={post.data.artist}>
     <img src={post.data.img.src} alt={post.data.img.alt} class="cover__bg" />
   </Cover>
-  <section class="entry-section section" aria-label="Artist about artist">
+  <SectionInfo>
+    <img src={post.data.img2.src} alt={post.data.img2.alt} slot="images" />
+    <img src={post.data.img.src} alt={post.data.img.alt} slot="images" />
+    <article class="entry-section__article" slot="text">
+      <h2 class="entry-section__h2">
+        {post.data.title}
+      </h2>
+      <div class="entry-section__ps">
+        <Content />
+      </div>
+    </article>
+  </SectionInfo>
+  <SectionInfo>
+    <img src={post.data.img2.src} alt={post.data.img2.alt} slot="images" />
+    <img src={post.data.img.src} alt={post.data.img.alt} slot="images" />
+    <article class="entry-section__article" slot="text">
+      <h2 class="entry-section__h2">
+        {post.data.title}
+      </h2>
+      <div class="entry-section__ps">
+        <Content />
+      </div>
+    </article>
+  </SectionInfo>
+  <!-- <section class="entry-section section" aria-label="Artist about artist">
     <article class="entry-section__article">
       <h2 class="entry-section__h2">
         {post.data.title}
@@ -42,8 +67,8 @@ const { Content } = await post.render();
     <aside class="entry-section__aside">
       <img src={post.data.img2.src} alt={post.data.img2.alt} />
     </aside>
-  </section>
-  <EntrySection sectionTitle="Discover more artist" />
+  </section> -->
+  <!-- <EntrySection sectionTitle="Discover more artist" /> -->
 </DefaultLayout>
 
 <style lang="scss">
