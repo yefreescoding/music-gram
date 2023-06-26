@@ -21,6 +21,11 @@ img3:
     src: '/images/artist-images/bb-trickz/bb-trickz-3.png',
     alt: 'Imagen de portada de bb trickz',
   }
+video:
+  {
+    src: '/images/artist-images/bb-trickz/bb-trickz-video.mp4',
+    alt: 'Imagen de portada de bb trickz',
+  }
 ---
 
 ### Sub-sub title

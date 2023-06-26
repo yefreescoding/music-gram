@@ -16,6 +16,16 @@ img2:
     src: '/images/artist-images/connor-price/connor-price-2.png',
     alt: 'Imagen del aside del artista Connor Price',
   }
+img3:
+  {
+    src: '/images/artist-images/connor-price/connor-price-3.png',
+    alt: 'Imagen del aside del artista Connor Price',
+  }
+video:
+  {
+    src: '/images/artist-images/connor-price/connor-price-video.mp4',
+    alt: 'Imagen del articulo, artista masculino Sain Levant',
+  }
 ---
 
 ## Music.

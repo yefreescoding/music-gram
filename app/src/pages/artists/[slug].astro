@@ -29,11 +29,13 @@ const { Content } = await post.render();
 
 <DefaultLayout subtitle={post.data.title}>
   <Cover coverText={post.data.artist}>
-    <img src={post.data.img.src} alt={post.data.img.alt} class="cover__bg" />
+    <video autoplay muted playsinline loop class="cover__bg">
+      <source src={post.data.video.src} type="video/mp4" />
+    </video>
+    <!-- <img src={post.data.img.src} alt={post.data.img.alt} class="cover__bg" /> -->
   </Cover>
   <SectionInfo>
     <img src={post.data.img2.src} alt={post.data.img2.alt} slot="images" />
-    <img src={post.data.img.src} alt={post.data.img.alt} slot="images" />
     <article class="entry-section__article" slot="text">
       <h2 class="entry-section__h2">
         {post.data.title}
@@ -44,30 +46,17 @@ const { Content } = await post.render();
     </article>
   </SectionInfo>
   <SectionInfo>
-    <img src={post.data.img2.src} alt={post.data.img2.alt} slot="images" />
-    <img src={post.data.img.src} alt={post.data.img.alt} slot="images" />
-    <article class="entry-section__article" slot="text">
-      <h2 class="entry-section__h2">
-        {post.data.title}
-      </h2>
-      <div class="entry-section__ps">
-        <Content />
-      </div>
-    </article>
+    <img src={post.data.img3.src} alt={post.data.img3.alt} slot="images" />
+    <iframe
+      slot="text"
+      width="760"
+      height="515"
+      src="https://www.youtube.com/embed/m_NSs7_ucEY"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
   </SectionInfo>
-  <!-- <section class="entry-section section" aria-label="Artist about artist">
-    <article class="entry-section__article">
-      <h2 class="entry-section__h2">
-        {post.data.title}
-      </h2>
-      <div class="entry-section__ps">
-        <Content />
-      </div>
-    </article>
-    <aside class="entry-section__aside">
-      <img src={post.data.img2.src} alt={post.data.img2.alt} />
-    </aside>
-  </section> -->
   <!-- <EntrySection sectionTitle="Discover more artist" /> -->
 </DefaultLayout>
 

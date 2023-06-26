@@ -1,6 +1,14 @@
 ---
 import DefaultLayout from '../Layouts/DefaultLayout.astro';
 import Cover from '../Components/Cover.astro';
+import EntrySection from '../Components/EntrySection.astro';
+import Entry from '../Components/Entry.astro';
+
+import { getCollection, CollectionEntry } from 'astro:content';
+import { formatBlogPosts } from '../js/utils';
+
+const allArtist = await getCollection('artists');
+const fomrmatArtist: CollectionEntry<'blog'>[] = formatBlogPosts(allArtist, {});
 ---
 
 <DefaultLayout>
@@ -9,49 +17,25 @@ import Cover from '../Components/Cover.astro';
       <source src="/video/video-hero2.mp4" type="video/mp4" />
     </video>
   </Cover>
-  <!-- <section>
-    <div id="music" class="flex about__music">
-      <div class="grid about__info">
-        <div class="about__text--video">
-          <h3 class="about__h3--video">Tu Nightmare</h3>
-          <p class="about__p--video">
-            This is the latest single of the artist BB trickz. Go check it out
-            in all the streaming platforms.
-          </p>
-          <button id="video-show" class="about__btn">check video</button>
-        </div>
-        <video autoplay muted playsinline loop class="about__video">
-          <source src="/video/video-hero.mp4" type="video/mp4" />
-        </video>
-        <div id="video-youtube" class="music-video">
-          <iframe
-            class="about__music--video"
-            src="https://www.youtube.com/embed/ODHwDw_QKzE?controls=0"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
-        </div>
-      </div>
-      <div class="grid about__info">
-        <div class="about__text--video">
-          <h3 class="about__h3--video">Treachory</h3>
-          <p class="about__p--video">Treachory... Just listen.</p>
-          <button id="video-show" class="about__btn">check video</button>
-        </div>
-        <video autoplay muted playsinline loop class="about__video">
-          <source src="/video/video-hero2.mp4" type="video/mp4" />
-        </video>
-        <div id="video-youtube2" class="music-video">
-          <iframe
-            class="about__music--video"
-            src="https://www.youtube.com/embed/zIWoqc00EPI?controls=0"
-            title="YouTube video player"
-            frameborder="0"
-            allow="clipboard-write; encrypted-media; gyroscope; web-share"
-          ></iframe>
-        </div>
-      </div>
-    </div>
-  </section> -->
+  <EntrySection sectionTitle="Hot artist of the moment" />
+  <div class="test">
+    {
+      fomrmatArtist.map((post) => (
+        <Entry
+          url={post.slug}
+          title={post.data.title}
+          src={post.data.img.src}
+          alt={post.data.img.alt}
+        />
+      ))
+    }
+  </div>
 </DefaultLayout>
+
+<style>
+  .test {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(25em, 100%), 1fr));
+    gap: 1rem;
+  }
+</style>
