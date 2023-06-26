@@ -13,7 +13,7 @@ img:
   }
 img2:
   {
-    src: '/images/artist-images/bb-trickz/bb-trickz-2.png',
+    src: '/images/artist-images/bb-trickz/bb-trickz-2.webp',
     alt: 'Imagen de portada de bb trickz',
   }
 img3:
