@@ -4,12 +4,13 @@ import Navigation from './Navigation.astro';
 
 <header id="home" class="flex header">
   <div class="header__logo">
-    <a href="/" class="header__logo--letters">Home</a>
-    <img
+    <a href="/" class="header__logo--letters">
+      <img
       class="header__logo--image"
       src="/logos/music.png"
       alt="Logo de la pagina"
-    />
+      />
+    </a>
   </div>
   <Navigation />
   <p class="header__p">
@@ -24,13 +25,21 @@ import Navigation from './Navigation.astro';
   @use '../assets/scss/util/' as *;
 
   .header {
-    padding: 0 1rem;
-    font-weight: 400;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-
+    flex-direction: column;
+    position: fixed;
+    inset: 0 auto 0 0;
+    background-color: var(--Dark-blue);
+    z-index: 999;
+    width: 17rem;
+    padding: 1rem;
+    @media (width < 39.9em){
+      position: relative;
+      height: fit-content;
+    }
     a {
       color: var(--Dark-moderate-cyan);
+      font-size: clamp(.9rem, calc(.75rem + 1vw), 1.6rem);
+      text-transform: uppercase;
       &:hover {
         color: gray;
         transform: scale(1.1, 1.1);
@@ -38,46 +47,21 @@ import Navigation from './Navigation.astro';
     }
 
     &__logo,
-    &__nav,
     &__p {
-      flex-basis: 15em;
-      flex-grow: 1;
-      align-items: center;
-      justify-content: center;
+      flex: 1;
+      // align-items: center;
       gap: 1rem;
-      @media (min-width: 35em) {
-        border-left: 1px solid var(--Dark-moderate-cyan);
-        justify-content: space-between;
-        padding: 0.5rem 1rem;
-        align-items: start;
-        flex-direction: column;
-      }
     }
     &__logo {
       display: flex;
       &--image {
-        width: em(50);
+        width: em(30);
         border-radius: 50%;
       }
       &--letters {
         font-size: 1.3rem;
       }
     }
-    // &__toggle {
-    //   width: rem(32);
-    //   aspect-ratio: 1;
-    //   background-image: url(/icons/icon-hamburger.svg);
-    //   background-repeat: no-repeat;
-    //   background-position: center;
-    //   background-color: transparent;
-    //   background-size: contain;
-    //   border: 1.5px solid transparent;
-
-    //   cursor: pointer;
-    //   @include breakpoint(medium) {
-    //     display: none;
-    //   }
-    // }
   }
 
   .header__p {
@@ -88,14 +72,4 @@ import Navigation from './Navigation.astro';
 </style>
 
 <script>
-  // const header = document.getElementById('home');
-
-  // window.addEventListener('scroll', () => {
-  //   const scrollHeight = window.pageYOffset;
-  //   if (scrollHeight > 50) {
-  //     header.classList.add('fixed-nav');
-  //   } else {
-  //     header.classList.remove('fixed-nav');
-  //   }
-  // });
 </script>

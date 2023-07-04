@@ -20,27 +20,31 @@ const fomrmatArtist: CollectionEntry<'blog'>[] = formatBlogPosts(allArtist, {});
       <source src="/video/video-hero2.mp4" type="video/mp4" />
     </video>
   </Cover>
-  <EntrySection sectionTitle="Hot artist of the moment" />
   <Sectioninfo>
     <div slot="images">
-      <MusicPlayer />
-    </div>
-    <div slot="text">
       <ArtistCard />
     </div>
+    <div slot="text">
+      <MusicPlayer />
+    </div>
   </Sectioninfo>
-  <div class="test">
-    {
-      fomrmatArtist.map((post) => (
-        <Entry
-          url={post.slug}
-          title={post.data.title}
-          src={post.data.img.src}
-          alt={post.data.img.alt}
-        />
-      ))
-    }
-  </div>
+  <!-- <h2></h2> -->
+  <EntrySection sectionTitle="Hot artist of the moment" />
+  <section class="section">
+    <h2>Todos los artistas</h2>
+    <div class="test">
+      {
+        fomrmatArtist.map((post) => (
+          <Entry
+            url={post.slug}
+            title={post.data.title}
+            src={post.data.img.src}
+            alt={post.data.img.alt}
+          />
+        ))
+      }
+    </div>
+  </section>
 </DefaultLayout>
 
 <style>

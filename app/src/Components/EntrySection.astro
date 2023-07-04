@@ -30,14 +30,17 @@ const { sectionTitle } = Astro.props;
 
 <style lang="scss" is:global>
   .post {
+    padding-inline: 1rem;
+    margin: 10vh 0;
+    text-align: center;
+    gap: 2rem;
+    h2 {
+      font-size: clamp(2rem, calc(1.765rem + 3vw), 6rem);
+    }
     &,
     &__div {
       display: grid;
     }
-    padding-inline: 1rem;
-    margin: 20vh 0;
-    text-align: center;
-    gap: 2rem;
     &__div {
       gap: 1rem;
       grid-template-areas:
