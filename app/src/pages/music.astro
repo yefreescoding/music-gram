@@ -3,9 +3,12 @@ import DefaultLayout from '../Layouts/DefaultLayout.astro';
 import Cover from '../Components/Cover.astro';
 import EntrySection from '../Components/EntrySection.astro';
 import Entry from '../Components/Entry.astro';
+import Sectioninfo from '../Components/SectionInfo.astro';
+import ArtistCard from '../Components/ArtistCard.astro';
 
 import { getCollection, CollectionEntry } from 'astro:content';
 import { formatBlogPosts } from '../js/utils';
+import MusicPlayer from '../Components/MusicPlayer.astro';
 
 const allArtist = await getCollection('artists');
 const fomrmatArtist: CollectionEntry<'blog'>[] = formatBlogPosts(allArtist, {});
@@ -18,6 +21,14 @@ const fomrmatArtist: CollectionEntry<'blog'>[] = formatBlogPosts(allArtist, {});
     </video>
   </Cover>
   <EntrySection sectionTitle="Hot artist of the moment" />
+  <Sectioninfo>
+    <div slot="images">
+      <MusicPlayer />
+    </div>
+    <div slot="text">
+      <ArtistCard />
+    </div>
+  </Sectioninfo>
   <div class="test">
     {
       fomrmatArtist.map((post) => (

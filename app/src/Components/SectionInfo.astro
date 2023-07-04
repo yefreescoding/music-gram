@@ -1,7 +1,10 @@
 ---
 ---
 
-<section class="intro" aria-label="Important information about the page">
+<section
+  class="intro section"
+  aria-label="Important information about the page"
+>
   <div class="intro__images">
     <slot name="images" />
   </div>
@@ -12,13 +15,11 @@
 
 <style lang="scss" is:global>
   .intro {
-    // margin: 10vh 0;
     gap: 1rem;
     position: relative;
     display: flex;
     flex-wrap: wrap;
     isolation: isolate;
-    // background-color: lightblue;
 
     &__images,
     &__text,
@@ -30,18 +31,23 @@
     &__images {
       flex-basis: 20em;
       flex-grow: 1;
-      img {
-        object-fit: cover;
-      }
+    }
+    img {
+      object-fit: cover;
+      object-position: center;
+      border-radius: 1rem;
+      aspect-ratio: 1;
     }
     &__text {
       flex-basis: 20em;
       flex-grow: 1;
       position: sticky;
-      top: 5px;
+      top: 0;
       height: fit-content;
-      padding: 5vh 2vw;
+      padding: 2vh 2vw;
       overflow: hidden;
+      border-radius: 1rem;
+      // background-color: var(--Very-dark-desaturated-blue);
       @media (width > 40em) {
         &::after {
           content: 'VIBES';

@@ -4,7 +4,7 @@ const { title, src, alt, url } = Astro.props;
 
 <article class="entries">
   <a href={`/artists/${url}/`}>
-    <img class="entries__bg" src={src} alt={alt} />
+    <img loading="lazy" class="entries__bg" src={src} alt={alt} />
     <h3 class="entries__h3">{title}</h3>
   </a>
 </article>
@@ -14,6 +14,7 @@ const { title, src, alt, url } = Astro.props;
     position: relative;
     overflow: hidden;
     flex-direction: column;
+    border-radius: 1rem;
 
     &__bg {
       height: 100%;
@@ -33,7 +34,7 @@ const { title, src, alt, url } = Astro.props;
       bottom: 0;
       font-size: clamp(1.8rem, 2.5vw, 2rem);
       color: hsl(0, 0%, 100%);
-      background: linear-gradient(hsla(180, 14%, 99%, 0), hsla(0, 0%, 0%, 1));
+      background: linear-gradient(hsla(180, 14%, 99%, 0), hsla(0, 0%, 0%, 0.8));
       transition: all 0.23s ease-in-out;
     }
   }
