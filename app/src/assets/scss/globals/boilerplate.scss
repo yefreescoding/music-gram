@@ -63,7 +63,7 @@ span {
 }
 
 p {
-  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-size: clamp(1.1rem, calc(1rem + 2vw), 1.4rem);
 }
 
 button {
