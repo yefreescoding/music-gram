@@ -8,7 +8,7 @@ draft: false
 state: true
 img:
   {
-    src: '/images/artist-images/bb-trickz/bb-trickz-cover.png',
+    src: '/images/artist-images/bb-trickz/bb-trickz-cover.webp',
     alt: 'Imagen de portada de bb trickz',
   }
 img2:
@@ -18,7 +18,7 @@ img2:
   }
 img3:
   {
-    src: '/images/artist-images/bb-trickz/bb-trickz-3.png',
+    src: '/images/artist-images/bb-trickz/bb-trickz-3.webp',
     alt: 'Imagen de portada de bb trickz',
   }
 video:

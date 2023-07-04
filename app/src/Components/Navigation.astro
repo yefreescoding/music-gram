@@ -12,7 +12,6 @@ const navigationLinks = [
     name: 'About us',
     link: '/about/',
   },
-  
 ];
 ---
 
@@ -34,16 +33,16 @@ const navigationLinks = [
       flex-wrap: wrap;
       flex-basis: 15em;
       flex-grow: 1;
-      justify-content: space-around;
+      justify-content: center;
       flex-direction: column;
       gap: 1rem;
-      @media (max-width:40em){
+      @media (max-width: 40em) {
         position: fixed;
         inset: auto 1rem 1rem 1rem;
         padding: 1rem;
         height: 5rem;
         border-radius: 1rem;
-        background-color: hsla(240, 94%, 3%, 0.8);
+        background-color: hsla(240, 94%, 3%, 0.9);
         backdrop-filter: blur(1rem);
         align-items: center;
         justify-content: space-between;
@@ -61,13 +60,12 @@ const navigationLinks = [
 </style>
 
 <script defer>
-  const links = document.querySelectorAll(".header__links");
+  const links = document.querySelectorAll('.header__links');
 
   links.forEach((link) => {
     if (link.href === window.location.href) {
-      link.classList.add("active");
+      link.classList.add('active');
     }
-  })
-    // Check if the link href matches the current URL
-    
+  });
+  // Check if the link href matches the current URL
 </script>

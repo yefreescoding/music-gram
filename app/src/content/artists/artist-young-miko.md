@@ -8,17 +8,17 @@ draft: false
 state: true
 img:
   {
-    src: '/images/artist-images/young-miko/young-miko-cover.png',
+    src: '/images/artist-images/young-miko/young-miko-cover.webp',
     alt: 'Imagen de portada, fotografía artista masculino Sain Levant',
   }
 img2:
   {
-    src: '/images/artist-images/young-miko/young-miko-1.png',
+    src: '/images/artist-images/young-miko/young-miko-1.webp',
     alt: 'Imagen del articulo, artista masculino Sain Levant',
   }
 img3:
   {
-    src: '/images/artist-images/young-miko/young-miko-2.png',
+    src: '/images/artist-images/young-miko/young-miko-2.webp',
     alt: 'Imagen del articulo, artista masculino Sain Levant',
   }
 video:

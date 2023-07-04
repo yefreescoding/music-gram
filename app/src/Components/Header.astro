@@ -6,17 +6,16 @@ import Navigation from './Navigation.astro';
   <div class="header__logo">
     <a href="/" class="header__logo--letters">
       <img
-      class="header__logo--image"
-      src="/logos/music.png"
-      alt="Logo de la pagina"
+        class="header__logo--image"
+        src="/logos/music.png"
+        alt="Logo de la pagina"
       />
     </a>
   </div>
   <Navigation />
   <p class="header__p">
-    Get ready to groove with the hottest beats, freshest talent, and coolest
-    vibes! Your ultimate destination for the latest music, emerging artists, and
-    juicy articles.
+    <span> Yefree Valdez</span>
+    <small>copyright &copy; all right reserved</small>
   </p>
   <!-- <button class="header__toggle"></button> -->
 </header>
@@ -30,15 +29,15 @@ import Navigation from './Navigation.astro';
     inset: 0 auto 0 0;
     background-color: var(--Dark-blue);
     z-index: 999;
-    width: 17rem;
+    width: 15rem;
     padding: 1rem;
-    @media (width < 39.9em){
+    @media (width < 39.9em) {
       position: relative;
       height: fit-content;
     }
     a {
       color: var(--Dark-moderate-cyan);
-      font-size: clamp(.9rem, calc(.75rem + 1vw), 1.6rem);
+      font-size: clamp(0.9rem, calc(0.75rem + 1vw), 1.6rem);
       text-transform: uppercase;
       &:hover {
         color: gray;
@@ -48,8 +47,9 @@ import Navigation from './Navigation.astro';
 
     &__logo,
     &__p {
+      display: flex;
+      flex-flow: column;
       flex: 1;
-      // align-items: center;
       gap: 1rem;
     }
     &__logo {
@@ -71,5 +71,4 @@ import Navigation from './Navigation.astro';
   }
 </style>
 
-<script>
-</script>
+<script></script>

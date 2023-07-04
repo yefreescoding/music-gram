@@ -18,10 +18,9 @@ const fomrmatArtist: CollectionEntry<'blog'>[] = formatBlogPosts(allArtist, {
 <DefaultLayout subtitle="HOME">
   <Cover coverText="MUSIC.GRAM">
     <video autoplay muted playsinline loop class="cover__bg">
-      <source src="/video/hero-video-cover.mp4" type="video/mp4" />
+      <source src="/video/cover-jul-5-23.mp4" type="video/mp4" />
     </video>
   </Cover>
-  <EntrySection sectionTitle="Hot artist of the moment" />
   <SectionInfo>
     {
       fomrmatArtist.map((artist) => (
@@ -56,4 +55,5 @@ const fomrmatArtist: CollectionEntry<'blog'>[] = formatBlogPosts(allArtist, {
       </p>
     </article>
   </SectionInfo>
+  <EntrySection sectionTitle="Hot artist of the moment" />
 </DefaultLayout>

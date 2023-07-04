@@ -15,11 +15,11 @@ const fomrmatArtist: CollectionEntry<'blog'>[] = formatBlogPosts(allArtist, {});
 ---
 
 <DefaultLayout>
-  <Cover coverText="music">
+  <!-- <Cover coverText="music">
     <video autoplay muted playsinline class="cover__bg">
       <source src="/video/video-hero2.mp4" type="video/mp4" />
     </video>
-  </Cover>
+  </Cover> -->
   <Sectioninfo>
     <div slot="images">
       <ArtistCard />
@@ -40,6 +40,7 @@ const fomrmatArtist: CollectionEntry<'blog'>[] = formatBlogPosts(allArtist, {});
             title={post.data.title}
             src={post.data.img.src}
             alt={post.data.img.alt}
+            aspectRatio="aspect-ratio"
           />
         ))
       }
@@ -50,7 +51,8 @@ const fomrmatArtist: CollectionEntry<'blog'>[] = formatBlogPosts(allArtist, {});
 <style>
   .test {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(25em, 100%), 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(10em, 100%), 1fr));
+    gap: 0.725rem;
+    margin-bottom: 10rem;
   }
 </style>
