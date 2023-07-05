@@ -15,19 +15,22 @@ const fomrmatArtist: CollectionEntry<'blog'>[] = formatBlogPosts(allArtist, {});
 ---
 
 <DefaultLayout>
-  <!-- <Cover coverText="music">
+  <Cover coverText="music">
     <video autoplay muted playsinline class="cover__bg">
-      <source src="/video/video-hero2.mp4" type="video/mp4" />
+      <source
+        src="/images/artist-images/young-miko/young-miko-video.mp4"
+        type="video/mp4"
+      />
     </video>
-  </Cover> -->
-  <Sectioninfo>
-    <div slot="images">
+  </Cover>
+  <!-- <Sectioninfo>
+    <div slot="text">
       <ArtistCard />
     </div>
-    <div slot="text">
+    <div slot="images">
       <MusicPlayer />
     </div>
-  </Sectioninfo>
+  </Sectioninfo> -->
   <!-- <h2></h2> -->
   <EntrySection sectionTitle="Hot artist of the moment" />
   <section class="section">
