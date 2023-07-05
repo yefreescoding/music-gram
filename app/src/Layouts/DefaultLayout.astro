@@ -4,8 +4,11 @@ import '../assets/scss/index.scss';
 import SiteMeta from '../Components/SiteMeta.astro';
 import LinkFonts from '../Components/SiteMeta.astro';
 import Header from '../Components/Header.astro';
-import Footer from '../Components/Footer.astro';
 import Preloader from '../Components/Preloader.astro';
+
+import { inject } from '@vercel/analytics';
+ 
+inject();
 
 const {
   title = 'MUSIC.GRAM',
