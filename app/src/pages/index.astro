@@ -11,7 +11,7 @@ import { formatBlogPosts } from '../js/utils';
 
 const allArtist = await getCollection('artists');
 const fomrmatArtist: CollectionEntry<'blog'>[] = formatBlogPosts(allArtist, {
-  limit: 2,
+  limit: 1,
 });
 ---
 
@@ -27,11 +27,11 @@ const fomrmatArtist: CollectionEntry<'blog'>[] = formatBlogPosts(allArtist, {
         <img
           src={artist.data.img2.src}
           alt="Person listening to music"
-          slot="images"
+          slot="text"
         />
       ))
     }
-    <article class="intro__article" slot="text">
+    <article class="intro__article" slot="images">
       <h2>Fresh Sounds Every Week!</h2>
       <p>
         Discover the next wave of musical talent with our weekly uploads. We
@@ -41,17 +41,16 @@ const fomrmatArtist: CollectionEntry<'blog'>[] = formatBlogPosts(allArtist, {
         that will keep your playlists fresh and your ears yearning for more.
       </p>
     </article>
-    <article class="intro__article" slot="text">
+    <article class="intro__article" slot="images">
       <h2>Global Vibes, Local Talent</h2>
       <p>
         Music knows no boundaries, and neither do we. Our dedication to
         showcasing artists from every corner of the globe ensures a rich
-        tapestry of cultural influences and sonic journeys. From the bustling
-        streets of Tokyo to the vibrant neighborhoods of Rio de Janeiro, our
-        platform brings together artists who are pushing boundaries and
-        redefining music as we know it. Get ready to explore a world of
-        captivating melodies, infectious rhythms, and authentic voices that will
-        transport you to new musical landscapes.
+        tapestry of cultural influences and sonic journeys. Our platform brings
+        together artists who are pushing boundaries and redefining music as we
+        know it. Get ready to explore a world of captivating melodies,
+        infectious rhythms, and authentic voices that will transport you to new
+        musical landscapes.
       </p>
     </article>
   </SectionInfo>

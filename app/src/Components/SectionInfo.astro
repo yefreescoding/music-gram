@@ -5,11 +5,11 @@
   class="intro section"
   aria-label="Important information about the page"
 >
-  <div class="intro__images">
-    <slot name="images" />
-  </div>
   <div class="intro__text">
     <slot name="text" />
+  </div>
+  <div class="intro__images">
+    <slot name="images" />
   </div>
 </section>
 
@@ -29,16 +29,24 @@
       gap: 1rem;
     }
     &__images {
+      z-index: 999;
+      background-color: var(--Dark-blue);
       flex-basis: 20em;
       flex-grow: 1;
+      padding: 1rem;
     }
     img {
       object-fit: cover;
       object-position: center;
       border-radius: 1rem;
       aspect-ratio: 1;
+      @media (width < 40em) {
+        // display: none;
+      }
     }
     &__text {
+      justify-content: center;
+      align-items: center;
       flex-basis: 20em;
       flex-grow: 1;
       position: sticky;
@@ -47,7 +55,6 @@
       padding: 2vh 2vw;
       overflow: hidden;
       border-radius: 1rem;
-      // background-color: var(--Very-dark-desaturated-blue);
       @media (width > 40em) {
         &::after {
           content: 'VIBES';
@@ -65,7 +72,7 @@
       }
     }
     &__article {
-      padding-right: 8vw;
+      // padding-right: 3vw;
     }
   }
 </style>
