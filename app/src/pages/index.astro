@@ -11,7 +11,7 @@ import { formatBlogPosts } from '../js/utils';
 
 const allArtist = await getCollection('artists');
 const fomrmatArtist: CollectionEntry<'blog'>[] = formatBlogPosts(allArtist, {
-  limit: 3,
+  limit: 2,
 });
 ---
 

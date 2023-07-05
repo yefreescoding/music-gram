@@ -1,5 +1,5 @@
 ---
-title: New spanish sensation
+title: Missionsuicida
 artist: bb-trickz
 description: Lorem ipsum, dolor sit amet consectetur adipisicing elit.
 genre: trap

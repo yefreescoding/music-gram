@@ -1,5 +1,5 @@
 ---
-title: The globe isn't enough for this artist
+title: Spinning
 artist: Connor Price
 description: Winning Against Major Labels
 genre: drill

@@ -5,7 +5,7 @@ import { z, defineCollection } from 'astro:content';
 const artists = defineCollection({
   type: 'content', // v2.5.0 and later
   schema: z.object({
-    title: z.string().max(60),
+    title: z.string().max(20),
     artist: z.string(),
     description: z.string().max(160),
     genre: z.string().optional(),

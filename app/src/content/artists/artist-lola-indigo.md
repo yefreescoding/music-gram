@@ -1,5 +1,5 @@
 ---
-title: She's special and unique.
+title: The dragon.
 artist: Lola Indigo
 description: The Spanish Singer and Dancer Taking the Music World by Storm
 genre: pop
