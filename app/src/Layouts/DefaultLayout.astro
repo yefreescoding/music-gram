@@ -6,9 +6,12 @@ import LinkFonts from '../Components/SiteMeta.astro';
 import Header from '../Components/Header.astro';
 import Preloader from '../Components/Preloader.astro';
 
+// import { Analytics } from '@vercel/analytics/react';
+
 import { inject } from '@vercel/analytics';
  
-inject();
+
+ 
 
 const {
   title = 'MUSIC.GRAM',
@@ -48,5 +51,9 @@ const { pageTitle } = Astro.props;
       <slot />
     </main>
     <!-- <Footer />   -->
+    <!-- <Analytics/> -->
+    <script defer>
+      inject();
+    </script>
   </body>
 </html>
