@@ -3,6 +3,13 @@
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
+  color-scheme: light dark;
+
+  body * {
+    animation-duration: 0.2s linear;
+    animation-delay: 0.2s linear;
+    transition: all 0.2s linear;
+  }
 
   @media (prefers-reduced-motion: reduce) {
     scroll-behavior: auto;
@@ -105,10 +112,6 @@ body {
     @media (width < 40em) {
       padding: 0;
     }
-  }
-
-  & * {
-    transition: all 0.2s linear;
   }
 
   img {

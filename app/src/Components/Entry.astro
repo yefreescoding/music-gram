@@ -1,5 +1,5 @@
 ---
-const { title, src, alt, url, aspectRatio } = Astro.props;
+const { title, src, alt, url, artist } = Astro.props;
 ---
 
 <!-- <a href={`/artists/${url}/`} class=`card entries ${aspectRatio}`>
@@ -8,114 +8,34 @@ const { title, src, alt, url, aspectRatio } = Astro.props;
     <h3 class="card__title">{title}</h3>
   </div>
 </a> -->
-<article class=`entries ${aspectRatio}`>
-  <img loading="lazy" class="entries__bg" src={src} alt={alt} />
-  <h3 class="entries__h3">{title}</h3>
-  <a href={`/artists/${url}/`}>
-    <img class="entries__link" src="/icons/music.avif" alt="music icon" />
-  </a>
-</article>
+<a href={`/artists/${url}/`}>
+  <article class=`entries flex flex-col gap-[.5rem]`>
+    <div class="overflow-hidden">
+      <img loading="lazy" class="entries__bg" src={src} alt={alt} />
+    </div>
+    <h3 class="entries__h3">{title}</h3>
+    <span class="text-grey-200"> {artist}</span>
+  </article>
+</a>
 
 <style lang="scss">
   .entries {
-    font-size: 90%;
     position: relative;
     overflow: hidden;
-    flex-direction: column;
-    border-radius: 1rem;
+    border-radius: 10px;
 
     &__bg {
       height: 100%;
       object-fit: cover;
       aspect-ratio: 1;
-      width: 25em;
-      @media (min-width: 40em) {
-        aspect-ratio: 4/2;
-      }
-    }
-    &__link {
-      background-color: var(--purple);
-      position: absolute;
-      inset: auto 5px 5px auto;
-      border-radius: 50%;
-      width: 4.2rem;
-      padding: 0.5rem;
-      object-fit: cover;
-      outline: 1rem solid var(--Dark-blue);
       &:hover {
         transform: scale(1.1);
       }
     }
     &__h3 {
-      position: absolute;
-      inset: 0.5rem auto auto 0;
       font-size: clamp(1em, calc(1em + 1vw), 2em);
       color: hsl(0, 0%, 100%);
-      background-color: var(--Dark-blue);
-      outline: 8px solid var(--Dark-blue);
       transition: all 0.23s ease-in-out;
-      border-radius: 0 0 0.5rem 0;
     }
   }
-  // .card {
-  //   font-size: 90%;
-  //   position: relative;
-  //   background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100%);
-  //   border-radius: 1rem;
-  //   display: flex;
-  //   align-items: center;
-  //   justify-content: center;
-  //   overflow: hidden;
-  //   transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-  // }
-
-  .entries.aspect-ratio {
-    aspect-ratio: 1;
-  }
-
-  // .entries__bg {
-  //   height: 100%;
-  //   object-fit: cover;
-  //   aspect-ratio: 1;
-  //   width: 25rem;
-  //   @media (min-width: 40em) {
-  //     aspect-ratio: 4/2;
-  //   }
-  // }
-
-  // .card:hover {
-  //   // transform: rotate(-5deg) scale(1.1);
-  //   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  // }
-
-  // .card__content {
-  //   position: absolute;
-  //   // transform: translate(-50%, -50%) rotate(-45deg);
-  //   inset: 0;
-  //   padding: 20px;
-  //   background-color: #fff;
-  //   opacity: 0;
-  //   display: grid;
-  //   place-items: center;
-  //   transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-  // }
-
-  // .card:hover .card__content {
-  //   // transform: translate(-50%, -50%) rotate(0deg);
-  //   opacity: 1;
-  // }
-
-  // .card__title {
-  //   margin: 0;
-  //   font-size: clamp(1.2em, calc(1em + 1.5vw), 3em);
-  //   color: #333;
-  //   font-weight: 700;
-  // }
-
-  // .card__description {
-  //   margin: 10px 0 0;
-  //   font-size: 1rem;
-  //   color: #777;
-  //   line-height: 1.4;
-  // }
 </style>

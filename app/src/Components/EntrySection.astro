@@ -5,21 +5,22 @@ import Entry from './Entry.astro';
 
 const artistsPost = await getCollection('artists');
 const fomrmatArtist: CollectionEntry<'blog'>[] = formatBlogPosts(artistsPost, {
-  limit: 4,
+  limit: 3,
 });
 
 const { sectionTitle } = Astro.props;
 ---
 
-<section class="post" aria-label="Recent Entries">
-  <h2>{sectionTitle}</h2>
-  <div class="post__div">
+<section class="post flex flex-col" aria-label="Recent Entries">
+  <h2 class="text-left">{sectionTitle}</h2>
+  <div class="post__div grid gap-4">
     <!-- Entries goes in here -->
     {
       fomrmatArtist.map((post) => (
         <Entry
           url={post.slug}
           title={post.data.title}
+          artist={post.data.artist}
           src={post.data.img.src}
           alt={post.data.img.alt}
         />
@@ -32,39 +33,12 @@ const { sectionTitle } = Astro.props;
   .post {
     padding-inline: 1rem;
     margin: 10vh 0;
-    // text-align: center;
     gap: 2rem;
     h2 {
-      font-size: clamp(2rem, calc(1.765rem + 3vw), 6rem);
-    }
-    &,
-    &__div {
-      display: grid;
+      font-size: clamp(2rem, calc(1.7rem + 2.75vw), 3.5rem);
     }
     &__div {
-      gap: 1rem;
-      grid-template-areas:
-        'one'
-        'two'
-        'three'
-        'four';
-      @media (min-width: 40em) {
-        grid-template-areas:
-          'one two four'
-          'one three four';
-      }
-      .entries:nth-child(1) {
-        grid-area: one;
-      }
-      .entries:nth-child(2) {
-        grid-area: two;
-      }
-      .entries:nth-child(3) {
-        grid-area: three;
-      }
-      .entries:nth-child(4) {
-        grid-area: four;
-      }
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 15em), 1fr));
     }
   }
 </style>

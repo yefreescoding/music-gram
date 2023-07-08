@@ -1,61 +1,36 @@
 ---
 import DefaultLayout from '../Layouts/DefaultLayout.astro';
 import Cover from '../Components/Cover.astro';
-import EntrySection from '../Components/EntrySection.astro';
+// import EntrySection from '../Components/EntrySection.astro';
 import Entry from '../Components/Entry.astro';
-import Sectioninfo from '../Components/SectionInfo.astro';
-import ArtistCard from '../Components/ArtistCard.astro';
+// import Sectioninfo from '../Components/SectionInfo.astro';
+// import ArtistCard from '../Components/ArtistCard.astro';
 
-import { getCollection, CollectionEntry } from 'astro:content';
-import { formatBlogPosts } from '../js/utils';
-import MusicPlayer from '../Components/MusicPlayer.astro';
+// import { getCollection, CollectionEntry } from 'astro:content';
+// import { formatBlogPosts } from '../js/utils';
 
-const allArtist = await getCollection('artists');
-const fomrmatArtist: CollectionEntry<'blog'>[] = formatBlogPosts(allArtist, {});
+// const allArtist = await getCollection('artists');
+// const fomrmatArtist: CollectionEntry<'blog'>[] = formatBlogPosts(allArtist, {});
 ---
 
 <DefaultLayout>
   <Cover coverText="music">
-    <video autoplay muted playsinline class="cover__bg">
+    <video paused muted playsinline loop class="cover__bg">
       <source
         src="/images/artist-images/young-miko/young-miko-video.mp4"
         type="video/mp4"
       />
     </video>
   </Cover>
-  <!-- <Sectioninfo>
-    <div slot="text">
-      <ArtistCard />
+  <section>
+    <div>
+      <h2>new hot artist</h2>
+      <p>The top pick artist. Updated daily</p>
     </div>
-    <div slot="images">
-      <MusicPlayer />
-    </div>
-  </Sectioninfo> -->
-  <!-- <h2></h2> -->
-  <EntrySection sectionTitle="Hot artist of the moment" />
-  <section class="section">
-    <h2>Todos los artistas</h2>
-    <div class="test">
-      {
-        fomrmatArtist.map((post) => (
-          <Entry
-            url={post.slug}
-            title={post.data.title}
-            src={post.data.img.src}
-            alt={post.data.img.alt}
-            aspectRatio="aspect-ratio"
-          />
-        ))
-      }
+    <div>
+      <Entry />
     </div>
   </section>
 </DefaultLayout>
 
-<style>
-  .test {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(20em, 100%), 1fr));
-    gap: 0.725rem;
-    margin-bottom: 10rem;
-  }
-</style>
+<style></style>
