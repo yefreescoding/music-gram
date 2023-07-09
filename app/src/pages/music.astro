@@ -3,34 +3,51 @@ import DefaultLayout from '../Layouts/DefaultLayout.astro';
 import Cover from '../Components/Cover.astro';
 // import EntrySection from '../Components/EntrySection.astro';
 import Entry from '../Components/Entry.astro';
-// import Sectioninfo from '../Components/SectionInfo.astro';
-// import ArtistCard from '../Components/ArtistCard.astro';
 
-// import { getCollection, CollectionEntry } from 'astro:content';
-// import { formatBlogPosts } from '../js/utils';
+import { getCollection, getEntryBySlug, CollectionEntry } from 'astro:content';
+import { formatBlogPosts } from '../js/utils';
+import EntrySection from '../Components/EntrySection.astro';
 
-// const allArtist = await getCollection('artists');
-// const fomrmatArtist: CollectionEntry<'blog'>[] = formatBlogPosts(allArtist, {});
+const artistsPost = await getCollection('artists');
+const fomrmatArtist: CollectionEntry<'blog'>[] = formatBlogPosts(artistsPost);
 ---
 
 <DefaultLayout>
   <Cover coverText="music">
-    <video paused muted playsinline loop class="cover__bg">
+    <video id="video-cover" autoplay muted playsinline loop class="cover__bg">
       <source
         src="/images/artist-images/young-miko/young-miko-video.mp4"
         type="video/mp4"
       />
     </video>
   </Cover>
-  <section>
-    <div>
-      <h2>new hot artist</h2>
-      <p>The top pick artist. Updated daily</p>
-    </div>
-    <div>
-      <Entry />
+  <EntrySection
+    sectionTitle="Top Artist of the week"
+    subtitle="This list updte every week"
+  />
+  <section class="flex flex-col gap-4 p-4">
+    <h2 class="text-4xl font-extrabold">All artist</h2>
+    <p class="text-xl text-slate-400 font-bold capitalize">
+      Every artist that has been posted
+    </p>
+    <div class="all_post grid gap-[5px]">
+      {
+        fomrmatArtist.map((post) => (
+          <Entry
+            url={post.slug}
+            title={post.data.title}
+            artist={post.data.artist}
+            src={post.data.img.src}
+            alt={post.data.img.alt}
+          />
+        ))
+      }
     </div>
   </section>
 </DefaultLayout>
 
-<style></style>
+<style>
+  .all_post {
+    grid-template-columns: repeat(auto-fit, minmax(min(10em, 100%), 1fr));
+  }
+</style>

@@ -108,7 +108,8 @@ body {
     flex-direction: column;
     gap: 1rem;
     width: min(100%, 101.075em);
-    padding-left: 15rem;
+    padding: 0 0 0 15rem;
+    margin: 0 0 15rem 0;
     @media (width < 40em) {
       padding: 0;
     }

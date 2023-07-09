@@ -5,7 +5,7 @@ import Entry from './Entry.astro';
 
 const artistsPost = await getCollection('artists');
 const fomrmatArtist: CollectionEntry<'blog'>[] = formatBlogPosts(artistsPost, {
-  limit: 3,
+  limit: 4,
 });
 
 const { sectionTitle, subtitle } = Astro.props;
@@ -37,7 +37,7 @@ const { sectionTitle, subtitle } = Astro.props;
       font-size: clamp(2rem, calc(1.5rem + 2vw), 3rem);
     }
     &__div {
-      grid-template-columns: repeat(auto-fit, minmax(min(100%, 15em), 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 20em), 1fr));
     }
   }
 </style>
