@@ -1,7 +1,7 @@
 ---
 const navigationLinks = [
   {
-    name: 'Music Space',
+    name: 'Discover',
     link: '/music/',
   },
   {
@@ -18,7 +18,11 @@ const navigationLinks = [
 <nav id="nav" class="header__nav" aria-label="Navegation bar">
   {
     navigationLinks.map((link) => (
-      <a href={link.link} class="header__links text-grey-200">
+      <a
+        data-name={link.name}
+        href={link.link}
+        class="header__links text-grey-200 p-[7px]"
+      >
         {link.name}
       </a>
     ))
