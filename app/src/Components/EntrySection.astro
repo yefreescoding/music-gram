@@ -8,12 +8,13 @@ const fomrmatArtist: CollectionEntry<'blog'>[] = formatBlogPosts(artistsPost, {
   limit: 3,
 });
 
-const { sectionTitle } = Astro.props;
+const { sectionTitle, subtitle } = Astro.props;
 ---
 
-<section class="post flex flex-col" aria-label="Recent Entries">
-  <h2 class="text-left">{sectionTitle}</h2>
-  <div class="post__div grid gap-4">
+<section class="post flex flex-col p-4" aria-label="Recent Entries">
+  <h2 class="text-left font-extrabold">{sectionTitle}</h2>
+  <p class="text-xl text-slate-400 font-bold capitalize">{subtitle}</p>
+  <div class="post__div grid gap-8 mt-8">
     <!-- Entries goes in here -->
     {
       fomrmatArtist.map((post) => (
@@ -31,11 +32,9 @@ const { sectionTitle } = Astro.props;
 
 <style lang="scss" is:global>
   .post {
-    padding-inline: 1rem;
     margin: 10vh 0;
-    gap: 2rem;
     h2 {
-      font-size: clamp(2rem, calc(1.7rem + 2.75vw), 3.5rem);
+      font-size: clamp(2rem, calc(1.5rem + 2vw), 3rem);
     }
     &__div {
       grid-template-columns: repeat(auto-fit, minmax(min(100%, 15em), 1fr));

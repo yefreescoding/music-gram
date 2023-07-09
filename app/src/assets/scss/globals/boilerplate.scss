@@ -3,7 +3,7 @@
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
-  color-scheme: light dark;
+  color-scheme: dark light;
 
   body * {
     animation-duration: 0.2s linear;
@@ -65,7 +65,7 @@ h4 {
 
 p,
 span {
-  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  font-size: clamp(1rem, calc(1rem + 2vw), 1.2rem);
   line-height: 1.25;
 }
 
@@ -81,7 +81,7 @@ button {
 }
 
 .section {
-  padding-inline: 1rem;
+  // padding-inline: 1rem;
   display: grid;
   gap: 1rem;
   // grid-auto-rows: 1fr;

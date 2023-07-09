@@ -13,6 +13,8 @@ const allArtist = await getCollection('artists');
 const fomrmatArtist: CollectionEntry<'blog'>[] = formatBlogPosts(allArtist, {
   limit: 1,
 });
+
+// const cover1 = await Astro.glob('../content/**/artist-bb-trickz.md');
 ---
 
 <DefaultLayout subtitle="HOME">
@@ -21,18 +23,15 @@ const fomrmatArtist: CollectionEntry<'blog'>[] = formatBlogPosts(allArtist, {
       <source src="/video/cover-jul-5-23.mp4" type="video/mp4" />
     </video>
   </Cover>
-  <SectionInfo>
-    {
-      fomrmatArtist.map((artist) => (
-        <img
-          src={artist.data.img2.src}
-          alt="Person listening to music"
-          slot="text"
-        />
-      ))
-    }
-    <article class="intro__article" slot="images">
-      <h2>Fresh Sounds Every Week!</h2>
+  <SectionInfo position={true}>
+    <img
+      class="rounded-lg"
+      src={allArtist[1].data.img2.src}
+      alt="Person listening to music"
+      slot="images"
+    />
+    <article class="intro__article" slot="text">
+      <h2 class="font-bold text-2xl mb-[1rem]">Fresh Sounds Every Week!</h2>
       <p>
         Discover the next wave of musical talent with our weekly uploads. We
         pride ourselves on being a platform that champions relative unknown
@@ -41,8 +40,16 @@ const fomrmatArtist: CollectionEntry<'blog'>[] = formatBlogPosts(allArtist, {
         that will keep your playlists fresh and your ears yearning for more.
       </p>
     </article>
-    <article class="intro__article" slot="images">
-      <h2>Global Vibes, Local Talent</h2>
+  </SectionInfo>
+  <SectionInfo position={false}>
+    <img
+      class="rounded-lg"
+      src={allArtist[0].data.img2.src}
+      alt="Person listening to music"
+      slot="images"
+    />
+    <article class="intro__article" slot="text">
+      <h2 class="font-bold text-2xl mb-[1rem]">Global Vibes, Local Talent</h2>
       <p>
         Music knows no boundaries, and neither do we. Our dedication to
         showcasing artists from every corner of the globe ensures a rich
@@ -54,5 +61,8 @@ const fomrmatArtist: CollectionEntry<'blog'>[] = formatBlogPosts(allArtist, {
       </p>
     </article>
   </SectionInfo>
-  <EntrySection sectionTitle="Hot artist of the moment" />
+  <EntrySection
+    sectionTitle="Hot artist of the moment"
+    subtitle="This is what is vibing on the street"
+  />
 </DefaultLayout>

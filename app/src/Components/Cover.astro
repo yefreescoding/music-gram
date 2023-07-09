@@ -13,14 +13,13 @@ const { coverText } = Astro.props;
   .cover {
     position: relative;
     flex-direction: column;
-    // height: 80dvh;
     overflow: hidden;
-    border-radius: 0 0 0 1rem;
+    border-radius: 0 0 0 0.5rem;
     &__bg {
       object-fit: cover;
       aspect-ratio: 1;
-      @media (width > 40em) {
-        aspect-ratio: 16/9;
+      @media (width > 60em) {
+        aspect-ratio: 16/7;
       }
     }
     &__h1 {
@@ -28,7 +27,7 @@ const { coverText } = Astro.props;
       left: 0;
       right: 0;
       bottom: 0;
-      font-size: clamp(3rem, 10vw, 12rem);
+      font-size: clamp(3rem, calc(2rem + 5vw), 12rem);
       color: hsl(0, 0%, 100%);
       text-shadow: 0px 0px 0 rgb(137, 156, 213), 1px 1px 0 rgb(129, 148, 205),
         2px 2px 0 rgb(120, 139, 196), 3px 3px 0 rgb(111, 130, 187),

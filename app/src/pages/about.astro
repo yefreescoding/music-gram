@@ -18,9 +18,13 @@ import aboutData from '../js/data';
       aboutData.map((data) => (
         <article class="about__article">
           <div class="flex-col about__text">
-            <h2 class="about__h2">{data.title}</h2>
+            <h2 class="font-bold text-xl">{data.title}</h2>
             <p class="about__p">{data.description}</p>
-            <a href={data.link} class="about__link" target="_blank">
+            <a
+              href={data.link}
+              class="about__link underline text-violet-400"
+              target="_blank"
+            >
               Get to know more about us...
             </a>
           </div>
@@ -38,7 +42,6 @@ import aboutData from '../js/data';
     &__text {
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
     }
     &__text,
     &__image {
@@ -46,7 +49,7 @@ import aboutData from '../js/data';
       flex-grow: 1;
     }
     &__article {
-      border-bottom: 1px solid var(--Dark-moderate-cyan);
+      border-bottom: 1px solid var(--clr-brd);
     }
     &__text {
       justify-content: space-between;
