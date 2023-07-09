@@ -14,7 +14,7 @@ const { sectionTitle, subtitle } = Astro.props;
 <section class="post flex flex-col p-4" aria-label="Recent Entries">
   <h2 class="text-left font-extrabold">{sectionTitle}</h2>
   <p class="text-xl text-slate-400 font-bold capitalize">{subtitle}</p>
-  <div class="post__div grid gap-8 mt-8">
+  <div class="post__div grid gap-4 mt-8">
     <!-- Entries goes in here -->
     {
       fomrmatArtist.map((post) => (
@@ -37,7 +37,7 @@ const { sectionTitle, subtitle } = Astro.props;
       font-size: clamp(2rem, calc(1.5rem + 2vw), 3rem);
     }
     &__div {
-      grid-template-columns: repeat(auto-fit, minmax(min(100%, 20em), 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 15em), 1fr));
     }
   }
 </style>

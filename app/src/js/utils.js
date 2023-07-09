@@ -51,3 +51,15 @@ export function formatBlogPosts(
   }
   return filteredPosts;
 }
+
+export function formatNumber(num) {
+  if (Math.abs(num) >= 1e9) {
+    return (num / 1e9).toFixed(1) + 'b';
+  } else if (Math.abs(num) >= 1e6) {
+    return (num / 1e6).toFixed(1) + 'm';
+  } else if (Math.abs(num) >= 1e3) {
+    return (num / 1e3).toFixed(1) + 'k';
+  } else {
+    return num;
+  }
+}

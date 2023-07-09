@@ -48,6 +48,9 @@ const fomrmatArtist: CollectionEntry<'blog'>[] = formatBlogPosts(artistsPost);
 
 <style>
   .all_post {
-    grid-template-columns: repeat(auto-fit, minmax(min(10em, 100%), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(15em, 100%), 1fr));
+    @media (width < 40em) {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 </style>

@@ -3,10 +3,14 @@
 import DefaultLayout from '../../Layouts/DefaultLayout.astro';
 // import components
 import Cover from '../../Components/Cover.astro';
-import EntrySection from '../../Components/EntrySection.astro';
+import DashNumber from '../../Components/DashNumbers';
 import SectionInfo from '../../Components/SectionInfo.astro';
 
+//import utils
+import { formatNumber } from '../../js/utils';
+
 import { CollectionEntry, getCollection, getEntryBySlug } from 'astro:content';
+import MusicPlayer from '../../Components/MusicPlayer.astro';
 
 export async function getStaticPaths() {
   const artistsPost = await getCollection('artists', ({ data }) => {
@@ -25,6 +29,33 @@ interface Props {
 const { post } = Astro.props;
 
 const { Content } = await post.render();
+
+const dashNumbersData = [
+  {
+    social: 'instagram',
+    icon: '/',
+    followers: 3000000,
+    percentage: 30,
+  },
+  {
+    social: 'tiktok',
+    icon: '/',
+    followers: 14000000,
+    percentage: 70,
+  },
+  {
+    social: 'spotify',
+    icon: '/',
+    followers: 2000000,
+    percentage: 15,
+  },
+  {
+    social: 'twitter',
+    icon: '/',
+    followers: 500000,
+    percentage: 7,
+  },
+];
 ---
 
 <DefaultLayout subtitle={post.data.title}>
@@ -32,32 +63,31 @@ const { Content } = await post.render();
     <video autoplay muted playsinline loop class="cover__bg">
       <source src={post.data.video.src} type="video/mp4" />
     </video>
-    <!-- <img src={post.data.img.src} alt={post.data.img.alt} class="cover__bg" /> -->
   </Cover>
-  <SectionInfo>
-    <img src={post.data.img2.src} alt={post.data.img2.alt} slot="text" />
-    <article class="entry-section__article" slot="images">
-      <h2 class="entry-section__h2">
-        {post.data.title}
-      </h2>
-      <article class="entry-section__ps">
-        <Content />
-      </article>
+  <section aria-label="Artist data">
+    <h2>{post.data.artist}</h2>
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+      {
+        dashNumbersData.map((data) => (
+          <DashNumber
+            social={data.social}
+            icon={data.icon}
+            followers={formatNumber(data.followers)}
+            percentage={data.percentage}
+          />
+        ))
+      }
+    </div>
+  </section>
+  <SectionInfo position={true}>
+    <article
+      class="flex flex-col gap-4 border-[1px] rounded-lg border-clr p-8"
+      slot="text"
+    >
+      <Content />
     </article>
+    <MusicPlayer slot="images" />
   </SectionInfo>
-  <SectionInfo>
-    <img src={post.data.img3.src} alt={post.data.img3.alt} slot="images" />
-    <article class="entry-section__article" slot="text">
-      <iframe
-        width="760"
-        height="515"
-        src={post.data.video.alt}
-        title="YouTube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen></iframe>
-    </article>
-  </SectionInfo>
-  <!-- <EntrySection sectionTitle="Discover more artist" /> -->
 </DefaultLayout>
 
 <style lang="scss">
