@@ -1,8 +1,10 @@
 ---
+import Preloader from './Preloader.astro';
 const { coverText } = Astro.props;
 ---
 
-<section class="cover">
+<section class="cover relative">
+  <Preloader />
   <slot />
   <h1 class="cover__h1 font-extrabold">{coverText}</h1>
 </section>
