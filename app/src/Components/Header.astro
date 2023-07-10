@@ -1,10 +1,16 @@
 ---
 import Navigation from './Navigation.astro';
+import Links from './Links.astro';
 ---
 
 <header id="home" class="flex header gap-8 border-r-[1px] border-clr">
   <div class="header__logo p-4 border-b-[1px] border-clr">
-    <a href="/" class="font-bold p-[5px]"> MUSICGRAM</a>
+    <Links
+      text="MUSICGRAM"
+      href="/"
+      style="header__links"
+      classes="font-bold p-[7px]"
+    />
   </div>
   <Navigation />
   <p class="header__p border-t-[1px] border-clr p-4">
@@ -29,17 +35,6 @@ import Navigation from './Navigation.astro';
       position: relative;
       width: 100%;
       // height: fit-content;
-    }
-    a {
-      color: var(--Dark-moderate-cyan);
-      border-radius: 0.5rem;
-      font-size: clamp(0.8rem, calc(0.7rem + 1vw), 1.3rem);
-      text-transform: uppercase;
-      &:hover {
-        background-color: var(--Dark-moderate-cyan);
-        color: var(--Dark-blue);
-        transform: scale(1.1, 1.1);
-      }
     }
 
     &__logo,

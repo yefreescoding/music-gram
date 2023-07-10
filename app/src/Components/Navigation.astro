@@ -1,16 +1,21 @@
 ---
+// import components
+import Links from './Links.astro';
 const navigationLinks = [
   {
     name: 'Discover',
     link: '/music/',
+    icon: '/icons/playlist.svg',
   },
   {
     name: 'Support',
     link: '/',
+    icon: '/icons/music-note-add.svg',
   },
   {
     name: 'About us',
     link: '/about/',
+    icon: '/icons/group.svg',
   },
 ];
 ---
@@ -18,13 +23,17 @@ const navigationLinks = [
 <nav id="nav" class="header__nav" aria-label="Navegation bar">
   {
     navigationLinks.map((link) => (
-      <a
-        data-name={link.name}
+      <Links
+        text={link.name}
         href={link.link}
-        class="header__links text-grey-200 p-[7px]"
-      >
-        {link.name}
-      </a>
+        style="header__links"
+        classes="flex gap-[5px] text-grey-200 p-[7px]"
+        icon={{
+          name: link.icon,
+          side: 'left',
+        }}
+        hide="hide"
+      />
     ))
   }
 </nav>
@@ -49,24 +58,9 @@ const navigationLinks = [
         background-color: var(--Dark-blue);
         backdrop-filter: blur(0.5rem);
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-around;
         flex-direction: row;
       }
     }
   }
-
-  .active {
-    color: var(--Very-dark-desaturated-blue);
-  }
 </style>
-
-<script defer>
-  const links = document.querySelectorAll('.header__links');
-
-  links.forEach((link) => {
-    if (link.href === window.location.href) {
-      link.classList.add('active');
-    }
-  });
-  // Check if the link href matches the current URL
-</script>
