@@ -26,6 +26,7 @@ video:
     src: '/images/artist-images/connor-price/connor-price-video.mp4',
     alt: 'Imagen del articulo, artista masculino Sain Levant',
   }
+socials: { instagram: 0, tiktok: 0, spotify: 0, twitter: 0 }
 ---
 
 Connor Price is a Canadian-American actor, rapper, and songwriter who has been making waves in the music industry. He has been releasing singles consistently, and his music is gaining popularity. This article will explore Connor Price's journey in the music industry, his unique approach to music, and how he is winning against major labels.

@@ -16,6 +16,14 @@ const artists = defineCollection({
     img2: z.object({ src: z.string(), alt: z.string() }).optional(),
     img3: z.object({ src: z.string(), alt: z.string() }).optional(),
     video: z.object({ src: z.string(), alt: z.string() }).optional(),
+    socials: z
+      .object({
+        instagram: z.number(),
+        tiktok: z.number(),
+        spotify: z.number(),
+        twitter: z.number(),
+      })
+      .optional(),
   }),
 });
 

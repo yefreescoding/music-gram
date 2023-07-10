@@ -26,6 +26,7 @@ video:
     src: '/images/artist-images/la-blackie/la-blackie-video.mp4',
     alt: 'Imagen del articulo, artista Femenina La Blackie',
   }
+socials: { instagram: 0, tiktok: 0, spotify: 0, twitter: 0 }
 ---
 
 La Blackie is a rising female singer from Spain who has been making waves in the music industry with her unique sound and style. Her most recent song, "NO HOOK Freestyle Pt. 2," has been gaining popularity and attention from fans and critics alike. In this article, we will explore La Blackie's background, her musical journey, and the inspiration behind her latest release.

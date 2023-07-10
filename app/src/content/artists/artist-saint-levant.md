@@ -26,15 +26,18 @@ video:
     src: '/images/artist-images/saint-levant/saint-levant-video.mp4',
     alt: 'Imagen del articulo, artista masculino Sain Levant',
   }
+socials: { instagram: 759000, tiktok: 828700, spotify: 2026828, twitter: 0 }
 ---
 
-## The Palestinian-French Trilingual Rapper
+<h2 class="font-extrabold mb-4 text-2xl">The Palestinian-French Trilingual Rapper</h2>
 
 Saint Levant is a 22-year-old Palestinian-French rapper who has been making music since he was 14. He fuses English, French, and Arabic to bring a unique take on modern global music. In this article, we will delve into his background, his music, and his impact on the music industry.
 
-### Introduction
+<h3 class="font-extrabold mb-4 text-xl">Introduction</h3>
 
 Saint Levant, born Marwan Abdelhamid, is a Palestinian-French rapper who has been making music since he was 14. He is known for his trilingual wordplay, fusing English, French, and Arabic to bring a unique take on modern global music. His music is nostalgic towards the early 2000s, yet intensely forward-thinking, surpassing the limits of genre. In this article, we will explore Saint Levant's background, his music, and his impact on the music industry.
+
+<img class='aspect-square object-cover my-4 rounded-lg' src="/images/artist-images/saint-levant/saint-levant-1.png"/>
 
 ### Background
 

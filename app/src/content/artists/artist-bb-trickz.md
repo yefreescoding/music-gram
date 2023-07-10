@@ -26,6 +26,7 @@ video:
     src: '/images/artist-images/bb-trickz/bb-trickz-video.mp4',
     alt: 'Imagen de portada de bb trickz',
   }
+socials: { instagram: 212000, tiktok: 152900, spotify: 270593, twitter: 28700 }
 ---
 
 ## The Rising Female Artist Blending Genres and Breaking Boundaries

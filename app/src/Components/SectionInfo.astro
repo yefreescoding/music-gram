@@ -13,10 +13,10 @@ const { position = true } = Astro.props;
   {
     position && (
       <>
-        <div class="intro__text flex flex-col basis-[20em] grow gap-4 justify-center">
+        <div class="intro__text flex flex-col basis-[20em] grow p-4 lg:p-[0] gap-4 justify-center">
           <slot name="text" />
         </div>
-        <div class="intro__images flex flex-col basis-[20em] grow">
+        <div class="intro__images flex flex-col basis-[20em] grow p-4 lg:p-[0]">
           <slot name="images" />
         </div>
       </>
@@ -25,10 +25,10 @@ const { position = true } = Astro.props;
   {
     !position && (
       <>
-        <div class="intro__images flex flex-col basis-[20em] grow">
+        <div class="intro__images flex flex-col basis-[20em] grow p-4 lg:p-[0]">
           <slot name="images" />
         </div>
-        <div class="intro__text flex flex-col basis-[20em] grow p-8 gap-4 justify-center">
+        <div class="intro__text flex flex-col basis-[20em] grow p-4 lg:p-[0] gap-4 justify-center">
           <slot name="text" />
         </div>
       </>

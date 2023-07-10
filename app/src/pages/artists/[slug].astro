@@ -9,7 +9,7 @@ import SectionInfo from '../../Components/SectionInfo.astro';
 //import utils
 import { formatNumber } from '../../js/utils';
 
-import { CollectionEntry, getCollection, getEntryBySlug } from 'astro:content';
+import { CollectionEntry, getCollection } from 'astro:content';
 import MusicPlayer from '../../Components/MusicPlayer.astro';
 
 export async function getStaticPaths() {
@@ -33,26 +33,22 @@ const { Content } = await post.render();
 const dashNumbersData = [
   {
     social: 'instagram',
-    icon: '/',
-    followers: 3000000,
+    icon: '/icons/instagram.avif',
     percentage: 30,
   },
   {
     social: 'tiktok',
-    icon: '/',
-    followers: 14000000,
+    icon: '/icons/tiktok.avif',
     percentage: 70,
   },
   {
     social: 'spotify',
-    icon: '/',
-    followers: 2000000,
+    icon: '/icons/spotify.avif',
     percentage: 15,
   },
   {
     social: 'twitter',
-    icon: '/',
-    followers: 500000,
+    icon: '/icons/twitter.avif',
     percentage: 7,
   },
 ];
@@ -64,20 +60,34 @@ const dashNumbersData = [
       <source src={post.data.video.src} type="video/mp4" />
     </video>
   </Cover>
-  <section aria-label="Artist data">
-    <h2>{post.data.artist}</h2>
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
-      {
-        dashNumbersData.map((data) => (
-          <DashNumber
-            social={data.social}
-            icon={data.icon}
-            followers={formatNumber(data.followers)}
-            percentage={data.percentage}
-          />
-        ))
-      }
-    </div>
+  <section
+    class="p-4 lg:p-[0] grid grid-cols-2 lg:grid-cols-4 gap-4"
+    aria-label="Artist data"
+  >
+    <DashNumber
+      social={dashNumbersData[0].social}
+      icon={dashNumbersData[0].icon}
+      followers={formatNumber(post.data.socials.instagram)}
+      percentage={dashNumbersData[0].percentage}
+    />
+    <DashNumber
+      social={dashNumbersData[1].social}
+      icon={dashNumbersData[1].icon}
+      followers={formatNumber(post.data.socials.tiktok)}
+      percentage={dashNumbersData[1].percentage}
+    />
+    <DashNumber
+      social={dashNumbersData[2].social}
+      icon={dashNumbersData[2].icon}
+      followers={formatNumber(post.data.socials.spotify)}
+      percentage={dashNumbersData[2].percentage}
+    />
+    <DashNumber
+      social={dashNumbersData[3].social}
+      icon={dashNumbersData[3].icon}
+      followers={formatNumber(post.data.socials.twitter)}
+      percentage={dashNumbersData[3].percentage}
+    />
   </section>
   <SectionInfo position={true}>
     <article
@@ -92,7 +102,7 @@ const dashNumbersData = [
 
 <style lang="scss">
   .entry-section {
-    margin: 10vh 0;
+    // margin: 10vh 0;
     gap: 3rem;
     &__article,
     &__ps {

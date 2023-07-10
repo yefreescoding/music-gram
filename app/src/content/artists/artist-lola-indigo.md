@@ -26,6 +26,7 @@ video:
     src: '/images/artist-images/lola-indigo/lola-indigo-video.mp4',
     alt: 'https://www.youtube.com/embed/pR862HV1mb0',
   }
+socials: { instagram: 0, tiktok: 0, spotify: 0, twitter: 0 }
 ---
 
 ## The Spanish Singer and Dancer Taking the Music World by Storm
