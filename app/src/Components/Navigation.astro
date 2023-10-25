@@ -1,21 +1,26 @@
 ---
 // import components
-import Links from './Links.astro';
+import Links from "./Links.astro";
 const navigationLinks = [
   {
-    name: 'Discover',
-    link: '/music/',
-    icon: '/icons/playlist.svg',
+    name: "Discover",
+    link: "/music/",
+    icon: "/icons/playlist.svg",
   },
   {
-    name: 'Support',
-    link: '/',
-    icon: '/icons/music-note-add.svg',
+    name: "Support",
+    link: "/",
+    icon: "/icons/music-note-add.svg",
   },
   {
-    name: 'About us',
-    link: '/about/',
-    icon: '/icons/group.svg',
+    name: "About us",
+    link: "/about/",
+    icon: "/icons/group.svg",
+  },
+  {
+    name: "Privacy Policy",
+    link: "/privacy-policy/",
+    icon: "/icons/group.svg",
   },
 ];
 ---
@@ -30,7 +35,7 @@ const navigationLinks = [
         classes="flex gap-[5px] text-grey-200 p-[7px]"
         icon={{
           name: link.icon,
-          side: 'left',
+          side: "left",
         }}
         hide="hide"
       />
@@ -39,7 +44,7 @@ const navigationLinks = [
 </nav>
 
 <style lang="scss">
-  @use '../assets/scss/util/' as *;
+  @use "../assets/scss/util/" as *;
 
   .header {
     &__nav {
