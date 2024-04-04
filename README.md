@@ -1,44 +1,55 @@
-# Music.gram web site.
+# 🍥Fuwari
 
-All the music that I like and all the artist that inspired, together in just one place.
+A static blog template built with [Astro](https://astro.build).
 
-## Table of contents
+[**🖥️Live Demo (Vercel)**](https://fuwari.vercel.app)&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;[**🌏中文 README**](https://github.com/saicaca/fuwari/blob/main/README.zh-CN.md)&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;[**📦Old Hexo Version**](https://github.com/saicaca/hexo-theme-vivia)
 
-- [Overview](#overview)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
+![Preview Image](https://raw.githubusercontent.com/saicaca/resource/main/fuwari/home.png)
 
-## Overview
+## ✨ Features
 
-### Screenshot
+- [x] Built with [Astro](https://astro.build) and [Tailwind CSS](https://tailwindcss.com)
+- [x] Smooth animations and page transitions
+- [x] Light / dark mode
+- [x] Customizable theme colors & banner
+- [x] Responsive design
+- [ ] Comments
+- [x] Search
+- [ ] TOC
 
-![](/)
+## 🚀 How to Use
 
-### Links
+1. [Generate a new repository](https://github.com/saicaca/fuwari/generate) from this template or fork this repository.
+2. To edit your blog locally, clone your repository, run `pnpm install` AND `pnpm add sharp` to install dependencies.  
+   - Install [pnpm](https://pnpm.io) `npm install -g pnpm` if you haven't.
+3. Edit the config file `src/config.ts` to customize your blog.
+4. Run `pnpm new-post <filename>` to create a new post and edit it in `src/content/posts/`.
+5. Deploy your blog to Vercel, Netlify, GitHub Pages, etc. following [the guides](https://docs.astro.build/en/guides/deploy/).
 
-- Solution URL: [GitHub Repository](https://github.com/yefreescoding/bb-trickz-landing-page.git)
-- Live Site URL: [Vercel Live Site](https://bb-trickz-landing-page.vercel.app)
+## ⚙️ Frontmatter of Posts
 
-## My process
+```yaml
+---
+title: My First Blog Post
+published: 2023-09-09
+description: This is the first post of my new Astro blog.
+image: /images/cover.jpg
+tags: [Foo, Bar]
+category: Front-end
+draft: false
+---
+```
 
-### Built with
+## 🧞 Commands
 
-- Semantic HTML5 markup
-- CSS custom properties
-- Mobile-first workflow
-- Astro. Framework.
-- Conten collections
+All commands are run from the root of the project, from a terminal:
 
-### Useful resources
-
-- [Build a Simple Website with HTML](https://youtu.be/krfUjg0S2uI) - Really useful video, TOTALLY FREE, it taught me about the process of building a website, how to organize de folder and he research we should do before starting to write any code.
-- [Kevin Powell - Youtube Channel](https://www.example.com) - This awesome human being will teach in the most amazing way how to love CSS. Go check it out.
-
-## Author
-
-- Website - [Yefree De Los Santos](https://github.com/yefreescoding)
-- Twitter - [@YefreeCodes](https://twitter.com/YefreeCodes)
+| Command                             | Action                                           |
+|:------------------------------------|:-------------------------------------------------|
+| `pnpm install` AND `pnpm add sharp` | Installs dependencies                            |
+| `pnpm dev`                          | Starts local dev server at `localhost:4321`      |
+| `pnpm build`                        | Build your production site to `./dist/`          |
+| `pnpm preview`                      | Preview your build locally, before deploying     |
+| `pnpm new-post <filename>`          | Create a new post                                |
+| `pnpm astro ...`                    | Run CLI commands like `astro add`, `astro check` |
+| `pnpm astro --help`                 | Get help using the Astro CLI                     |
