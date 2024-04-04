@@ -14,7 +14,7 @@ const { title, url, description, pubDate, author, image, tags } = Astro.props;
         />
       </div>
       <div
-        class="flex flex-col items-start justify-between h-full flex-1 w-full p-6"
+        class="flex flex-col items-start justify-between h-full flex-1 w-full p-4"
       >
         <div>
           <div class="inline-flex space-x-1 items-center">
@@ -32,7 +32,7 @@ const { title, url, description, pubDate, author, image, tags } = Astro.props;
         <div class="mt-4 flex space-x-2">
           {
             tags.map((tag) => (
-              <span class="text-xs font-medium text-black">{tag}</span>
+              <span class="rounded-sm bg-[var(--clr-tags)] px-2 p-1 text-xs font-medium text-black">{tag}</span>
             ))
           }
         </div>
@@ -40,3 +40,12 @@ const { title, url, description, pubDate, author, image, tags } = Astro.props;
     </article>
   </a>
 </li>
+
+<style>
+  article {
+    transition: all 240ms ease-in-out;
+    &:hover {
+      box-shadow: 0 0 1.5rem hsl(0, 0%, 85%);
+    }
+  }
+</style>
