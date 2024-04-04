@@ -12,11 +12,11 @@
   "ss08" 1, /* Square quotes */
   "zero" 1, /* Slashed zero */
   "tnum" 1, /* Tabular numbers */
-    "cv03" 1, /* Open six */
-    "cv04" 1, /* Open nine */
-    "cv01" 1, /* Alternate one */
-    "cv09", /* Flat-top three */
-    "cv02" 1; /* Open 4 */
+  "cv03" 1, /* Open six */
+  "cv04" 1, /* Open nine */
+  "cv01" 1, /* Alternate one */
+  "cv09", /* Flat-top three */
+  "cv02" 1; /* Open 4 */
 }
 @supports (font-variation-settings: normal) {
   /* Use variable font if supported */
@@ -37,9 +37,10 @@
   --astro-code-token-parameter: #ffffff;
   --astro-code-token-function: black;
   --astro-code-token-string-expression: #fe351b;
-  --clr-accent: hsl(7, 99%, 55%);
-  --astro-code-token-punctuation: #ffffff;
+  --clr-accent: hsl(0, 0%, 20%);
+  --clr-hover-link: hsl(197, 91%, 37%);
   --astro-code-token-link: #ffffff;
+  
 
 }
 
