@@ -33,6 +33,7 @@
   --astro-code-token-string: #00000050;
   --astro-code-token-comment: #00000060;
   --clr-tags: hsl(0, 0%, 90%);
+  --clr-tags-hover: hsl(0, 0%, 70%);
   --astro-code-token-keyword: black;
   --astro-code-token-parameter: #ffffff;
   --astro-code-token-function: black;
@@ -40,8 +41,7 @@
   --clr-accent: hsl(0, 0%, 20%);
   --clr-hover-link: hsl(197, 91%, 37%);
   --astro-code-token-link: #ffffff;
-  
-
+  color-scheme: light;
 }
 
 

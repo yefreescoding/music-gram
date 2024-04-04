@@ -1,44 +1,38 @@
 ---
 import "../styles/global.css";
-import { AstroSeo } from "@astrolib/seo";
+// import { AstroSeo } from "@astrolib/seo";
+import { SEO } from "astro-seo"
 ---
 <!---
 Use AstroSeo in all the pages you want different Seo than the index page
 -->
-<AstroSeo
-  title="musicgram"
-  description="Your site description goes here"
-  canonical="https://www.lexingtonthemes.com"
-  openGraph={{
-    url: "https://music-gram-yefreescoding.vercel.app/music",
-    title: "Open Graph Title",
-    description: "Open Graph Description",
-    images: [
-      {
-        url: "https://music-gram-yefreescoding.vercel.app/music/opengraph/social-og.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Social open graph",
-        type: "image/jpeg",
-      },
-      {
-        url: "https://music-gram-yefreescoding.vercel.app/music/opengraph/twitter-og.jpg",
-        width: 4096,
-        height: 4096,
-        alt: "Twitter open graph",
-        type: "image/jpeg",
-      },
-      { url: "https://music-gram-yefreescoding.vercel.app/music/opengraph/social-og.jpg" },
-      { url: "https://music-gram-yefreescoding.vercel.app/music/opengraph/twitter-og.jpg" },
-    ],
-    site_name: "musicgram",
-  }}
-  twitter={{
-    handle: "@TwitterHandle",
-    site: "@site",
-    cardType: "summary_large_image",
-  }}
-/>
+ <SEO
+      title="musicgram | Music, musique, música, موسيقى , 音乐, 音楽"
+      description="Where the artist that are all the playing in my spotify come together."
+      openGraph={{
+        basic: {
+          title: "A Very Descriptive Title",
+          type: "A type.",
+          image: "https://user-images.githubusercontent.com/5182256/131216951-8f74f425-f775-463d-a11b-0e01ad9fce8d.png",
+        }
+      }}
+      twitter={{
+        creator: "@jonasmerlins1"
+      }}
+      extend={{
+        // extending the default link tags
+        link: [{ rel: "icon", href: "/favicon.ico" }],
+        // extending the default meta tags
+        meta: [
+          {
+            name: "twitter:image",
+            content: "https://user-images.githubusercontent.com/5182256/131216951-8f74f425-f775-463d-a11b-0e01ad9fce8d.png",
+          },
+          { name: "twitter:title", content: "Tinker Tailor Soldier Spy" },
+          { name: "twitter:description", content: "Agent" },
+        ],
+      }}
+    />
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width" />
 <meta charset="UTF-8" />
