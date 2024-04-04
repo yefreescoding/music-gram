@@ -9,7 +9,7 @@ const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
 
 // Sort posts by date in descending order (newest first)
 const sortedPosts = allPosts.sort(
-  (a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate)
+  (a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
 );
 ---
 
@@ -27,7 +27,7 @@ const sortedPosts = allPosts.sort(
         }
       </ol>
       <ul
-        class="grid grid-cols-1 mt-12 gap-1 gap-y-24 lg:grid-cols-3 sm:grid-cols-2"
+        class="grid grid-cols-1 mt-12 gap-4 lg:grid-cols-3 sm:grid-cols-2"
       >
         {
           sortedPosts.map((post) => (
