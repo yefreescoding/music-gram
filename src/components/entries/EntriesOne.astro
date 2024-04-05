@@ -1,17 +1,36 @@
 ---
+const { 
+  title, 
+  url, 
+  description, 
+  pubDate, 
+  author, 
+  image, 
+  tags, 
+  mediaTransitionName } = Astro.props;
 
-const { title, url, description, pubDate, author, image, tags } = Astro.props;
+  import Image from "astro/components/Image.astro";
 ---
 
 <li>
-  <a href={url} title={title} class="group">
-    <article class="bg-[var(--clr-card-bgk)] p-4 flex-1 h-full flex flex-col rounded-xl overflow-hidden">
-      <div class="block w-full lg:col-span-2">
-        <img
-          class="aspect-[1] object-cover bg-center h-full w-full rounded-lg"
+  <a 
+    href={url} 
+    title={title} 
+    class="group"
+    >
+    <article 
+      class="bg-[var(--clr-card-bgk)] p-4 flex-1 h-full flex flex-col rounded-xl overflow-hidden"
+     >
+      <div 
+        class="block w-full lg:col-span-2" 
+        transition:name={mediaTransitionName}
+        >
+        <Image 
+          class="w-full aspect-[1]  rounded-[0.65rem] object-cover object-top"
           src={image}
           alt={title}
-        />
+          width={100} 
+          height={50}/>
       </div>
       <div
         class="flex flex-col items-start justify-between h-full flex-1 w-full mt-2"

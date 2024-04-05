@@ -123,17 +123,16 @@ p {
   grid-template-columns: 1fr;
   gap: 1rem;
 
-  & a {
-    color: var(--clr-accent, blue);
-    font-weight: 600;
-    text-decoration: underline;
-  }
-
   & ul {
     list-style-type: circle;
     padding-left: 1rem;
   }
 
+  & a {
+    color: var(--clr-hover-link);
+    font-weight: 600;
+    text-decoration: underline;
+  }
 
   & h2 {
     font-size: clamp(1.8rem, 1.75vw, 2rem);

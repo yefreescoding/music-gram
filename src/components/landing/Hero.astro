@@ -1,9 +1,59 @@
-<section >
-  <div class="px-8 py-12 md:px-12 mx-auto lg:pb-24 max-w-7xl lg:px-32   lg:pt-32">
-    <div class="lg:text-center">
-      <h1 class="text-6xl tracking-tight text-balance font-black text-black md:text-7xl">
+<section class="hero">
+  <div class="hero_back" data-position="top"></div>
+  <div class="hero_back" data-position="bottom"></div>
+  <div class="hero_back" data-position="left"></div>
+  <div class="hero_back" data-position="right"></div>
+  <div class="px-8 py-12 md:px-12 mx-auto lg:pb-24 max-w-7xl lg:px-32 lg:pt-32">
+    <div class="text-center">
+      <h1 class="text-6xl text-balance font-black text-black md:text-7xl">
         Influencers That Influence. 
       </h1>
     </div>
   </div>
 </section>
+
+<style>
+  .hero{
+    position: relative;
+    isolation: isolate;
+  }
+
+  .hero_back {
+    /* padding-inline: 8rem; */
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    border-radius: 50%;
+    margin: auto;
+    filter: blur(1.5rem);
+
+    &[data-position="top"]{
+      --size: 8.625em;
+      transform: translateX(10px) translateY(-50px);
+      background-color: aqua;
+      width: var(--size);
+      height: var(--size);
+    }
+    &[data-position="bottom"]{
+      --size: 7em;
+      transform: translateX(-20px) translateY(80px);
+      background-color: lightgreen;
+      width: var(--size);
+      height: var(--size);
+    }
+    &[data-position="left"]{
+      --size: 7.625em;
+      transform: translateX(-150px) translateY(10px);
+      background-color: lightcoral;
+      width: var(--size);
+      height: var(--size);
+    }
+    &[data-position="right"]{
+      --size: 6.625em;
+      transform: translateX(90px) translateY(10px);
+      background-color: rgb(236, 233, 53);
+      width: var(--size);
+      height: var(--size);
+    }
+  }
+</style>

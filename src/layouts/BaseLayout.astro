@@ -4,13 +4,16 @@ import Navigation from "@/components/global/Navigation.astro";
 import Footer from "@/components/global/Footer.astro";
 
 import '@/styles/globals.css'
+
+import ViewTransitions from "astro/components/ViewTransitions.astro";
 ---
 
-<html lang="en">
+<html lang="en" transition:animate="none">
   <head>
     <BaseHead />
+    <ViewTransitions />
   </head>
-  <body class="bg-[var(--clr-bgk)] flex flex-col min-h-screen relative">
+  <body class="bg-[var(--clr-bgk)] flex flex-col min-h-screen relative" transition:animate="none">
     <Navigation />
     <main class="flex-grow"><slot /></main>
     <Footer />
