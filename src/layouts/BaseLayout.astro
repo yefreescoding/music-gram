@@ -2,13 +2,15 @@
 import BaseHead from "@/components/BaseHead.astro";
 import Navigation from "@/components/global/Navigation.astro";
 import Footer from "@/components/global/Footer.astro";
+
+import '@/styles/globals.css'
 ---
 
 <html lang="en">
   <head>
     <BaseHead />
   </head>
-  <body class="bg-[var(--astro-code-color-background)] flex flex-col min-h-screen">
+  <body class="bg-[var(--clr-bgk)] flex flex-col min-h-screen">
     <Navigation />
     <main class="flex-grow"><slot /></main>
     <Footer />
