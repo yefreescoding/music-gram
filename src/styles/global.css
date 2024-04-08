@@ -1,9 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi+Fun:wght@400..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Reem+Kufi+Fun:wght@400..700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 
 :root {
   font-family: Inter, sans-serif;
@@ -11,18 +10,18 @@
   /* font-family: ; */
   font-optical-sizing: auto;
   font-feature-settings:
-  "liga" 1,
-  "calt" 1, /* Contextual Alternates */
-  "dlig" 1, /* Discretionary Ligatures */
-  "ss07" 1, /* fSquare punctuation */
-  "ss08" 1, /* Square quotes */
-  "zero" 1, /* Slashed zero */
-  "tnum" 1, /* Tabular numbers */
-  "cv03" 1, /* Open six */
-  "cv04" 1, /* Open nine */
-  "cv01" 1, /* Alternate one */
-  "cv09", /* Flat-top three */
-  "cv02" 1; /* Open 4 */
+    "liga" 1,
+    "calt" 1,
+    /* Contextual Alternates */ "dlig" 1,
+    /* Discretionary Ligatures */ "ss07" 1,
+    /* fSquare punctuation */ "ss08" 1,
+    /* Square quotes */ "zero" 1,
+    /* Slashed zero */ "tnum" 1,
+    /* Tabular numbers */ "cv03" 1,
+    /* Open six */ "cv04" 1,
+    /* Open nine */ "cv01" 1,
+    /* Alternate one */ "cv09",
+    /* Flat-top three */ "cv02" 1; /* Open 4 */
 }
 
 @supports (font-variation-settings: normal) {
@@ -110,14 +109,14 @@ p {
   text-wrap: pretty;
 }
 
-@media (prefers-reduced-motion: no-preference){
-  :has(:target){
+@media (prefers-reduced-motion: no-preference) {
+  :has(:target) {
     scroll-behavior: smooth;
     scroll-padding-top: 3rem;
   }
 }
 
-.prose-styles {
+.prose__styles {
   /* @apply text-sm prose text-neutral-600 dark:text-neutral-600 prose-a:font-normal prose-a:text-blue-400 hover:prose-a:text-black prose-h1:text-black prose-img:border-2  prose-img:bg-neutral-50 dark:prose-img:bg-neutral-800 prose-img:border-transparent dark:prose-img:invert prose-h2:text-black prose-h2:font-semibold  prose-pre:font-mono max-w-none prose-headings:font-display; */
   display: grid;
   grid-template-columns: 1fr;
@@ -152,5 +151,12 @@ p {
     aspect-ratio: 16/9;
     object-fit: cover;
     object-position: top;
+  }
+
+  & blockquote {
+    padding: 0.5rem 0 0.5rem 1rem;
+    border-left: solid 5px var(--clr-tags-hover);
+    background-color: var(--clr-card-bgk);
+    font-style: italic;
   }
 }
