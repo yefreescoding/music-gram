@@ -159,4 +159,26 @@ p {
     background-color: var(--clr-card-bgk);
     font-style: italic;
   }
+
+  & .social_media_link {
+    width: fit-content;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    font-weight: 400;
+    padding: 0rem 0.2rem;
+    border-radius: 0.3rem;
+    text-decoration: none;
+    background-color: var(--_clr-bgk);
+    color: var(--_clr-text);
+    border: 1px solid var(--_clr-text);
+  }
+  & .social_media_link[data-social="youtube"] {
+    --_clr-bgk: hsl(0, 100%, 98%);
+    --_clr-text: hsl(0, 100%, 30%);
+  }
+  & .social_media_link[data-social="instagram"] {
+    --_clr-bgk: hsl(323, 100%, 98%);
+    --_clr-text: hsl(325, 98%, 30%);
+  }
 }
