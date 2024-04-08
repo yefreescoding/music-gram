@@ -1,0 +1,72 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import EntriesOne from "@/components/entries/EntriesOne.astro";
+import { getCollection } from "astro:content";
+
+const allPosts = await getCollection("posts");
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection("posts");
+  const uniqueTags = [
+    ...new Set(allPosts.map((post) => post.data.tags).flat()),
+  ];
+
+  return uniqueTags.map((tag) => {
+    // Filter posts by tag
+    const filteredPosts = allPosts.filter((post) =>
+      post.data.tags.includes(tag)
+    );
+    // Sort filtered posts by date in descending order
+    const sortedPosts = filteredPosts.sort(
+      (a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
+    );
+
+    return {
+      params: { tag },
+      props: { posts: sortedPosts },
+    };
+  });
+}
+const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+---
+
+<BaseLayout pageTitle={tag}>
+  <section>
+    <div
+      class="px-8 py-12 md:px-12 mx-auto lg:pb-24 max-w-7xl lg:px-32 lg:pt-12"
+    >
+      <h1 class="text-3xl tracking-tight text-balance font-black text-black md:text-6xl uppercase mb-12">{tag}</h1>
+      <!-- Content omitted for brevity -->
+      <ol role="list" class="flex flex-wrap gap-3">
+        {
+          tags.map((tag) => (
+            <li class="rounded-sm bg-[var(--clr-tags)] px-2 p-1  t inline-flex items-center uppercase mx-auto hover:bg-[var(--clr-tags-hover)] text-xs font-medium text-black">
+              <a href={`/tags/${tag}`}>{tag}</a>
+            </li>
+          ))
+        }
+      </ol>
+      <ul
+        class="grid grid-cols-1 mt-12 gap-4 lg:grid-cols-3 sm:grid-cols-2"
+      >
+        {
+          posts.map((post) => (
+            <EntriesOne
+              url={"/posts/" + post.slug}
+              title={post.data.title}
+              description={post.data.description}
+              alt={post.data.title}
+              pubDate={post.data.pubDate.toString().slice(0, 10)}
+              author={post.data.author}
+              image={post.data.image.url}
+              tags={post.data.tags}
+            />
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Reem+Kufi+Fun:wght@400..700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, sans-serif;
+  --font-h: "Reem Kufi Fun", sans-serif;
+  /* font-family: ; */
+  font-optical-sizing: auto;
+  font-feature-settings:
+    "liga" 1,
+    "calt" 1,
+    /* Contextual Alternates */ "dlig" 1,
+    /* Discretionary Ligatures */ "ss07" 1,
+    /* fSquare punctuation */ "ss08" 1,
+    /* Square quotes */ "zero" 1,
+    /* Slashed zero */ "tnum" 1,
+    /* Tabular numbers */ "cv03" 1,
+    /* Open six */ "cv04" 1,
+    /* Open nine */ "cv01" 1,
+    /* Alternate one */ "cv09",
+    /* Flat-top three */ "cv02" 1; /* Open 4 */
+}
+
+@supports (font-variation-settings: normal) {
+  /* Use variable font if supported */
+  :root {
+    font-family: InterVariable, sans-serif;
+  }
+}
+
+:root {
+  --astro-code-color-text: hsl(0, 0%, 20%);
+  --clr-bgk: hsl(0, 0%, 95%);
+  --clr-card-bgk: hsl(0, 0%, 99%);
+  --astro-code-token-constant: #00000080;
+  --astro-code-token-string: #00000050;
+  --astro-code-token-comment: #00000060;
+  --clr-tags: hsl(0, 0%, 90%);
+  --clr-tags-hover: hsl(0, 0%, 70%);
+  --astro-code-token-keyword: black;
+  --astro-code-token-parameter: #ffffff;
+  --astro-code-token-function: black;
+  --astro-code-token-string-expression: #fe351b;
+  --clr-accent: hsl(0, 0%, 20%);
+  --clr-hover-link: hsl(197, 91%, 37%);
+  --astro-code-token-link: #ffffff;
+  color-scheme: light;
+}
+/* CSS */
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  hanging-punctuation: first last;
+}
+/*
+  Typographic tweaks!
+  - Add accessible line-height
+  - Improve text rendering
+*/
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  margin: 0;
+  padding: 0;
+}
+body {
+  line-height: 1.25;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/* 
+text-wrap: balance;
+- Only works for the latest versions of Chrome
+*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+  font-family: var(--font-h);
+}
+
+p {
+  /* Change this according to your preferences */
+  max-width: 75ch;
+  text-wrap: pretty;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :has(:target) {
+    scroll-behavior: smooth;
+    scroll-padding-top: 3rem;
+  }
+}
+
+.prose__styles {
+  /* @apply text-sm prose text-neutral-600 dark:text-neutral-600 prose-a:font-normal prose-a:text-blue-400 hover:prose-a:text-black prose-h1:text-black prose-img:border-2  prose-img:bg-neutral-50 dark:prose-img:bg-neutral-800 prose-img:border-transparent dark:prose-img:invert prose-h2:text-black prose-h2:font-semibold  prose-pre:font-mono max-w-none prose-headings:font-display; */
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+
+  & ul {
+    list-style-type: circle;
+    padding-left: 1rem;
+  }
+
+  & a {
+    color: var(--clr-hover-link);
+    font-weight: 600;
+    text-decoration: underline;
+  }
+
+  & h2 {
+    font-size: clamp(1.8rem, 1.75vw, 2rem);
+  }
+
+  & h3 {
+    font-size: clamp(1.5rem, 1.75vw, 1.8rem);
+  }
+
+  & p {
+    font-size: clamp(1rem, 1.75vw, 1.2rem);
+  }
+
+  & img {
+    border-radius: 0.75rem;
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  & blockquote {
+    padding: 0.5rem 0 0.5rem 1rem;
+    border-left: solid 5px var(--clr-tags-hover);
+    background-color: var(--clr-card-bgk);
+    font-style: italic;
+  }
+}
