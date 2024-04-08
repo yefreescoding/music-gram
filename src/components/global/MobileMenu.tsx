@@ -4,12 +4,8 @@ import {
   DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuPortal,
   DropdownMenuSeparator,
   DropdownMenuShortcut,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
@@ -28,7 +24,7 @@ export function MobileMenu() {
               className="inline-flex"
               strokeLinecap="round"
               strokeLinejoin="round"
-              strokewidth="2"
+              strokeWidth="2"
               d="M4 6h16M4 12h16M4 18h16"
             ></path>
             <path
