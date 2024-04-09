@@ -2,7 +2,7 @@
 import { MobileMenu } from "@/components/global/MobileMenu";
 ---
 
-<div class="header">
+<section class="header">
   <div class="px-4 md:px-12 mx-auto max-w-7xl py-2 lg:px-32 text-xs">
     <div
       x-data="{ open: false }"
@@ -26,7 +26,7 @@ import { MobileMenu } from "@/components/global/MobileMenu";
         >
           <li>
             <a
-              href="about.astro"
+              href="/about"
               class="text-base text-[var(--astro-code-color-text)] hover:text-[var(--clr-hover-link)]"
             >
               About
@@ -74,7 +74,7 @@ import { MobileMenu } from "@/components/global/MobileMenu";
       </nav>
     </div>
   </div>
-</div>
+</section>
 
 <style>
   .header {

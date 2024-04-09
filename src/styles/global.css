@@ -173,6 +173,7 @@ p {
   }
 
   & .social_media_link {
+    font-size: 0.9rem;
     width: fit-content;
     display: flex;
     gap: 0.5rem;
