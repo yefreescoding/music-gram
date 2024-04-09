@@ -17,21 +17,13 @@ const links = [
     name: "github",
     link: "/",
   },
-  {
-    name: "twitter",
-    link: "/",
-  },
-  {
-    name: "instagram",
-    link: "/",
-  },
 ];
 
 export function MobileMenu() {
   const [openMenu, setOpenMenu] = useState(false);
 
   const toggleButton = () => {
-    setOpenMenu(!openMenu); // Toggle the value of 'isButtonOn'
+    setOpenMenu(!openMenu);
   };
 
   return (
@@ -98,7 +90,7 @@ export function MobileMenu() {
         </div>
         <div className="text-left mr-3">
           <p>Menu</p>
-          <p className="font-bold capitalize">support</p>
+          <p className="font-bold capitalize">home</p>
         </div>
         {/* <svg
           width="20px"
@@ -153,51 +145,77 @@ export function MobileMenu() {
           {links.map((link) => (
             <li
               key={link.name}
-              className="flex p-2 w-full hover:bg-[var(--clr-tags)] transition-all rounded-md"
+              className="flex items-center p-2 w-full hover:bg-[var(--clr-tags)] transition-all rounded-md"
             >
               <a href={link.link} className="capitalize w-full">
                 {link.name}
               </a>
-              <svg
-                width="22px"
-                height="22px"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                color="#000000"
-              >
-                <path
-                  d="M12 2C16.9706 2 21 6.10406 21 11.1667C21 11.235 20.9993 11.3031 20.9978 11.3711C20.9773 12.3247 20.1331 13 19.1792 13H4.82077C3.8669 13 3.02268 12.3247 3.00219 11.3711C3.00073 11.3031 3 11.235 3 11.1667C3 6.10406 7.02944 2 12 2Z"
-                  stroke="#000000"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                ></path>
-                <path
-                  d="M6 13L7 14.125C7.5703 14.7666 7.5703 15.7334 7 16.375V16.375C6.4297 17.0166 6.4297 17.9834 7 18.625V18.625C7.5703 19.2666 7.5703 20.2334 7 20.875L6 22"
-                  stroke="#000000"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                ></path>
-                <path
-                  d="M11 13L12 14.125C12.5703 14.7666 12.5703 15.7334 12 16.375V16.375C11.4297 17.0166 11.4297 17.9834 12 18.625V18.625C12.5703 19.2666 12.5703 20.2334 12 20.875L11 22"
-                  stroke="#000000"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                ></path>
-                <path
-                  d="M16 13L17 14.125C17.5703 14.7666 17.5703 15.7334 17 16.375V16.375C16.4297 17.0166 16.4297 17.9834 17 18.625V18.625C17.5703 19.2666 17.5703 20.2334 17 20.875L16 22"
-                  stroke="#000000"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                ></path>
-              </svg>
+              <div className="h-2 w-2 rounded-full bg-slate-400"></div>
             </li>
           ))}
+          <li className="p-2 w-full border-b-[1px] border-[var(--clr-tags)]">
+            <h3>Our Socials</h3>
+          </li>
+          <li className="flex items-center p-2 w-full hover:bg-[var(--clr-tags)] transition-all rounded-md">
+            <a href="/" className="capitalize w-full">
+              Instagram
+            </a>
+            <svg
+              width="18px"
+              height="18px"
+              strokeWidth="1.2"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              color="currentColor"
+            >
+              <path
+                d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z"
+                stroke="currentColor"
+                strokeWidth="1.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              ></path>
+              <path
+                d="M3 16V8C3 5.23858 5.23858 3 8 3H16C18.7614 3 21 5.23858 21 8V16C21 18.7614 18.7614 21 16 21H8C5.23858 21 3 18.7614 3 16Z"
+                stroke="currentColor"
+                strokeWidth="1.2"
+              ></path>
+              <path
+                d="M17.5 6.51L17.51 6.49889"
+                stroke="currentColor"
+                strokeWidth="1.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              ></path>
+            </svg>
+          </li>
+          <li className="flex items-center p-2 w-full hover:bg-[var(--clr-tags)] transition-all rounded-md">
+            <a href="/" className="capitalize w-full">
+              Twitter
+            </a>
+            <svg
+              width="18px"
+              height="18px"
+              viewBox="0 0 24 24"
+              strokeWidth="1.2"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              color="currentColor"
+            >
+              <path
+                d="M16.8198 20.7684L3.75317 3.96836C3.44664 3.57425 3.72749 3 4.22678 3H6.70655C6.8917 3 7.06649 3.08548 7.18016 3.23164L20.2468 20.0316C20.5534 20.4258 20.2725 21 19.7732 21H17.2935C17.1083 21 16.9335 20.9145 16.8198 20.7684Z"
+                stroke="currentColor"
+                strokeWidth="1.2"
+              ></path>
+              <path
+                d="M20 3L4 21"
+                stroke="currentColor"
+                strokeWidth="1.2"
+                strokeLinecap="round"
+              ></path>
+            </svg>
+          </li>
         </ul>
       </div>
     </div>
