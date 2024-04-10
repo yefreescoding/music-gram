@@ -3,9 +3,10 @@ import BaseHead from "@/components/BaseHead.astro";
 import Navigation from "@/components/global/Navigation.astro";
 import Footer from "@/components/global/Footer.astro";
 
-import '@/styles/globals.css'
+import "@/styles/globals.css";
 
 import ViewTransitions from "astro/components/ViewTransitions.astro";
+import VerticalFade from "@/components/ui/VerticalFade.astro";
 ---
 
 <html lang="en" transition:animate="none">
@@ -13,10 +14,13 @@ import ViewTransitions from "astro/components/ViewTransitions.astro";
     <BaseHead />
     <ViewTransitions />
   </head>
-  <body class="bg-[var(--clr-bgk)] flex flex-col min-h-screen relative" transition:animate="none">
+  <body
+    class="bg-[var(--clr-bgk)] flex flex-col min-h-screen relative"
+    transition:animate="none"
+  >
     <Navigation />
+    <VerticalFade side="top" height={"100px"} />
     <main class="flex-grow"><slot /></main>
     <Footer />
   </body>
 </html>
-

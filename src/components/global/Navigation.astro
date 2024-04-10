@@ -3,7 +3,7 @@ import { MobileMenu } from "@/components/global/MobileMenu";
 import Themetoggle from "./Themetoggle.astro";
 ---
 
-<section class="header">
+<header class="header">
   <div class="px-4 md:px-12 mx-auto max-w-7xl py-2 lg:px-32 text-xs">
     <div
       x-data="{ open: false }"
@@ -76,14 +76,20 @@ import Themetoggle from "./Themetoggle.astro";
       </nav>
     </div>
   </div>
-</section>
+</header>
 
 <style>
   .header {
     position: sticky;
     inset: 0;
-    background-color: hsla(0, 0%, 95%, 0.3);
-    backdrop-filter: blur(0.35rem);
     z-index: 9999;
+    transition:
+      background 120ms linear,
+      backdrop-filter 120ms ease;
+
+    &:hover {
+      background: hsl(0, 0%, 93%);
+      backdrop-filter: blur(0.35rem);
+    }
   }
 </style>

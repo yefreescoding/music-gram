@@ -1,0 +1,38 @@
+---
+const { side, height } = Astro.props;
+---
+
+<div
+  aria-hidden
+  class="vertical_fade"
+  data-side={side}
+  style={{ height: height }}
+>
+</div>
+
+<style>
+  .vertical_fade {
+    --_gray1: hsl(0, 0%, 99%);
+    position: fixed;
+    pointer-events: none;
+    user-select: none;
+    width: 100%;
+    /* height: 100px; */
+    left: 0;
+    z-index: 1;
+    backdrop-filter: blur(1px);
+    will-change: transform;
+
+    &[data-side="top"] {
+      top: 0;
+      background: linear-gradient(to top, transparent, var(--_gray1));
+      mask-image: linear-gradient(to bottom, var(--_gray1) 25%, transparent);
+    }
+
+    &[data-side="bottom"] {
+      bottom: 0;
+      background: linear-gradient(to bottom, transparent 75%, var(--_gray1));
+      mask-image: linear-gradient(to top, var(--_gray1) 25%, transparent);
+    }
+  }
+</style>

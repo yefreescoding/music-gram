@@ -33,20 +33,20 @@
 
 :root {
   --astro-code-color-text: hsl(0, 0%, 20%);
-  --clr-bgk: hsl(0, 0%, 95%);
+  --clr-bgk: hsl(0, 0%, 93%);
   --clr-card-bgk: hsl(0, 0%, 99%);
-  --astro-code-token-constant: #00000080;
+  /* --astro-code-token-constant: #00000080;
   --astro-code-token-string: #00000050;
-  --astro-code-token-comment: #00000060;
+  --astro-code-token-comment: #00000060; */
   --clr-tags: hsl(0, 0%, 90%);
   --clr-tags-hover: hsl(0, 0%, 70%);
-  --astro-code-token-keyword: black;
+  /* --astro-code-token-keyword: black;
   --astro-code-token-parameter: #ffffff;
   --astro-code-token-function: black;
-  --astro-code-token-string-expression: #fe351b;
+  --astro-code-token-string-expression: #fe351b; */
   --clr-accent: hsl(0, 0%, 20%);
   --clr-hover-link: hsl(197, 91%, 37%);
-  --astro-code-token-link: #ffffff;
+  /* --astro-code-token-link: #ffffff; */
   color-scheme: light;
 }
 /* CSS */
@@ -173,19 +173,22 @@ p {
   }
 
   & .social_media_link {
-    font-size: 0.9rem;
     width: fit-content;
     display: flex;
     gap: 0.5rem;
     align-items: center;
-    font-weight: 400;
-    padding: 0rem 0.2rem;
+    font-weight: 500;
+    padding: 3px;
     border-radius: 0.3rem;
     text-decoration: none;
     background-color: var(--_clr-bgk);
     color: var(--_clr-text);
-    /* border: 1px solid var(--_clr-text); */
-    box-shadow: 0 0 1.5px var(--_clr-text);
+    box-shadow: 0 0 0.5px var(--_clr-text);
+
+    & svg {
+      stroke-width: 1.8;
+      width: 24px;
+    }
   }
   & .social_media_link[data-social="youtube"] {
     --_clr-bgk: hsl(0, 100%, 98%);
