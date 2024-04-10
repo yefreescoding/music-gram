@@ -1,17 +1,17 @@
 <section class="">
   <div class="px-8 py-12 md:px-12 mx-auto lg:pb-24 max-w-7xl lg:px-32">
-    <div class="relative bg-black p-8 lg:p-20 rounded-lg">
+    <div class="inbox_container relative p-8 lg:p-20 rounded-lg">
       <h2
-        class="mx-auto text-center text-3xl text-balance lg:text-8xl font-light font-display text-white"
+        class="mx-auto text-center text-4xl text-balance lg:text-8xl font-light font-display text-zinc-800"
       >
         Join us to get our news in your inbox.
       </h2>
-      <form action="" class="mt-12">
+      <form class="mt-12">
         <div class="flex w-full flex-col gap-1 sm:flex-row max-w-md mx-auto">
           <input
             name="email"
             type="email"
-            class="block w-full rounded-full border border-zinc-900 px-4 py-2 font-spline text-sm font-medium text-zinc-800 placeholder-zinc-400 focus:border-zinc-800 focus:outline-none focus:ring-2 h-10 lg:px-6 focus:ring-zinc-700/50 bg-zinc-800 disabled:opacity-50"
+            class="block w-full rounded-full border border-zinc-900 px-4 py-2 font-spline text-sm font-medium text-zinc-200 placeholder-zinc-400 focus:border-zinc-800 focus:outline-none focus:ring-2 h-10 lg:px-6 focus:ring-zinc-700/50 bg-zinc-800 disabled:opacity-50"
             placeholder="Enter your email..."
             required=""
           /><button
@@ -35,3 +35,37 @@
     </div>
   </div>
 </section>
+
+<style>
+  .inbox_container {
+    /* background-color: linear-gradient( var(--clr-accent)); */
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.15) 0%,
+        rgba(0, 0, 0, 0.15) 100%
+      ),
+      radial-gradient(
+          at top center,
+          rgba(255, 255, 255, 0.4) 0%,
+          rgba(0, 0, 0, 0.4) 120%
+        )
+        hsl(0, 0%, 90%);
+    background-blend-mode: multiply, multiply;
+    backdrop-filter: blur(16px);
+    isolation: isolate;
+    z-index: 1;
+  }
+  .inbox_container::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    aspect-ratio: 1;
+    width: 90px;
+    border-radius: 50%;
+    transform: translateX(320px) translateY(30px);
+    background-color: hsl(0, 0%, 87%);
+    filter: blur(12px);
+    z-index: -1;
+  }
+</style>
