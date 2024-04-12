@@ -50,7 +50,7 @@ export function MobileMenu() {
         onClick={toggleButton}
         className="w-fit bg-[var(--clr-card-bgk)] flex gap-2 items-center p-1 border border-[var(--clr-tags-hover)] rounded-full"
       >
-        <div className="p-2 border border-[var(--clr-tags-hover)] bg-[var(--clr-tags)] rounded-full">
+        <div className="p-2 border border-[var(--clr-tags)] hover:bg-[var(--clr-tags)] rounded-full">
           <svg
             width="20px"
             height="20px"

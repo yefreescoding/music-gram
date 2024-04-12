@@ -7,19 +7,17 @@ import { Image } from "astro:assets";
 
 <BaseLayout>
   <section class="bg-[var(--clr-bgk)]">
-    <div
-      class="px-8 py-12 md:px-12 mx-auto lg:pt-24 max-w-7xl lg:px-32 bg-[var(--clr-card-bgk)]"
-    >
+    <div class="md: mx-auto lg: max-w-8xl lg: bg-[var(--clr-card-bgk)]">
       <div class="lg:text-center">
         <Image
-          class="w-full aspect-[16/9] rounded-[1rem] object-cover object-center"
+          class="w-full h-[35em] aspect-[16/9] object-cover object-center"
           src={frontmatter.image.url}
           alt={frontmatter.image.alt}
           transition:name={`media-image-${frontmatter.id}`}
           width={100}
           height={50}
         />
-        <div class="flex flex-col md:flex-row mt-4 px-4 justify-between">
+        <div class="p-4 flex flex-col md:flex-row mt-4 px-4 justify-between">
           <p class="text-xs text-zinc-500">
             {frontmatter.pubDate.toString().slice(0, 10)} - Written by: {
               frontmatter.author
@@ -35,17 +33,20 @@ import { Image } from "astro:assets";
             }
           </div>
         </div>
-        <h1
-          id="#top"
-          class="text-4xl tracking-tight text-balance mt-12 lg:mt-16 font-medium font-display text-black md:text-8xl"
-        >
-          {frontmatter.title}
-        </h1>
-        <p class="max-w-2xl mt-8 mx-auto text-zinc-500">
-          <em>{frontmatter.description}</em>
-        </p>
+        <div class="p-4 flex flex-col mt-4 px-4 justify-between">
+          <h1
+            id="#top"
+            class="text-4xl tracking-tight text-balance mt-4 lg:mt-8 font-medium font-display text-black md:text-8xl"
+          >
+            {frontmatter.title}
+          </h1>
+          <p class="max-w-2xl mt-8 mx-auto text-zinc-500">
+            <em>{frontmatter.description}</em>
+          </p>
+        </div>
       </div>
-      <div class="mt-12 max-w-2xl mx-auto">
+
+      <div class="p-4 mt-12 max-w-3xl mx-auto">
         <div class="prose__styles">
           <slot />
         </div>

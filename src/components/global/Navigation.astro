@@ -6,25 +6,31 @@ import { MobileMenu } from "@/components/global/MobileMenu";
 <header class="header">
   <div class="p-4 mx-auto max-w-8xl text-base">
     <div
-      x-data="{ open: false }"
-      class="relative flex flex-col w-full mx-auto rounded-xl md:rounded-full md:items-center md:justify-between md:flex-row"
+      class="relative flex flex-col w-fit md:bg-[var(--clr-tags)] shadow-sm py-2 px-4 ml-auto rounded-xl md:rounded-full md:items-center md:justify-between md:flex-row"
     >
       <div class="flex flex-row items-center justify-between md:justify-start">
-        <a
+        <!-- <a
           href="/"
           class="text-[var(--astro-code-color-text)] hover:text-[var(--clr-hover-link)] text-xl font-semibold whitespace-nowrap"
         >
           musicgram
-        </a>
+        </a> -->
         <MobileMenu client:load />
       </div>
-      <!-- :class="{'flex': open, 'hidden': !open}" -->
       <nav
-        class="flex-col items-center flex-grow hidden py-12 md:py-0 md:flex md:items-end justify-center md:flex-row"
+        class="flex-col items-center flex-grow hidden md:flex md:items-end justify-center md:flex-row"
       >
         <ul
           class="space-y-2 list-none md:space-y-0 md:ml-auto items-center md:inline-flex justify-center text-center md:text-left gap-3"
         >
+          <li>
+            <a
+              href="/"
+              class="text-base text-[var(--astro-code-color-text)] hover:text-[var(--clr-hover-link)]"
+            >
+              Home
+            </a>
+          </li>
           <li>
             <a
               href="/about"
@@ -71,6 +77,14 @@ import { MobileMenu } from "@/components/global/MobileMenu";
               GitHub
             </a>
           </li>
+          <li>
+            <a
+              href="#top"
+              class="flex items-center p-2 bg-[var(--clr-tags)] rounded-full hover:bg-[var(--clr-tags-hover)]"
+            >
+              <img src={`/images/icons/arrow-icon.svg`} alt="" />
+            </a>
+          </li>
         </ul>
         <!-- <Themetoggle /> -->
       </nav>
@@ -80,16 +94,9 @@ import { MobileMenu } from "@/components/global/MobileMenu";
 
 <style>
   .header {
-    position: sticky;
-    inset: 0;
+    position: fixed;
+    inset: 0 0 auto 0;
     z-index: 9999;
-    transition:
-      background 120ms linear,
-      backdrop-filter 120ms ease;
-
-    &:hover {
-      background: hsl(0, 0%, 93%);
-      backdrop-filter: blur(0.35rem);
-    }
+    background-color: transparent;
   }
 </style>
