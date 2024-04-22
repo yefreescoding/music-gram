@@ -6,7 +6,7 @@ import { MobileMenu } from "@/components/global/MobileMenu";
 <header class="header">
   <div class="p-4 mx-auto max-w-8xl text-base">
     <div
-      class="relative flex flex-col w-fit md:bg-[var(--clr-tags)] shadow-sm py-2 px-4 ml-auto rounded-xl md:rounded-full md:items-center md:justify-between md:flex-row"
+      class="border_shadow relative md:bg-[#e6e6e6e6] flex flex-col w-fit py-2 px-4 ml-auto rounded-xl md:rounded-full md:items-center md:justify-between md:flex-row"
     >
       <div class="flex flex-row items-center justify-between md:justify-start">
         <MobileMenu client:load />
@@ -91,6 +91,11 @@ import { MobileMenu } from "@/components/global/MobileMenu";
     position: fixed;
     inset: 0 0 auto 0;
     z-index: 9999;
-    background-color: transparent;
+  }
+
+  @media (width > 54em) {
+    .border_shadow {
+      box-shadow: 0 0 2px hsl(0, 0%, 70%);
+    }
   }
 </style>
