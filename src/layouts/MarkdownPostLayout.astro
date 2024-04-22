@@ -13,9 +13,9 @@ import { Image } from "astro:assets";
           class="w-full h-[35em] aspect-[16/9] object-cover object-center"
           src={frontmatter.image.url}
           alt={frontmatter.image.alt}
-          transition:name={`media-image-${frontmatter.id}`}
           width={100}
           height={50}
+          loading="eager"
         />
         <div class="p-4 flex flex-col md:flex-row mt-4 px-4 justify-between">
           <p class="text-xs text-zinc-500">
