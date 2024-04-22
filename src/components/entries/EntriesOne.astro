@@ -16,14 +16,27 @@ import Image from "astro/components/Image.astro";
 <li>
   <a href={url} title={title} class="group">
     <article
-      class="bg-[var(--clr-card-bgk)] p-2 flex-1 h-full flex flex-col rounded-xl overflow-hidden"
+      class="border_shadow bg-[var(--clr-card-bgk)] h-full flex flex-col rounded-lg overflow-hidden"
     >
+      <div class="p-4 flex items-center gap-2">
+        <h3
+          class="text-[var(--astro-code-color-text)] text-xl font-bold text-pretty"
+        >
+          {title}
+        </h3>
+        <div class="inline-flex space-x-1 items-center">
+          <span aria-hidden="true">&middot;</span>
+          <div class="flex text-xs text-zinc-400">
+            <time datetime="2020-03-16">{pubDate}</time>
+          </div>
+        </div>
+      </div>
       <div
-        class="block w-full lg:col-span-2"
+        class="block w-full overflow-hidden"
         transition:name={mediaTransitionName}
       >
         <Image
-          class="w-full aspect-[1] rounded-[0.65rem] object-cover object-top"
+          class="w-full aspect-[1] object-cover object-top group-hover:scale-110 transition-all duration-200"
           src={image}
           alt={title}
           width={100}
@@ -31,22 +44,8 @@ import Image from "astro/components/Image.astro";
         />
       </div>
       <div
-        class="flex flex-col items-start justify-between h-full flex-1 w-full mt-2"
+        class="p-4 flex flex-col items-start justify-between h-full flex-1 w-full"
       >
-        <div>
-          <div class="inline-flex space-x-1 items-center">
-            <p class="text-xs font-medium text-black">{author}</p>
-            <span aria-hidden="true">&middot;</span>
-            <div class="flex text-xs text-zinc-400">
-              <time datetime="2020-03-16">{pubDate}</time>
-            </div>
-          </div>
-          <h3
-            class="text-[var(--astro-code-color-text)] text-xl font-bold text-pretty"
-          >
-            {title}
-          </h3>
-        </div>
         <p class="text-xs md:text-sm text-zinc-500 line-clamp-2">
           {description}
         </p>

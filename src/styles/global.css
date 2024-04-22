@@ -9,19 +9,6 @@
   --font-h: "Reem Kufi Fun", sans-serif;
   /* font-family: ; */
   font-optical-sizing: auto;
-  font-feature-settings:
-    "liga" 1,
-    "calt" 1,
-    /* Contextual Alternates */ "dlig" 1,
-    /* Discretionary Ligatures */ "ss07" 1,
-    /* fSquare punctuation */ "ss08" 1,
-    /* Square quotes */ "zero" 1,
-    /* Slashed zero */ "tnum" 1,
-    /* Tabular numbers */ "cv03" 1,
-    /* Open six */ "cv04" 1,
-    /* Open nine */ "cv01" 1,
-    /* Alternate one */ "cv09",
-    /* Flat-top three */ "cv02" 1; /* Open 4 */
 }
 
 @supports (font-variation-settings: normal) {
@@ -33,7 +20,7 @@
 
 :root {
   --astro-code-color-text: hsl(0, 0%, 20%);
-  --clr-bgk: hsl(0, 0%, 93%);
+  --clr-bgk: hsl(0, 0%, 96%);
   --clr-card-bgk: hsl(0, 0%, 99%);
   /* --astro-code-token-constant: #00000080;
   --astro-code-token-string: #00000050;
@@ -114,6 +101,10 @@ p {
     scroll-behavior: smooth;
     scroll-padding-top: 3rem;
   }
+}
+
+.border_shadow {
+  box-shadow: 0 0 2px hsl(0, 0%, 70%);
 }
 
 .prose__styles {
