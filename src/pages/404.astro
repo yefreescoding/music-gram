@@ -9,11 +9,15 @@ import VerticalFade from "@/components/ui/VerticalFade.astro";
     class="h-[90dvh] isolate relative w-full flex justify-center items-center"
   >
     <div class="px-4 md:px-12 mx-auto max-w-full">
-      <h1 class="text-center text-8xl font-bolder uppercase">404</h1>
+      <h1
+        class="text-[var(--clr-base-text)] text-center text-8xl font-bolder uppercase"
+      >
+        404
+      </h1>
     </div>
     <div class="absolute inset-0 mx-auto max-w-full -z-10">
       <Lines />
     </div>
-    <VerticalFade side="bottom" height={"300px"} />
+    <VerticalFade side="bottom" height={"100px"} />
   </section>
 </BaseLayout>

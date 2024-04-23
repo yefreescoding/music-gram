@@ -18,24 +18,6 @@
   }
 }
 
-:root {
-  --astro-code-color-text: hsl(0, 0%, 20%);
-  --clr-bgk: hsl(0, 0%, 96%);
-  --clr-card-bgk: hsl(0, 0%, 99%);
-  /* --astro-code-token-constant: #00000080;
-  --astro-code-token-string: #00000050;
-  --astro-code-token-comment: #00000060; */
-  --clr-tags: hsl(0, 0%, 90%);
-  --clr-tags-hover: hsl(0, 0%, 70%);
-  /* --astro-code-token-keyword: black;
-  --astro-code-token-parameter: #ffffff;
-  --astro-code-token-function: black;
-  --astro-code-token-string-expression: #fe351b; */
-  --clr-accent: hsl(0, 0%, 20%);
-  --clr-hover-link: hsl(197, 91%, 37%);
-  /* --astro-code-token-link: #ffffff; */
-  color-scheme: light;
-}
 /* CSS */
 
 html {
@@ -44,11 +26,7 @@ html {
   -webkit-text-size-adjust: 100%;
   hanging-punctuation: first last;
 }
-/*
-  Typographic tweaks!
-  - Add accessible line-height
-  - Improve text rendering
-*/
+
 *,
 *::before,
 *::after {
@@ -103,8 +81,40 @@ p {
   }
 }
 
+:root {
+  --clr-h-text: hsl(0, 0%, 12%);
+  --clr-base-text: hsl(0, 0%, 20%);
+  --clr-bgk: hsl(0, 0%, 96%);
+  --clr-card-bgk: hsl(0, 0%, 99%);
+  --clr-tags: hsl(0, 0%, 90%);
+  --clr-tags-hover: hsl(0, 0%, 70%);
+  --clr-accent: hsl(0, 0%, 20%);
+  --clr-hover-link: hsl(197, 91%, 37%);
+  --clr-shadow: hsl(0, 0%, 22%);
+  --clr-border-shadow: hsl(0, 0%, 40%);
+  --clr-shadow-hover: hsl(0, 0%, 12%);
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --clr-h-text: hsl(0, 0%, 90%);
+    --clr-base-text: hsl(0, 0%, 80%);
+    --clr-bgk: hsl(0, 0%, 6%);
+    --clr-card-bgk: hsl(0, 0%, 13%);
+    --clr-tags: hsl(0, 0%, 20%);
+    --clr-tags-hover: hsl(0, 0%, 40%);
+    --clr-accent: hsl(0, 0%, 5%);
+    --clr-hover-link: hsl(197, 91%, 37%);
+    --clr-shadow: hsl(0, 0%, 22%);
+    --clr-border-shadow: hsl(0, 0%, 80%);
+    --clr-shadow-hover: hsl(0, 0%, 12%);
+    color-scheme: dark;
+  }
+}
+
 .border_shadow {
-  box-shadow: 0 0 2px hsl(0, 0%, 70%);
+  box-shadow: 0 0 2px var(--clr-border-shadow);
 }
 
 .prose__styles {
@@ -112,6 +122,7 @@ p {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
+  color: var(--clr-base-text);
 
   & ul {
     list-style-type: circle;
@@ -126,10 +137,12 @@ p {
 
   & h2 {
     font-size: clamp(1.8rem, 1.75vw, 2rem);
+    color: var(--clr-h-text);
   }
 
   & h3 {
     font-size: clamp(1.5rem, 1.75vw, 1.8rem);
+    color: var(--clr-h-text);
   }
 
   & p {

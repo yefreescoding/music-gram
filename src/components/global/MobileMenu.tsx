@@ -48,9 +48,9 @@ export function MobileMenu() {
       <button
         type="button"
         onClick={toggleButton}
-        className="w-fit bg-[var(--clr-card-bgk)] flex gap-2 items-center p-1 border border-[var(--clr-tags-hover)] rounded-full"
+        className="border_shadow w-fit bg-[var(--clr-card-bgk)] flex gap-2 items-center p-1 rounded-full"
       >
-        <div className="p-2 border border-[var(--clr-tags)] hover:bg-[var(--clr-tags)] rounded-full">
+        <div className="text-[var(--clr-base-text)] p-2 border border-[var(--clr-border-shadow)] hover:bg-[var(--clr-tags)] rounded-full">
           <svg
             width="20px"
             height="20px"
@@ -107,29 +107,36 @@ export function MobileMenu() {
         </div>
       </button>
       <div
-        className={`w-[18rem] absolute top-14 right-0 border border-[var(--clr-tags-hover)] rounded-lg bg-[var(--clr-card-bgk)]  ${openMenu ? "block" : "hidden"}`}
+        className={`w-[18rem] absolute top-14 right-0 border_shadow rounded-lg bg-[var(--clr-card-bgk)]  ${openMenu ? "block" : "hidden"}`}
         ref={menuRef}
       >
         <div className="text-left text-base p-4">
-          <p className="text-[var(--clr-tags-hover)] mb-2">Menu</p>
-          <p className="font-bold capitalize">home</p>
+          <p className="text-[var(--clr-base-text)] mb-2 text-sm">Menu</p>
+          <p className="font-bold capitalize text-[var(--clr-h-text)]">home</p>
         </div>
         <ul className="flex flex-col w-full ">
-          <div className="p-[3px] border-t border-t-[var(--clr-tags-hover)]">
+          <div className="p-[3px] border-y-[0.5px] border-[var(--clr-border-shadow)]">
             {links.map((link) => (
               <li
                 key={link.name}
-                className="flex items-center gap-4 p-[13px] w-full hover:bg-[var(--clr-tags)] transition-all rounded-md"
+                className=" flex items-center gap-4 p-[13px] w-full hover:bg-[var(--clr-tags)] transition-all rounded-md"
               >
-                <img src={`/images/icons/${link.name}-icon.svg`} alt="" />
-                <a href={link.link} className="text-base capitalize w-full">
+                <img
+                  src={`/images/icons/${link.name}-icon.svg`}
+                  alt="Icono del link"
+                  className="text-[var(--clr-base-text)]"
+                />
+                <a
+                  href={link.link}
+                  className="text-base capitalize w-full text-[var(--clr-base-text)]"
+                >
                   {link.name}
                 </a>
               </li>
             ))}
           </div>
-          <div className="p-[3px] border-t border-t-[var(--clr-tags-hover)]">
-            <li className=" flex items-center gap-4 p-[13px] w-full hover:bg-[var(--clr-tags)] transition-all rounded-md">
+          <div className="p-[3px]">
+            <li className="text-[var(--clr-base-text)] flex items-center gap-4 p-[13px] w-full hover:bg-[var(--clr-tags)] transition-all rounded-md">
               <svg
                 width="22px"
                 height="22px"
@@ -163,7 +170,7 @@ export function MobileMenu() {
                 Instagram
               </a>
             </li>
-            <li className="flex items-center gap-4 p-[13px] w-full hover:bg-[var(--clr-tags)] transition-all rounded-md">
+            <li className="text-[var(--clr-base-text)] flex items-center gap-4 p-[13px] w-full hover:bg-[var(--clr-tags)] transition-all rounded-md">
               <svg
                 width="22px"
                 height="22px"
@@ -190,10 +197,12 @@ export function MobileMenu() {
               </a>
             </li>
           </div>
-          <div className="p-[3px] border-t border-t-[var(--clr-tags-hover)]">
-            <li className="text-base flex items-center gap-4 p-[13px] w-full hover:bg-[var(--clr-tags)] transition-all rounded-md">
+          <div className="p-[3px] border-t-[0.5px] border-t-[var(--clr-border-shadow)]">
+            <li className="text-[var(--clr-base-text)] text-base flex items-center gap-4 p-[13px] w-full hover:bg-[var(--clr-tags)] transition-all rounded-md">
               <img src={`/images/icons/arrow-icon.svg`} alt="" />
-              <a href="#top">Scroll to top</a>
+              <a href="#top" className="w-full">
+                Scroll to top
+              </a>
             </li>
           </div>
         </ul>

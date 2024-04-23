@@ -23,7 +23,7 @@ const sortedPosts = allPosts.sort(
       <ol role="list" class="flex flex-wrap gap-3">
         {
           tags.map((tag) => (
-            <li class="rounded-sm bg-[var(--clr-tags)] px-2 p-1  t inline-flex items-center uppercase mx-auto hover:bg-[var(--clr-tags-hover)] text-xs font-medium text-black">
+            <li class="border_shadow rounded-sm bg-[var(--clr-tags)] px-2 p-1  inline-flex items-center uppercase mx-auto hover:bg-[var(--clr-tags-hover)] text-xs font-medium text-[var(--clr-base-text)]">
               <a href={`/tags/${tag}`}>{tag}</a>
             </li>
           ))

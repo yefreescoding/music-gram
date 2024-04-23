@@ -16,17 +16,17 @@ import Image from "astro/components/Image.astro";
 <li>
   <a href={url} title={title} class="group">
     <article
-      class="border_shadow bg-[var(--clr-card-bgk)] h-full flex flex-col rounded-lg overflow-hidden"
+      class="border_shadow bg-[var(--clr-card-bgk)] h-full flex flex-col rounded-lg overflow-hidden hover:shadow-2xl transition-all"
     >
       <header class="p-4 flex items-center gap-2">
         <h3
-          class="text-[var(--astro-code-color-text)] text-lg xl:text-xl font-bold text-pretty"
+          class="text-[var(--clr-h-text)] text-lg xl:text-xl font-bold text-pretty"
         >
           {title}
         </h3>
-        <div class="flex items-center gap-2">
+        <div class="text-[var(--clr-base-text)] flex items-center gap-2">
           <span aria-hidden="true">&middot;</span>
-          <div class="flex text-xs text-zinc-400">
+          <div class="flex text-xs">
             <time datetime="2020-03-16">{pubDate}</time>
           </div>
         </div>
@@ -46,13 +46,15 @@ import Image from "astro/components/Image.astro";
       <div
         class="p-4 flex flex-col items-start justify-between h-full flex-1 w-full"
       >
-        <p class="text-xs md:text-sm text-zinc-500 line-clamp-2">
+        <p
+          class="my-2 text-[var(--clr-base-text)] text-xs md:text-sm line-clamp-2"
+        >
           {description}
         </p>
-        <div class="text-xs mt-2 flex space-x-1 flex-wrap">
+        <div class="text-xs mt-2 flex gap-2 flex-wrap">
           {
             tags.map((tag) => (
-              <span class="rounded-sm bg-[var(--clr-tags)] px-2 p-1 text-xs font-medium text-black">
+              <span class="border_shadow rounded-sm bg-[var(--clr-tags)] text-[var(--clr-base-text)] px-2 p-1 text-xs font-medium text-black">
                 {tag}
               </span>
             ))
@@ -62,12 +64,3 @@ import Image from "astro/components/Image.astro";
     </article>
   </a>
 </li>
-
-<style>
-  article {
-    transition: all 240ms ease-in-out;
-    &:hover {
-      box-shadow: 0 0 1.5rem hsl(0, 0%, 85%);
-    }
-  }
-</style>

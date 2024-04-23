@@ -18,7 +18,7 @@ import { Image } from "astro:assets";
           loading="eager"
         />
         <div class="p-4 flex flex-col md:flex-row mt-4 px-4 justify-between">
-          <p class="text-xs text-zinc-500">
+          <p class="text-xs text-[var(--clr-base-text)]">
             {frontmatter.pubDate.toString().slice(0, 10)} - Written by: {
               frontmatter.author
             }
@@ -26,7 +26,7 @@ import { Image } from "astro:assets";
           <div class="flex gap-3 items-end">
             {
               frontmatter.tags.map((tag) => (
-                <span class="inline-flex items-center uppercase    hover:text-blue-500   text-xs font-medium text-black">
+                <span class="inline-flex items-center uppercase    hover:text-blue-500   text-xs font-medium text-[var(--clr-base-text)]">
                   <a href={`/tags/${tag}`}>{tag}</a>
                 </span>
               ))
@@ -36,11 +36,11 @@ import { Image } from "astro:assets";
         <div class="p-4 flex flex-col mt-4 px-4 justify-between">
           <h1
             id="#top"
-            class="text-4xl tracking-tight text-balance mt-4 lg:mt-8 font-medium font-display text-black md:text-8xl"
+            class="text-[var(--clr-h-text)] text-4xl tracking-tight text-balance mt-4 lg:mt-8 font-medium font-display md:text-8xl"
           >
             {frontmatter.title}
           </h1>
-          <p class="max-w-2xl mt-8 mx-auto text-zinc-500">
+          <p class="max-w-2xl mt-8 mx-auto text-[var(--clr-base-text)]">
             <em>{frontmatter.description}</em>
           </p>
         </div>

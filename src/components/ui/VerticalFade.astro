@@ -25,14 +25,14 @@ const { side, height } = Astro.props;
 
     &[data-side="top"] {
       top: 0;
-      background: linear-gradient(to top, transparent 25%, var(--_gray1));
-      mask-image: linear-gradient(to bottom, var(--_gray1) 25%, transparent);
+      background: linear-gradient(to top, transparent 25%, var(--clr-bgk));
+      mask-image: linear-gradient(to bottom, var(--clr-bgk) 25%, transparent);
     }
 
     &[data-side="bottom"] {
       bottom: 0;
-      background: linear-gradient(to bottom, transparent 75%, var(--_gray1));
-      mask-image: linear-gradient(to top, var(--_gray1) 25%, transparent);
+      background: linear-gradient(to bottom, transparent 75%, var(--clr-bgk));
+      mask-image: linear-gradient(to top, var(--clr-bgk) 25%, transparent);
     }
   }
 </style>
