@@ -18,19 +18,19 @@ import Image from "astro/components/Image.astro";
     <article
       class="border_shadow bg-[var(--clr-card-bgk)] h-full flex flex-col rounded-lg overflow-hidden"
     >
-      <div class="p-4 flex items-center gap-2">
+      <header class="p-4 flex items-center gap-2">
         <h3
           class="text-[var(--astro-code-color-text)] text-xl font-bold text-pretty"
         >
           {title}
         </h3>
-        <div class="inline-flex space-x-1 items-center">
+        <div class="flex items-center gap-2">
           <span aria-hidden="true">&middot;</span>
           <div class="flex text-xs text-zinc-400">
             <time datetime="2020-03-16">{pubDate}</time>
           </div>
         </div>
-      </div>
+      </header>
       <div
         class="block w-full overflow-hidden"
         transition:name={mediaTransitionName}
