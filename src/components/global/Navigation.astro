@@ -1,12 +1,14 @@
 ---
 import { MobileMenu } from "@/components/global/MobileMenu";
-// import Themetoggle from "./Themetoggle.astro";
+import Themetoggle from "./Themetoggle.astro";
 ---
 
 <header class="header">
-  <div class="p-4 mx-auto max-w-8xl text-base">
+  <div
+    class="justify-between flex items-base flex-row-reverse md:flex-row md:items-start p-4 mx-auto max-w-8xl text-base"
+  >
     <div
-      class="border-shadow relative md:bg-[var(--clr-card-bgk)] flex flex-col w-fit py-2 px-4 ml-auto rounded-xl md:rounded-full md:items-center md:justify-between md:flex-row"
+      class="border-shadow relative md:bg-[var(--clr-card-bgk)] flex flex-col w-fit py-1.5 md:px-4 ml-auto rounded-lg md:items-center md:justify-between md:flex-row"
     >
       <div class="flex flex-row items-center justify-between md:justify-start">
         <MobileMenu client:load />
@@ -44,7 +46,7 @@ import { MobileMenu } from "@/components/global/MobileMenu";
           <li>
             <a
               href="https://github.com/michael-andreuzza/microblog"
-              class="py-1.5 px-4 h-8 rounded-full bg-[var(--clr-accent)] text-white duration-200 flex items-center justify-center gap-1"
+              class="py-1.5 px-4 rounded-full bg-[var(--clr-accent)] text-white duration-200 text-xs flex items-center justify-center gap-1"
             >
               <svg
                 width="18px"
@@ -76,13 +78,17 @@ import { MobileMenu } from "@/components/global/MobileMenu";
               href="#top"
               class="flex items-center p-2 bg-[var(--clr-tags)] rounded-full hover:bg-[var(--clr-tags-hover)]"
             >
-              <img src={`/images/icons/arrow-icon.svg`} alt="" />
+              <img
+                class="w-4 h-4"
+                src={`/images/icons/arrow-icon.svg`}
+                alt=""
+              />
             </a>
           </li>
         </ul>
-        <!-- <Themetoggle /> -->
       </nav>
     </div>
+    <Themetoggle />
   </div>
 </header>
 

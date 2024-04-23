@@ -4,14 +4,11 @@ import Navigation from "@/components/global/Navigation.astro";
 import Footer from "@/components/global/Footer.astro";
 
 import "@/styles/globals.css";
-
-import ViewTransitions from "astro/components/ViewTransitions.astro";
 ---
 
-<html lang="en" transition:animate="none">
+<html lang="en" data-theme="system">
   <head>
     <BaseHead />
-    <ViewTransitions />
   </head>
   <body
     class="bg-[var(--clr-bgk)] flex flex-col min-h-screen relative"

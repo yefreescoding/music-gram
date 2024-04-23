@@ -113,6 +113,36 @@ p {
   }
 }
 
+[data-theme="light"] {
+  --clr-h-text: hsl(0, 0%, 12%);
+  --clr-base-text: hsl(0, 0%, 20%);
+  --clr-bgk: hsl(0, 0%, 96%);
+  --clr-card-bgk: hsl(0, 0%, 99%);
+  --clr-tags: hsl(0, 0%, 90%);
+  --clr-tags-hover: hsl(0, 0%, 70%);
+  --clr-accent: hsl(0, 0%, 20%);
+  --clr-hover-link: hsl(197, 91%, 37%);
+  --clr-shadow: hsl(0, 0%, 22%);
+  --clr-border-shadow: hsl(0, 0%, 40%);
+  --clr-shadow-hover: hsl(0, 0%, 12%);
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --clr-h-text: hsl(0, 0%, 90%);
+  --clr-base-text: hsl(0, 0%, 80%);
+  --clr-bgk: hsl(0, 0%, 6%);
+  --clr-card-bgk: hsl(0, 0%, 13%);
+  --clr-tags: hsl(0, 0%, 20%);
+  --clr-tags-hover: hsl(0, 0%, 40%);
+  --clr-accent: hsl(0, 0%, 5%);
+  --clr-hover-link: hsl(197, 91%, 37%);
+  --clr-shadow: hsl(0, 0%, 22%);
+  --clr-border-shadow: hsl(0, 0%, 80%);
+  --clr-shadow-hover: hsl(0, 0%, 12%);
+  color-scheme: dark;
+}
+
 .border_shadow {
   box-shadow: 0 0 2px var(--clr-border-shadow);
 }

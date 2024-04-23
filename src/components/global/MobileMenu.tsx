@@ -206,6 +206,185 @@ export function MobileMenu() {
             </li>
           </div>
         </ul>
+        <div className="my-2 theme__toggle border_shadow text-center bg-[var(--clr-card-bgk)] text-[var(--clr-base-text)] mx-2 px-1 rounded-lg">
+          <button
+            className="inline-flex items-center gap-2 p-2 text-[var(--clr-base-text)]"
+            id="open-theme"
+            type="button"
+          >
+            Theme
+            <svg
+              width="18px"
+              height="18px"
+              viewBox="0 0 24 24"
+              stroke-width="1.4"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              color="currentColor"
+            >
+              <path
+                d="M8 7L3 12L8 17"
+                stroke="currentColor"
+                stroke-width="1.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+              <path
+                d="M16 7L21 12L16 17"
+                stroke="currentColor"
+                stroke-width="1.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+          </button>
+          <div
+            role="group"
+            dir="ltr"
+            className="flex items-center justify-center mb-1"
+            id="menu-theme"
+          >
+            <button
+              id="theme-light"
+              type="button"
+              aria-pressed="false"
+              data-state="off"
+              className="inline-flex items-center rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-[var(--clr-tags-hover)] hover:text-[var(--clr-base-text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=on]:bg-accent data-[state=on]:text-accent-foreground h-auto px-3 w-auto p-2 justify-start rounded-r-none"
+              value="light"
+            >
+              <svg
+                width="18px"
+                height="18px"
+                stroke-width="1.4"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                color="currentColor"
+              >
+                <path
+                  d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18Z"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M22 12L23 12"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M12 2V1"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M12 23V22"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M20 20L19 19"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M20 4L19 5"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M4 20L5 19"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M4 4L5 5"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M1 12L2 12"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </button>
+            <button
+              id="theme-system"
+              type="button"
+              aria-pressed="false"
+              data-state="off"
+              className="inline-flex items-center text-sm font-medium ring-offset-background transition-colors hover:bg-[var(--clr-tags-hover)] hover:text-[var(--clr-base-text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=on]:bg-accent data-[state=on]:text-accent-foreground h-auto px-3 w-auto p-2 justify-start rounded-r-none"
+              value="system"
+            >
+              <svg
+                width="18px"
+                height="18px"
+                stroke-width="1.4"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                color="currentColor"
+              >
+                <path
+                  d="M7 21L17 21"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M2 16.4V3.6C2 3.26863 2.26863 3 2.6 3H21.4C21.7314 3 22 3.26863 22 3.6V16.4C22 16.7314 21.7314 17 21.4 17H2.6C2.26863 17 2 16.7314 2 16.4Z"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                ></path>
+              </svg>
+            </button>
+            <button
+              id="theme-light"
+              type="button"
+              aria-pressed="false"
+              data-state="off"
+              className="inline-flex items-center rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-[var(--clr-tags-hover)] hover:text-[var(--clr-base-text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=on]:bg-accent data-[state=on]:text-accent-foreground h-auot px-3 w-auto p-2 justify-start rounded-l-none"
+              value="dark"
+            >
+              <svg
+                width="18px"
+                height="18px"
+                stroke-width="1.4"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                color="currentColor"
+              >
+                <path
+                  d="M3 11.5066C3 16.7497 7.25034 21 12.4934 21C16.2209 21 19.4466 18.8518 21 15.7259C12.4934 15.7259 8.27411 11.5066 8.27411 3C5.14821 4.55344 3 7.77915 3 11.5066Z"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
