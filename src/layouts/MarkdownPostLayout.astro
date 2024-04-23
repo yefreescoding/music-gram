@@ -3,6 +3,8 @@ import BaseLayout from "./BaseLayout.astro";
 const { frontmatter } = Astro.props;
 // import { AstroSeo } from "@astrolib/seo";
 import { Image } from "astro:assets";
+
+// import VerticalFade from "@/components/ui/VerticalFade.astro";
 ---
 
 <BaseLayout>
@@ -46,7 +48,7 @@ import { Image } from "astro:assets";
         </div>
       </div>
 
-      <div class="p-4 mt-12 max-w-3xl mx-auto">
+      <div class="relative p-4 mt-12 max-w-3xl mx-auto">
         <div class="prose__styles">
           <slot />
         </div>

@@ -6,7 +6,6 @@ import Footer from "@/components/global/Footer.astro";
 import "@/styles/globals.css";
 
 import ViewTransitions from "astro/components/ViewTransitions.astro";
-import VerticalFade from "@/components/ui/VerticalFade.astro";
 ---
 
 <html lang="en" transition:animate="none">
@@ -19,7 +18,6 @@ import VerticalFade from "@/components/ui/VerticalFade.astro";
     transition:animate="none"
   >
     <Navigation />
-    <VerticalFade side="top" height={"150px"} />
     <main class="flex-grow"><slot /></main>
     <Footer />
   </body>
